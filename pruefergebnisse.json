@@ -1,0 +1,11 @@
+{
+  "routes": 44,
+  "anchors": 164,
+  "viewports": 16,
+  "runtimeErrors": [],
+  "hoverMenu": true,
+  "keyboardMenu": true,
+  "touchMenu": true,
+  "languageKeepsSection": true,
+  "unconfiguredFormDisabled": true
+}

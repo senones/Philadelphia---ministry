@@ -1,0 +1,32 @@
+.grid-image {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-width: 0;
+	min-height: 0;
+	overflow: var(--grid-image-overflow, hidden);
+	border-radius: var(--grid-image-border-radius, 0);
+	-webkit-mask-image: var(--grid-image-mask, none);
+	-webkit-mask-size: cover;
+	mask-image: var(--grid-image-mask, none);
+	mask-size: 100% 100%;
+	mask-repeat: no-repeat;
+}
+
+.grid-image__image {
+	position: absolute;
+	inset: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	max-width: none;
+	object-fit: var(--grid-image-object-fit, cover);
+	object-position: center;
+}
+
+@media screen and (max-width: 920px) {
+	.grid-image {
+		border-radius: var(--grid-image-border-radius-m, var(--grid-image-border-radius, 0));
+	}
+}

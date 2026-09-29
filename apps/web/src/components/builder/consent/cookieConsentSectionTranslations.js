@@ -1,0 +1,8 @@
+export const COOKIE_CONSENT_SECTION_TRANSLATIONS = {
+	en: {
+		categoryNecessaryName: 'Strictly Necessary Cookies',
+		categoryNecessaryDescription: 'These cookies are essential for the website to function properly.',
+		categoryPlatformAnalyticsName: 'Platform Analytics',
+		categoryPlatformAnalyticsDescription: 'Hostinger uses cookies and similar technologies to analyze how you use this website. This helps improve user experience and Hostinger products. For this purpose, Amplitude service is used to collect usage data that does not directly identify you. Analytics are used only with your consent.',
+	},
+};

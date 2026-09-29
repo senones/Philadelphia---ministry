@@ -1,0 +1,102 @@
+[
+	{
+		"path": "/philadelphia-bayt",
+		"componentName": "PhiladelphiaBaytPage_system_bayt",
+		"importPath": "@/pages/builder/philadelphia-bayt/PhiladelphiaBaytPage",
+		"exportName": "PhiladelphiaBaytPage",
+		"locale": "system",
+		"pageId": "bayt",
+		"isHome": false,
+		"pageType": "default"
+	},
+	{
+		"path": "/",
+		"componentName": "HomePage_system_home",
+		"importPath": "@/pages/builder/home/HomePage",
+		"exportName": "HomePage",
+		"locale": "system",
+		"pageId": "home",
+		"isHome": true,
+		"pageType": "default"
+	},
+	{
+		"path": "/aktuelles",
+		"componentName": "AktuellesPage_system_news",
+		"importPath": "@/pages/builder/aktuelles/AktuellesPage",
+		"exportName": "AktuellesPage",
+		"locale": "system",
+		"pageId": "news",
+		"isHome": false,
+		"pageType": "default"
+	},
+	{
+		"path": "/unsere-arbeit",
+		"componentName": "UnsereArbeitPage_system_work",
+		"importPath": "@/pages/builder/unsere-arbeit/UnsereArbeitPage",
+		"exportName": "UnsereArbeitPage",
+		"locale": "system",
+		"pageId": "work",
+		"isHome": false,
+		"pageType": "default"
+	},
+	{
+		"path": "/ueber-uns",
+		"componentName": "UeberUnsPage_system_about",
+		"importPath": "@/pages/builder/ueber-uns/UeberUnsPage",
+		"exportName": "UeberUnsPage",
+		"locale": "system",
+		"pageId": "about",
+		"isHome": false,
+		"pageType": "default"
+	},
+	{
+		"path": "/kontakt",
+		"componentName": "KontaktPage_system_contact",
+		"importPath": "@/pages/builder/kontakt/KontaktPage",
+		"exportName": "KontaktPage",
+		"locale": "system",
+		"pageId": "contact",
+		"isHome": false,
+		"pageType": "default"
+	},
+	{
+		"path": "/lebensgeschichten",
+		"componentName": "LebensgeschichtenPage_system_stories",
+		"importPath": "@/pages/builder/lebensgeschichten/LebensgeschichtenPage",
+		"exportName": "LebensgeschichtenPage",
+		"locale": "system",
+		"pageId": "stories",
+		"isHome": false,
+		"pageType": "default"
+	},
+	{
+		"path": "/mitmachen",
+		"componentName": "MitmachenPage_system_support",
+		"importPath": "@/pages/builder/mitmachen/MitmachenPage",
+		"exportName": "MitmachenPage",
+		"locale": "system",
+		"pageId": "support",
+		"isHome": false,
+		"pageType": "default"
+	},
+	{
+		"path": "/impressum",
+		"componentName": "ImpressumPage",
+		"importPath": "@/pages/builder/rechtliches/ImpressumPage",
+		"exportName": "ImpressumPage",
+		"locale": "system",
+		"pageId": "impressum",
+		"isHome": false,
+		"pageType": "default"
+	},
+	{
+		"path": "/datenschutz",
+		"componentName": "DatenschutzPage",
+		"importPath": "@/pages/builder/rechtliches/DatenschutzPage",
+		"exportName": "DatenschutzPage",
+		"locale": "system",
+		"pageId": "datenschutz",
+		"isHome": false,
+		"pageType": "default"
+	}
+]

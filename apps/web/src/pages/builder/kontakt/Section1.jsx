@@ -1,0 +1,152 @@
+import React from 'react';
+import BlockLayout from '@/components/builder/layout/BlockLayout';
+import LayoutElement from '@/components/builder/layout/LayoutElement';
+import GridButton from '@/components/builder/elements/GridButton';
+import GridTextBox from '@/components/builder/elements/GridTextBox';
+
+export default function Section1() {
+	return (
+		<BlockLayout
+			blockId={"MC2B68"}
+			htmlId={"hero"}
+			blockClassName={"block block--desktop-first-visible block--mobile-first-visible"}
+			className={"block-layout block-layout--layout"}
+			style={{
+				"--cols": "12",
+				"--rows": 8,
+				"--width": "1224px",
+				"--m-rows": "1",
+				"--col-gap": "24px",
+				"--row-gap": "16px",
+				"--row-size": "48px",
+				"--block-padding-top": "16px",
+				"--block-padding": "16px 0 16px 0",
+				"--block-padding-right": "0",
+				"--block-padding-bottom": "16px",
+				"--block-padding-left": "0",
+				"--m-block-padding": "16px",
+				"--m-grid-template-rows": "22.22vw auto 3.33vw auto 3.33vw auto 3.33vw auto 92px",
+				"--t-grid-template-rows": "minmax(80px, auto) minmax(48px, auto) minmax(12px, auto) minmax(116px, auto) minmax(12px, auto) minmax(160px, auto) minmax(12px, auto) minmax(48px, auto) 1fr",
+				"--small-desktop-grid-template-rows": "minmax(8.50vw, auto) minmax(1.88vw, auto) minmax(3.02vw, auto) minmax(6.29vw, auto) minmax(2.61vw, auto) minmax(3.43vw, auto) minmax(3.76vw, auto) minmax(4.33vw, auto) 8.50vw",
+				"--grid-template-rows": "minmax(104px, auto) minmax(23px, auto) minmax(37px, auto) minmax(77px, auto) minmax(32px, auto) minmax(42px, auto) minmax(46px, auto) minmax(53px, auto) 1fr",
+				"--m-grid-template-columns": "21.95% 56.10% 21.95%",
+				"--grid-template-columns": "6.54% 16.34% 69.93% 7.19%",
+				"--m-block-min-height": "auto",
+				"--t-block-min-height": "580px",
+				"--small-desktop-block-min-height": "auto",
+				"--block-min-height": "518px"
+			}}
+			background={{
+				color: "#f7f4ef",
+				current: "color",
+				isTransparent: false
+			}}
+		>
+			<LayoutElement
+				elementId={"q0jTdA"}
+				className={"layout-element layout-element--layout transition transition--fade hover--lift"}
+				style={{
+					"--z-index": 1,
+					"--grid-row": "8/9",
+					"--grid-column": "2/3",
+					"--m-grid-row": "8/9",
+					"--m-grid-column": "2/3",
+					"--user-animation-delay": "0.1s"
+				}}
+				hasRotationFrame={false}
+				hasEntranceAnimation={true}
+			>
+				<GridButton
+					id={"q0jTdA"}
+					text={"Nachricht senden"}
+					type={"primary"}
+					href={"#"}
+					target={"_self"}
+					borderRadius={12}
+					borderWidth={0}
+					backgroundColor={"#231c18"}
+					fontColor={"#ffffff"}
+					borderColor={"#231c18"}
+					backgroundColorHover={"#4f4946"}
+					fontColorHover={"#ffffff"}
+					borderColorHover={"#4f4946"}
+					mobileWidthVw={"51.111111111111114vw"}
+					mobileHeightVw={"13.333333333333334vw"}
+					className={"layout-element__component layout-element__component--GridButton"}
+				/>
+			</LayoutElement>
+			<LayoutElement
+				elementId={"qTLXXI"}
+				className={"layout-element layout-element--layout transition transition--fade"}
+				style={{
+					"--text": "left",
+					"--m-text": "center",
+					"--z-index": 2,
+					"--grid-row": "2/3",
+					"--grid-column": "2/4",
+					"--m-grid-row": "2/3",
+					"--m-grid-column": "1/4",
+					"--user-animation-delay": "0.1s"
+				}}
+				hasRotationFrame={false}
+				hasEntranceAnimation={true}
+			>
+				<GridTextBox
+					id={"qTLXXI"}
+					content={"<span class=\"body-small\" dir=\"auto\" style=\"color: rgb(35, 28, 24);\">Wir sind für Sie da</span>"}
+					textAlign={"left"}
+					textAlignMobile={"center"}
+					className={"layout-element__component layout-element__component--GridTextBox"}
+				/>
+			</LayoutElement>
+			<LayoutElement
+				elementId={"a0F20Z"}
+				className={"layout-element layout-element--layout transition transition--rise"}
+				style={{
+					"--text": "left",
+					"--m-text": "center",
+					"--z-index": 3,
+					"--grid-row": "4/5",
+					"--grid-column": "2/4",
+					"--m-grid-row": "4/5",
+					"--m-grid-column": "1/4",
+					"--user-animation-delay": "0.1s"
+				}}
+				hasRotationFrame={false}
+				hasEntranceAnimation={true}
+			>
+				<GridTextBox
+					id={"a0F20Z"}
+					content={"<h1 dir=\"auto\" style=\"color: rgb(35, 28, 24);\"><strong>Kontakt</strong> &amp; Anfahrt</h1>"}
+					textAlign={"left"}
+					textAlignMobile={"center"}
+					className={"layout-element__component layout-element__component--GridTextBox"}
+				/>
+			</LayoutElement>
+			<LayoutElement
+				elementId={"ym7pDg"}
+				className={"layout-element layout-element--layout transition transition--slide"}
+				style={{
+					"--text": "left",
+					"--m-text": "center",
+					"--z-index": 4,
+					"--grid-row": "6/7",
+					"--grid-column": "2/4",
+					"--m-grid-row": "6/7",
+					"--m-grid-column": "1/4",
+					"--user-animation-delay": "0.1s"
+				}}
+				hasRotationFrame={false}
+				hasEntranceAnimation={true}
+			>
+				<GridTextBox
+					id={"ym7pDg"}
+					content={"<p dir=\"auto\" style=\"color: rgb(35, 28, 24);\">Wir bieten unkomplizierte Wege, um mit uns in Kontakt zu treten. Ob Sie Unterstützung suchen, sich engagieren möchten oder Fragen haben – wir sind für Sie da.</p>"}
+					textAlign={"left"}
+					textAlignMobile={"center"}
+					className={"layout-element__component layout-element__component--GridTextBox"}
+				/>
+			</LayoutElement>
+		</BlockLayout>
+	);
+}
