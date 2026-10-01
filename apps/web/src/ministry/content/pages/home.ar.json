@@ -29,5 +29,22 @@
       "pending": false
     }
   },
-  "extraSections": []
+  "extraSections": [
+    {
+      "id": "extra-b54e292b-93c7-42ac-8c40-d3da22c0f77c",
+      "title": "هذا الاختبار جديد",
+      "body": "اختبار",
+      "pending": false,
+      "untranslated": false,
+      "images": [
+        {
+          "caption": "",
+          "alt": "",
+          "id": "image-4ea39522-bab7-402c-b13a-06d86fdc3e57",
+          "src": "/media/mission.jpg"
+        }
+      ],
+      "after": "mitmachen"
+    }
+  ]
 }

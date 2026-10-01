@@ -30,5 +30,22 @@
     }
   },
   "syncTranslations": true,
-  "extraSections": []
+  "extraSections": [
+    {
+      "id": "extra-b54e292b-93c7-42ac-8c40-d3da22c0f77c",
+      "untranslated": false,
+      "after": "mitmachen",
+      "pending": false,
+      "images": [
+        {
+          "id": "image-4ea39522-bab7-402c-b13a-06d86fdc3e57",
+          "caption": "",
+          "alt": "",
+          "src": "/media/mission.jpg"
+        }
+      ],
+      "title": "Dieser Test ist neu",
+      "body": "test"
+    }
+  ]
 }
