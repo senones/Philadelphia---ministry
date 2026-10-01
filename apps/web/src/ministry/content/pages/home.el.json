@@ -1,5 +1,5 @@
 {
-  "title": "Αρχική",
+  "title": "Δοκιμαστική σελίδα",
   "heading": "Η πίστη μας ενώνει. Η ελπίδα μεγαλώνει.",
   "intro": "Philadelphia International Ministry συνδυάζει τη χριστιανική πίστη, την πρακτική βοήθεια και την κοινότητα για ανθρώπους από διαφορετικές κουλτούρες. Αυτή είναι μια δοκιμή της αυτόματης μετάφρασης.",
   "sections": {
@@ -29,31 +29,5 @@
       "pending": false
     }
   },
-  "extraSections": [
-    {
-      "id": "extra-b54e292b-93c7-42ac-8c40-d3da22c0f77c",
-      "title": "Αυτή η δοκιμή είναι καινούργια",
-      "body": "δοκιμή",
-      "pending": false,
-      "untranslated": false,
-      "images": [
-        {
-          "caption": "",
-          "alt": "",
-          "id": "image-4ea39522-bab7-402c-b13a-06d86fdc3e57",
-          "src": "/media/mission.jpg"
-        }
-      ],
-      "after": "mitmachen"
-    },
-    {
-      "id": "extra-9aac5a05-daec-4912-9467-d27ee2078cc8",
-      "title": "tst",
-      "body": "Κάνω ακόμα μια δοκιμή",
-      "pending": false,
-      "untranslated": false,
-      "images": [],
-      "after": "start"
-    }
-  ]
+  "extraSections": []
 }

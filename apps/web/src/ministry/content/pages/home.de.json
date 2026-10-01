@@ -1,5 +1,5 @@
 {
-  "title": "Startseite",
+  "title": "Testseite",
   "heading": "Glaube verbindet. Hoffnung wächst.",
   "intro": "Philadelphia International Ministry verbindet christlichen Glauben, praktische Hilfe und Gemeinschaft für Menschen aus unterschiedlichen Kulturen. Dies ist ein Test der automatischen Übersetzung.",
   "sections": {
@@ -30,31 +30,5 @@
     }
   },
   "syncTranslations": true,
-  "extraSections": [
-    {
-      "id": "extra-b54e292b-93c7-42ac-8c40-d3da22c0f77c",
-      "untranslated": false,
-      "after": "mitmachen",
-      "pending": false,
-      "images": [
-        {
-          "id": "image-4ea39522-bab7-402c-b13a-06d86fdc3e57",
-          "caption": "",
-          "alt": "",
-          "src": "/media/mission.jpg"
-        }
-      ],
-      "title": "Dieser Test ist neu",
-      "body": "test"
-    },
-    {
-      "id": "extra-9aac5a05-daec-4912-9467-d27ee2078cc8",
-      "untranslated": false,
-      "after": "start",
-      "pending": false,
-      "images": [],
-      "title": "tst",
-      "body": "ich mache noch ein test"
-    }
-  ]
+  "extraSections": []
 }

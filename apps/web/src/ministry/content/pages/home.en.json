@@ -1,5 +1,5 @@
 {
-  "title": "Home",
+  "title": "Test page",
   "heading": "Faith brings us together. Hope grows.",
   "intro": "Philadelphia International Ministry combines Christian faith, practical help and fellowship for people from different cultures. This is a test of the automatic translation.",
   "sections": {
@@ -29,31 +29,5 @@
       "pending": false
     }
   },
-  "extraSections": [
-    {
-      "id": "extra-b54e292b-93c7-42ac-8c40-d3da22c0f77c",
-      "title": "This test is new",
-      "body": "test",
-      "pending": false,
-      "untranslated": false,
-      "images": [
-        {
-          "caption": "",
-          "alt": "",
-          "id": "image-4ea39522-bab7-402c-b13a-06d86fdc3e57",
-          "src": "/media/mission.jpg"
-        }
-      ],
-      "after": "mitmachen"
-    },
-    {
-      "id": "extra-9aac5a05-daec-4912-9467-d27ee2078cc8",
-      "title": "tst",
-      "body": "I’m doing another test",
-      "pending": false,
-      "untranslated": false,
-      "images": [],
-      "after": "start"
-    }
-  ]
+  "extraSections": []
 }

@@ -1,5 +1,5 @@
 {
-  "title": "الرئيسية",
+  "title": "صفحة تجريبية",
   "heading": "الإيمان يجمعنا. والرجاء ينمو.",
   "intro": "Philadelphia International Ministry تجمع بين الإيمان المسيحي والمساعدة العملية والتواصل بين الناس من ثقافات مختلفة. هذا اختبار للترجمة الآلية.",
   "sections": {
@@ -29,31 +29,5 @@
       "pending": false
     }
   },
-  "extraSections": [
-    {
-      "id": "extra-b54e292b-93c7-42ac-8c40-d3da22c0f77c",
-      "title": "هذا الاختبار جديد",
-      "body": "اختبار",
-      "pending": false,
-      "untranslated": false,
-      "images": [
-        {
-          "caption": "",
-          "alt": "",
-          "id": "image-4ea39522-bab7-402c-b13a-06d86fdc3e57",
-          "src": "/media/mission.jpg"
-        }
-      ],
-      "after": "mitmachen"
-    },
-    {
-      "id": "extra-9aac5a05-daec-4912-9467-d27ee2078cc8",
-      "title": "tst",
-      "body": "سأجري اختبارًا آخر",
-      "pending": false,
-      "untranslated": false,
-      "images": [],
-      "after": "start"
-    }
-  ]
+  "extraSections": []
 }
