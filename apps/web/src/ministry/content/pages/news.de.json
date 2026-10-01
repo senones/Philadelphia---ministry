@@ -1,7 +1,7 @@
 {
   "title": "Aktuelles",
   "heading": "Verbunden bleiben. Neues entdecken.",
-  "intro": "Missionsberichte, Veranstaltungen und Gebetsanliegen – an einem Ort gesammelt.",
+  "intro": "Missionsberichte, Veranstaltungen und Gebetsanliegen",
   "sections": {
     "missionsberichte": {
       "title": "Missionsberichte",
@@ -28,5 +28,6 @@
       "body": "Konkrete Gebetsanliegen werden mit der Leitung abgestimmt. Beten Sie mit uns für die Menschen und die Arbeit des Ministries.",
       "pending": true
     }
-  }
+  },
+  "syncTranslations": true
 }
