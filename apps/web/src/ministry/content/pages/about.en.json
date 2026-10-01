@@ -1,7 +1,7 @@
 {
   "title": "About us",
   "heading": "The people and faith behind Philadelphia.",
-  "intro": "Learn about the story, vision and team of Philadelphia International Ministry.",
+  "intro": "so ein test",
   "sections": {
     "geschichte": {
       "title": "History",
@@ -23,5 +23,6 @@
       "body": "Names, roles and short introductions of the leadership and team will be added after approval.",
       "pending": true
     }
-  }
+  },
+  "syncTranslations": true
 }
