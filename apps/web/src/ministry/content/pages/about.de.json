@@ -20,8 +20,9 @@
     },
     "team": {
       "title": "Team / Leitung",
-      "body": "Namen, Aufgaben und kurze Vorstellungen der Leitung und des Teams werden nach Freigabe ergänzt.",
+      "body": "nein",
       "pending": true
     }
-  }
+  },
+  "syncTranslations": true
 }
