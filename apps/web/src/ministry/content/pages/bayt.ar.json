@@ -28,5 +28,16 @@
       "body": "ستُضاف تفاصيل الدعم العملي للسكان وطرق مساعدتك بعد التأكيد.",
       "pending": false
     }
-  }
+  },
+  "extraSections": [
+    {
+      "id": "extra-d4149624-b28d-4fc9-856d-30830c4e3dfa",
+      "title": "هنا يوجد ماء",
+      "body": "هذا اختبار",
+      "pending": false,
+      "untranslated": false,
+      "images": [],
+      "after": "bewohner"
+    }
+  ]
 }

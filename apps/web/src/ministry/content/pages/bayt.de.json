@@ -28,5 +28,17 @@
       "body": "Wie Bewohner praktisch begleitet werden und wie Sie dabei helfen können, wird nach Bestätigung ergänzt.",
       "pending": false
     }
-  }
+  },
+  "extraSections": [
+    {
+      "id": "extra-d4149624-b28d-4fc9-856d-30830c4e3dfa",
+      "untranslated": false,
+      "after": "bewohner",
+      "pending": false,
+      "images": [],
+      "title": "Hier  ist wasser",
+      "body": "Das ist ein Test"
+    }
+  ],
+  "syncTranslations": true
 }

@@ -28,5 +28,16 @@
       "body": "Details of practical support for residents and ways you can help will be added after confirmation.",
       "pending": false
     }
-  }
+  },
+  "extraSections": [
+    {
+      "id": "extra-d4149624-b28d-4fc9-856d-30830c4e3dfa",
+      "title": "Here is water",
+      "body": "This is a test",
+      "pending": false,
+      "untranslated": false,
+      "images": [],
+      "after": "bewohner"
+    }
+  ]
 }
