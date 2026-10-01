@@ -3,7 +3,24 @@
     "geschichten": {
       "position": "after",
       "layout": "grid",
-      "images": []
+      "images": [
+        {
+          "name": "Neues Bild",
+          "caption": {
+            "de": "",
+            "en": "",
+            "el": "",
+            "ar": ""
+          },
+          "alt": {
+            "de": "",
+            "en": "",
+            "el": "",
+            "ar": ""
+          },
+          "src": "/media/mission.jpg"
+        }
+      ]
     },
     "zeugnisse": {
       "position": "after",
@@ -20,5 +37,6 @@
       "layout": "grid",
       "images": []
     }
-  }
+  },
+  "syncTranslations": true
 }
