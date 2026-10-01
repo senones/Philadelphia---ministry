@@ -1,0 +1,32 @@
+{
+  "title": "Philadelphia Bayt – House Philadelphia",
+  "heading": "One house. A place for community.",
+  "intro": "Philadelphia Bayt – House Philadelphia – is about community, support and discipleship.",
+  "sections": {
+    "was-ist-bayt": {
+      "title": "What is Bayt?",
+      "body": "Bayt means “house”. The official description of House Philadelphia and its residents will be added by the leadership.",
+      "pending": false
+    },
+    "ziel-konzept": {
+      "title": "Purpose and concept",
+      "body": "The goals, intended residents and concept of the house will be described here after agreement with the leadership.",
+      "pending": true
+    },
+    "leben": {
+      "title": "Life in the house",
+      "body": "Approved texts and images will offer insights into daily life, shared activities and living together.",
+      "pending": true
+    },
+    "begleitung": {
+      "title": "Support and discipleship",
+      "body": "Personal support and learning together in faith are among the planned topics. Programme details will follow.",
+      "pending": false
+    },
+    "bewohner": {
+      "title": "Supporting residents",
+      "body": "Details of practical support for residents and ways you can help will be added after confirmation.",
+      "pending": false
+    }
+  }
+}

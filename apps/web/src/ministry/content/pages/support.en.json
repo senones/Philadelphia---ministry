@@ -1,0 +1,27 @@
+{
+  "title": "Get involved / support",
+  "heading": "Make a difference together.",
+  "intro": "Prayer, donations, practical help or volunteering – explore how you can get involved.",
+  "sections": {
+    "gebet": {
+      "title": "Prayer",
+      "body": "Support the people, team and projects in prayer. Current prayer requests are listed under News.",
+      "pending": false
+    },
+    "spenden": {
+      "title": "Donations",
+      "body": "Confirmed donation options and information about how funds are used will be added here.",
+      "pending": true
+    },
+    "praktische-unterstuetzung": {
+      "title": "Practical support",
+      "body": "Would you like to contribute skills, time or supplies? Current needs and contact details will be added.",
+      "pending": false
+    },
+    "mitarbeit": {
+      "title": "Volunteering / mission placement",
+      "body": "Volunteering opportunities, requirements and arrangements for a mission placement will be agreed with the leadership.",
+      "pending": true
+    }
+  }
+}

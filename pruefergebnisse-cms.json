@@ -1,0 +1,90 @@
+{
+  "checked_on": "2026-09-30",
+  "cms_version": "3.16.3",
+  "original_content_preserved": true,
+  "language_pages": 44,
+  "authentication_unit_tests": 18,
+  "contact_api_unit_tests": 20,
+  "production_build_passed": true,
+  "frontend_lint_passed": true,
+  "cms_browser": {
+    "languageSaves": 4,
+    "richTextSave": true,
+    "previewLanguages": 4,
+    "websiteLayouts": 24,
+    "settingsCollections": 3,
+    "unconfiguredEditorDisabled": true,
+    "browserErrors": [],
+    "originalContentRestored": true,
+    "realGithubLogins": 0,
+    "realEmails": 0
+  },
+  "settings_browser": {
+    "siteSettingsSave": true,
+    "optionalFieldsPreserved": true,
+    "existingImageSelectionSave": true,
+    "pdfMetadataSave": true,
+    "hiddenDocumentMetadataPreserved": true,
+    "browserErrors": [],
+    "originalSettingsRestored": true
+  },
+  "real_github_logins": 0,
+  "real_emails_sent": 0,
+  "published_to_live_site": false,
+  "online_setup_required": [
+    "Website repository and Vercel Git connection",
+    "GitHub OAuth application",
+    "CMS_SITE_URL",
+    "CMS_GITHUB_REPO",
+    "CMS_GITHUB_CLIENT_ID",
+    "CMS_GITHUB_CLIENT_SECRET"
+  ],
+  "additional_images_browser": {
+    "checked_on": "2026-09-30",
+    "actual_uploads": 1,
+    "browser_errors": [],
+    "published_to_live_site": false,
+    "add_multiple_images": true,
+    "reorder_saved": true,
+    "nonempty_gallery_validation": true,
+    "editor_preview_images_loaded": true,
+    "website_layouts": 16,
+    "position_and_layout_saved": true,
+    "remove_keeps_media_file": true,
+    "remove_all_images": true,
+    "other_sections_unchanged": true,
+    "original_content_restored": true,
+    "passed": true
+  },
+  "jpg_upload_and_crop_browser": {
+    "checked_on": "2026-09-30",
+    "jpg_uploads": [
+      {
+        "file_name": "haus-jpg-test.jpg",
+        "saved_src": "/media/haus-jpg-test.jpg",
+        "http_status": 200,
+        "image_loaded": true
+      },
+      {
+        "file_name": "Mein Haus Philadelphia Äöü (1).JPG",
+        "saved_src": "/media/mein-haus-philadelphia-aou-1-.jpg",
+        "http_status": 200,
+        "image_loaded": true
+      },
+      {
+        "file_name": "WhatsApp Image 2026-09-30 at 09.48.22.jpeg",
+        "saved_src": "/media/whatsapp-image-2026-09-30-at-09.48.22.jpeg",
+        "http_status": 200,
+        "image_loaded": true
+      }
+    ],
+    "crop_layouts": 8,
+    "browser_errors": [],
+    "user_missing_image_reproduced": false,
+    "published_to_live_site": false,
+    "already_open_preview_uploads": 3,
+    "full_images_visible": true,
+    "original_assets_restored": true,
+    "passed": true
+  }
+}

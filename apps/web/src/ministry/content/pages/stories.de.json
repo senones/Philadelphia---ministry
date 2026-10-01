@@ -1,0 +1,27 @@
+{
+  "title": "Lebensgeschichten / Zeugnisse",
+  "heading": "Menschen. Geschichten. Hoffnung.",
+  "intro": "Hier ist Raum für persönliche Geschichten und freigegebene Zeugnisse aus der Gemeinschaft.",
+  "sections": {
+    "geschichten": {
+      "title": "Persönliche Geschichten",
+      "body": "Persönliche Lebensgeschichten werden auf Grundlage der Originaltexte und mit Zustimmung der betroffenen Personen veröffentlicht.",
+      "pending": true
+    },
+    "zeugnisse": {
+      "title": "Zeugnisse von Bewohnern",
+      "body": "Bewohner können hier selbst zu Wort kommen. Freigegebene Zeugnisse und die dazugehörigen Bilder werden ergänzt.",
+      "pending": true
+    },
+    "maluk": {
+      "title": "Maluk",
+      "body": "Der freigegebene Website-Text zu Maluk wird hier ergänzt. Das im bisherigen Entwurf verlinkte Originaldokument finden Sie unten.",
+      "pending": true
+    },
+    "sunday": {
+      "title": "Sunday",
+      "body": "Der freigegebene Website-Text zu Sunday wird hier ergänzt. Das im bisherigen Entwurf verlinkte Originaldokument finden Sie unten.",
+      "pending": true
+    }
+  }
+}

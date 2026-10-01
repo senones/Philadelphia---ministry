@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "missionsberichte": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "veranstaltungen": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "sommercamps": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "neuigkeiten": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "gebetsanliegen": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    }
+  }
+}

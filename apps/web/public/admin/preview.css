@@ -1,0 +1,20 @@
+body { margin: 0; background: #fffcf7; color: #29251f; font-family: Arial, sans-serif; }
+.page-preview { max-width: 850px; padding: 34px; line-height: 1.9; }
+.page-preview header { border-bottom: 1px solid #dfd5c9; padding-bottom: 28px; }
+.page-preview .eyebrow { text-transform: uppercase; font-size: 11px; letter-spacing: .1em; color: #8d6b44; }
+.page-preview h1 { font: 42px/1.2 Georgia, serif; margin: 16px 0; }
+.page-preview .intro { color: #766c60; white-space: pre-line; }
+.page-preview section { position: relative; border-bottom: 1px solid #dfd5c9; margin-top: 30px; padding: 0 0 26px; }
+.page-preview h2 { font: 29px/1.4 Georgia, serif; margin: 10px 0; }
+.page-preview .pending-label { font-size: 11px; color: #8d6b44; margin: 0; }
+.page-preview .preview-body { color: #766c60; }
+.page-preview img { max-width: 100%; }
+.page-preview[dir=rtl] h1, .page-preview[dir=rtl] h2 { font-family: Tahoma, Arial, sans-serif; line-height: 1.6; }
+.gallery-position { font-size: 12px; color: #766c60; }
+.preview-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.preview-gallery.gallery-full, .preview-gallery.is-single { grid-template-columns: minmax(0, 1fr); }
+.preview-gallery figure { min-width: 0; margin: 0; }
+.preview-gallery img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; background: #eee8de; border-radius: 8px; }
+.preview-gallery.gallery-full img, .preview-gallery.is-single img { aspect-ratio: auto; max-height: 660px; }
+.preview-gallery figcaption { margin-top: 10px; font-size: 12px; line-height: 1.8; color: #766c60; white-space: pre-line; overflow-wrap: anywhere; }
+@media(max-width: 440px) { .page-preview { padding: 22px; }.preview-gallery { grid-template-columns: minmax(0, 1fr); } }

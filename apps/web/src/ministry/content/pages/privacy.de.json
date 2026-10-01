@@ -1,0 +1,32 @@
+{
+  "title": "Datenschutz",
+  "heading": "Datenschutz",
+  "intro": "Entwurf: Die endgültigen Datenschutzhinweise werden entsprechend dem tatsächlichen Hosting, den Kontaktwegen und eingebundenen Diensten ergänzt.",
+  "sections": {
+    "verantwortlicher": {
+      "title": "Verantwortliche Stelle",
+      "body": "Die verantwortliche Organisation und deren Datenschutz-Kontakt werden ergänzt.",
+      "pending": true
+    },
+    "kontaktformular": {
+      "title": "Kontakt und Nachrichten",
+      "body": "Bei Nutzung des eingerichteten Kontaktformulars werden Name, E-Mail-Adresse und Nachricht zur Bearbeitung Ihrer Anfrage per E-Mail übermittelt. Der Versand erfolgt über Resend und eine Funktion auf Vercel. Rechtsgrundlage, Verantwortliche, Angaben zu den Dienstleistern und Speicherdauer werden im endgültigen Datenschutzhinweis ergänzt.",
+      "pending": true
+    },
+    "externe-dienste": {
+      "title": "Externe Dienste",
+      "body": "Links zu Google Maps öffnen einen externen Dienst. Originaldokumente werden von dieser Website bereitgestellt. Ergänzen Sie vor Veröffentlichung die Angaben zu allen tatsächlich verwendeten Dienstleistern.",
+      "pending": true
+    },
+    "spracheinstellung": {
+      "title": "Spracheinstellung",
+      "body": "Diese Website kann die gewählte Sprache lokal in Ihrem Browser speichern, damit Ihre Auswahl beim nächsten Besuch erhalten bleibt.",
+      "pending": false
+    },
+    "rechte": {
+      "title": "Datenschutzrechte und Kontakt",
+      "body": "Die zutreffenden Informationen zu Rechten und Kontaktmöglichkeiten werden vor Veröffentlichung ergänzt.",
+      "pending": true
+    }
+  }
+}

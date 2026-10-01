@@ -1,0 +1,32 @@
+{
+  "title": "Philadelphia Bayt – Haus Philadelphia",
+  "heading": "Ein Haus. Raum für Gemeinschaft.",
+  "intro": "Philadelphia Bayt – das Haus Philadelphia – steht für Gemeinschaft, Begleitung und Jüngerschaft.",
+  "sections": {
+    "was-ist-bayt": {
+      "title": "Was ist das Bayt?",
+      "body": "Bayt bedeutet „Haus“. Die offizielle Beschreibung des Hauses Philadelphia und seiner Bewohner wird von der Leitung ergänzt.",
+      "pending": false
+    },
+    "ziel-konzept": {
+      "title": "Ziel und Konzept",
+      "body": "Ziele, Zielgruppe und das Konzept des Hauses werden hier nach Abstimmung mit der Leitung beschrieben.",
+      "pending": true
+    },
+    "leben": {
+      "title": "Leben im Haus",
+      "body": "Einblicke in den Alltag, gemeinsame Aktivitäten und das Zusammenleben folgen mit freigegebenen Texten und Bildern.",
+      "pending": true
+    },
+    "begleitung": {
+      "title": "Begleitung und Jüngerschaft",
+      "body": "Persönliche Begleitung und gemeinsames Lernen im Glauben gehören zu den vorgesehenen Themen. Details zu den Angeboten folgen.",
+      "pending": false
+    },
+    "bewohner": {
+      "title": "Unterstützung der Bewohner",
+      "body": "Wie Bewohner praktisch begleitet werden und wie Sie dabei helfen können, wird nach Bestätigung ergänzt.",
+      "pending": false
+    }
+  }
+}

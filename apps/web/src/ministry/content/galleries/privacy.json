@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "verantwortlicher": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "kontaktformular": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "externe-dienste": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "spracheinstellung": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "rechte": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    }
+  }
+}

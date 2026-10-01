@@ -1,0 +1,27 @@
+{
+  "title": "Über uns",
+  "heading": "Die Menschen und der Glaube hinter Philadelphia.",
+  "intro": "Hier lernen Sie die Geschichte, die Vision und das Team von Philadelphia International Ministry kennen.",
+  "sections": {
+    "geschichte": {
+      "title": "Geschichte",
+      "body": "Die Gründungsgeschichte, wichtige Stationen und Hintergründe werden anhand der Angaben der Leitung ergänzt.",
+      "pending": true
+    },
+    "vision-ziele": {
+      "title": "Vision und Ziele",
+      "body": "Die offizielle Vision sowie die kurz- und langfristigen Ziele des Ministries werden hier veröffentlicht, sobald sie abgestimmt sind.",
+      "pending": true
+    },
+    "glaubensgrundlagen": {
+      "title": "Glaubensgrundlagen",
+      "body": "Der christliche Glaube bildet den Rahmen dieses Ministries. Das freigegebene Glaubensbekenntnis und die konkreten Glaubensgrundlagen folgen.",
+      "pending": true
+    },
+    "team": {
+      "title": "Team / Leitung",
+      "body": "Namen, Aufgaben und kurze Vorstellungen der Leitung und des Teams werden nach Freigabe ergänzt.",
+      "pending": true
+    }
+  }
+}

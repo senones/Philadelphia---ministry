@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "anbieter": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "verantwortung": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "kontakt": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    }
+  }
+}

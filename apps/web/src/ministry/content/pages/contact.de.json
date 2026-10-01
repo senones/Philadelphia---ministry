@@ -1,0 +1,27 @@
+{
+  "title": "Kontakt & Anfahrt",
+  "heading": "Wir freuen uns auf den Kontakt.",
+  "intro": "Fragen zum Ministry, zur Unterstützung oder zur Mitarbeit? Hier finden Sie unsere Kontaktwege und die Anfahrt.",
+  "sections": {
+    "kontakt": {
+      "title": "Kontakt",
+      "body": "Schreiben Sie uns mit Ihren Fragen oder Ihrem Anliegen.",
+      "pending": false
+    },
+    "adresse": {
+      "title": "Adresse",
+      "body": "Philadelphia International Ministry",
+      "pending": false
+    },
+    "anfahrt": {
+      "title": "Google Maps / Anfahrt",
+      "body": "Öffnen Sie die Route in Google Maps, um Ihre Anfahrt zu planen.",
+      "pending": false
+    },
+    "social-media": {
+      "title": "Social Media",
+      "body": "Bleiben Sie mit dem Ministry in Verbindung.",
+      "pending": false
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Aktuelles",
+  "heading": "Verbunden bleiben. Neues entdecken.",
+  "intro": "Missionsberichte, Veranstaltungen und Gebetsanliegen – an einem Ort gesammelt.",
+  "sections": {
+    "missionsberichte": {
+      "title": "Missionsberichte",
+      "body": "Aktuelle Missionsberichte werden nach Freigabe ergänzt. Der im vorhandenen Entwurf verlinkte Missionsbrief ist hier verfügbar.",
+      "pending": true
+    },
+    "veranstaltungen": {
+      "title": "Veranstaltungen",
+      "body": "Bestätigte Veranstaltungstermine, Orte und Anmeldemöglichkeiten werden hier veröffentlicht.",
+      "pending": true
+    },
+    "sommercamps": {
+      "title": "Sommercamps",
+      "body": "Informationen und Berichte zu Sommercamps folgen. Das Originaldokument zum Sommercamp 2026 aus dem vorhandenen Entwurf ist unten verlinkt.",
+      "pending": true
+    },
+    "neuigkeiten": {
+      "title": "Neuigkeiten",
+      "body": "Hier erscheinen künftig freigegebene Neuigkeiten aus dem Ministry und dem Philadelphia Bayt.",
+      "pending": true
+    },
+    "gebetsanliegen": {
+      "title": "Gebetsanliegen",
+      "body": "Konkrete Gebetsanliegen werden mit der Leitung abgestimmt. Beten Sie mit uns für die Menschen und die Arbeit des Ministries.",
+      "pending": true
+    }
+  }
+}

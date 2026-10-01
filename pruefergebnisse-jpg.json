@@ -1,0 +1,31 @@
+{
+  "checked_on": "2026-09-30",
+  "jpg_uploads": [
+    {
+      "file_name": "haus-jpg-test.jpg",
+      "saved_src": "/media/haus-jpg-test.jpg",
+      "http_status": 200,
+      "image_loaded": true
+    },
+    {
+      "file_name": "Mein Haus Philadelphia Äöü (1).JPG",
+      "saved_src": "/media/mein-haus-philadelphia-aou-1-.jpg",
+      "http_status": 200,
+      "image_loaded": true
+    },
+    {
+      "file_name": "WhatsApp Image 2026-09-30 at 09.48.22.jpeg",
+      "saved_src": "/media/whatsapp-image-2026-09-30-at-09.48.22.jpeg",
+      "http_status": 200,
+      "image_loaded": true
+    }
+  ],
+  "crop_layouts": 8,
+  "browser_errors": [],
+  "user_missing_image_reproduced": false,
+  "published_to_live_site": false,
+  "already_open_preview_uploads": 3,
+  "full_images_visible": true,
+  "original_assets_restored": true,
+  "passed": true
+}

@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "geschichte": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "vision-ziele": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "glaubensgrundlagen": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "team": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    }
+  }
+}

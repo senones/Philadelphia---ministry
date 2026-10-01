@@ -1,0 +1,21 @@
+{
+  "successfulLayouts": 8,
+  "languages": [
+    "de",
+    "en",
+    "el",
+    "ar"
+  ],
+  "widths": [
+    1440,
+    390
+  ],
+  "errorStates": 4,
+  "inputPreservedOnFailure": true,
+  "retryUsesSameIdempotencyKey": true,
+  "duplicateSubmissionBlocked": true,
+  "unconfiguredSendingDisabled": true,
+  "fixedRecipient": "tsorakis@hotmail.de",
+  "realEmailsSent": 0,
+  "runtimeErrors": []
+}

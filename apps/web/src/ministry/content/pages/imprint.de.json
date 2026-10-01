@@ -1,0 +1,22 @@
+{
+  "title": "Impressum",
+  "heading": "Impressum",
+  "intro": "Entwurf: Die rechtlich verantwortliche Organisation und alle erforderlichen Anbieterangaben müssen vor der Veröffentlichung bestätigt und vervollständigt werden.",
+  "sections": {
+    "anbieter": {
+      "title": "Anbieter",
+      "body": "Philadelphia International Ministry – vollständige Rechtsform, Anschrift und gegebenenfalls Registrierungsdaten ergänzen.",
+      "pending": true
+    },
+    "verantwortung": {
+      "title": "Vertretung / Verantwortliche",
+      "body": "Bestätigte Namen und Kontaktangaben der rechtlich verantwortlichen Personen ergänzen.",
+      "pending": true
+    },
+    "kontakt": {
+      "title": "Kontakt aufnehmen",
+      "body": "E-Mail-Adresse und Telefonnummer werden ergänzt.",
+      "pending": false
+    }
+  }
+}

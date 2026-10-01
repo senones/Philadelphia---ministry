@@ -1,0 +1,47 @@
+{
+  "title": "Our work",
+  "heading": "Faith in everyday life. Support that connects.",
+  "intro": "Eight areas of work form the outline of our ministry. Specific programmes and arrangements will be added with the leadership.",
+  "sections": {
+    "evangelisation": {
+      "title": "Evangelism",
+      "body": "Sharing the Christian faith and making space for conversations and questions. Details of specific activities will follow.",
+      "pending": false
+    },
+    "fluechtlingsarbeit": {
+      "title": "Refugee outreach",
+      "body": "Meeting and accompanying people with experiences of displacement. Specific support options will be added.",
+      "pending": false
+    },
+    "camp-besuche": {
+      "title": "Visits to refugee camps",
+      "body": "Visits, personal encounters and practical help on site are among the planned areas of work. Locations and dates will follow after confirmation.",
+      "pending": false
+    },
+    "praktische-hilfe": {
+      "title": "Practical help",
+      "body": "Support in everyday life and with specific needs. Available forms of assistance will be added here.",
+      "pending": false
+    },
+    "sprachkurse": {
+      "title": "Language courses",
+      "body": "Language helps people communicate and participate. Course details, languages and registration options will follow.",
+      "pending": false
+    },
+    "juengerschaft": {
+      "title": "Discipleship",
+      "body": "Understanding the Christian faith together and living it in everyday life. Information about groups and guidance will follow.",
+      "pending": false
+    },
+    "gemeinschaft": {
+      "title": "Leisure & community",
+      "body": "Spending time together, building relationships and experiencing community. Current activities will be added.",
+      "pending": false
+    },
+    "camps": {
+      "title": "Camps / events",
+      "body": "Information about camps, community days and events. Confirmed dates and registration details will be available under News.",
+      "pending": false
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "gebet": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "spenden": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "praktische-unterstuetzung": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "mitarbeit": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    }
+  }
+}

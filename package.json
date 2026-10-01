@@ -4,14 +4,18 @@
   "private": true,
   "scripts": {
     "setup": "npm install",
-    "dev": "npm run dev --workspace web",
+    "dev": "node scripts/dev-cms.mjs",
     "build": "npm run build --workspace web",
     "start": "npm run start --workspace web",
     "lint": "concurrently --raw \"npm run lint --prefix apps/web\"",
-    "dev:hostinger": "concurrently --kill-others --raw \"npm run dev --prefix apps/web\" \"npm run dev --prefix apps/pocketbase\""
+    "dev:hostinger": "concurrently --kill-others --raw \"npm run dev --prefix apps/web\" \"npm run dev --prefix apps/pocketbase\"",
+    "dev:cms": "node scripts/dev-cms.mjs",
+    "prebuild": "node scripts/validate-content.mjs && node scripts/generate-cms-schema.mjs",
+    "test": "node tests/cms-auth.test.cjs && node tests/contact.test.cjs && node --test tests/cms-translation.test.cjs tests/cms-sync.test.cjs tests/content-model.test.mjs"
   },
   "devDependencies": {
     "concurrently": "^10.0.4",
+    "decap-server": "3.11.3",
     "knip": "^6.32.1"
   },
   "workspaces": [

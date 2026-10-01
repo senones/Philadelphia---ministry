@@ -1,0 +1,47 @@
+{
+  "title": "Unsere Arbeit",
+  "heading": "Glaube im Alltag. Hilfe, die verbindet.",
+  "intro": "Acht Arbeitsbereiche bilden das Grundgerüst unseres Ministries. Konkrete Angebote und Abläufe werden mit der Leitung ergänzt.",
+  "sections": {
+    "evangelisation": {
+      "title": "Evangelisation",
+      "body": "Christlichen Glauben teilen und Raum für Gespräche und Fragen schaffen. Informationen zu konkreten Angeboten folgen.",
+      "pending": false
+    },
+    "fluechtlingsarbeit": {
+      "title": "Flüchtlingsarbeit",
+      "body": "Begegnung und Begleitung von Menschen mit Fluchterfahrung. Die konkreten Unterstützungsmöglichkeiten werden ergänzt.",
+      "pending": false
+    },
+    "camp-besuche": {
+      "title": "Besuche in Flüchtlingscamps",
+      "body": "Besuche, Begegnungen und Hilfe vor Ort gehören zu den vorgesehenen Arbeitsbereichen. Orte und Besuchstermine folgen nach Bestätigung.",
+      "pending": false
+    },
+    "praktische-hilfe": {
+      "title": "Praktische Hilfe",
+      "body": "Unterstützung im Alltag und bei konkreten Bedürfnissen. Welche Hilfen aktuell möglich sind, wird hier ergänzt.",
+      "pending": false
+    },
+    "sprachkurse": {
+      "title": "Sprachkurse",
+      "body": "Sprache erleichtert Verständigung und Teilhabe. Kursangebote, Sprachen und Anmeldemöglichkeiten folgen.",
+      "pending": false
+    },
+    "juengerschaft": {
+      "title": "Jüngerschaft",
+      "body": "Gemeinsam den christlichen Glauben verstehen und im Alltag leben. Informationen zu Gruppen und Begleitung folgen.",
+      "pending": false
+    },
+    "gemeinschaft": {
+      "title": "Freizeit & Gemeinschaft",
+      "body": "Zeit miteinander verbringen, Beziehungen aufbauen und Gemeinschaft erleben. Aktuelle Aktivitäten werden ergänzt.",
+      "pending": false
+    },
+    "camps": {
+      "title": "Camps / Veranstaltungen",
+      "body": "Informationen zu Camps, Begegnungstagen und Veranstaltungen. Bestätigte Termine und Anmeldedetails finden Sie künftig unter Aktuelles.",
+      "pending": false
+    }
+  }
+}

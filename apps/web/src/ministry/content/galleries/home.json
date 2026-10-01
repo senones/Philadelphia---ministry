@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "vorstellung": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "vision": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "projekte": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "bilder": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "mitmachen": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    }
+  }
+}

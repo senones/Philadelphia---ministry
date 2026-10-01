@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "was-ist-bayt": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "ziel-konzept": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "leben": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "begleitung": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "bewohner": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    }
+  }
+}

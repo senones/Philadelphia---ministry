@@ -1,0 +1,17 @@
+{
+  "title": "Rechtliches",
+  "heading": "Rechtliche Informationen.",
+  "intro": "Impressum und Datenschutzhinweise finden Sie auf den folgenden Seiten.",
+  "sections": {
+    "impressum": {
+      "title": "Impressum",
+      "body": "Angaben zum Anbieter und den verantwortlichen Personen.",
+      "pending": false
+    },
+    "datenschutz": {
+      "title": "Datenschutz",
+      "body": "Informationen zur Verarbeitung personenbezogener Daten.",
+      "pending": false
+    }
+  }
+}

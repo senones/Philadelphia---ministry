@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "impressum": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "datenschutz": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    }
+  }
+}

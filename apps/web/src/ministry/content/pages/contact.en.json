@@ -1,0 +1,27 @@
+{
+  "title": "Contact & directions",
+  "heading": "We look forward to hearing from you.",
+  "intro": "Questions about the ministry, support or volunteering? Find contact details and directions here.",
+  "sections": {
+    "kontakt": {
+      "title": "Contact",
+      "body": "Write to us with your questions or enquiries.",
+      "pending": false
+    },
+    "adresse": {
+      "title": "Address",
+      "body": "Philadelphia International Ministry",
+      "pending": false
+    },
+    "anfahrt": {
+      "title": "Google Maps / directions",
+      "body": "Open the route in Google Maps to plan your visit.",
+      "pending": false
+    },
+    "social-media": {
+      "title": "Social media",
+      "body": "Stay connected with the ministry.",
+      "pending": false
+    }
+  }
+}

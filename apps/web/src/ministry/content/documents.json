@@ -1,0 +1,28 @@
+{
+  "maluk": {
+    "url": "/documents/maluk.pdf",
+    "preview": "/document-previews/maluk.png",
+    "type": "pdf",
+    "pages": 2,
+    "sourceUrl": "https://horizons-cdn.hostinger.com/4da9d7fd-50bd-455b-82aa-c08bc73b5a2d/3ba60ba347982db22342c0d94f1e943c.pdf"
+  },
+  "sunday": {
+    "url": "/documents/sunday.pdf",
+    "preview": "/document-previews/sunday.png",
+    "type": "pdf",
+    "pages": 2,
+    "sourceUrl": "https://horizons-cdn.hostinger.com/4da9d7fd-50bd-455b-82aa-c08bc73b5a2d/0122ae25d3e49f204aa36edc3b051f41.pdf"
+  },
+  "camp": {
+    "url": "/documents/camp.pdf",
+    "preview": "/document-previews/camp.png",
+    "type": "pdf",
+    "pages": 2,
+    "sourceUrl": "https://horizons-cdn.hostinger.com/4da9d7fd-50bd-455b-82aa-c08bc73b5a2d/63665ba419043f64844bfe43e118ca33.pdf"
+  },
+  "letter": {
+    "url": "/media/missionsbrief.jpg",
+    "preview": "/media/missionsbrief.jpg",
+    "type": "image"
+  }
+}

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="de">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Philadelphia · Übersetzung einrichten</title>
+<link rel="stylesheet" href="/admin/editor.css">
+<main class="editor-status" style="margin:5vh auto;max-width:760px">
+  <p class="eyebrow">Philadelphia · Hilfe</p>
+  <h1>Neue Abschnitte und Übersetzungen</h1>
+  <p>Unter „Neue Abschnitte“ kannst du Überschriften, Texte und Bilder ergänzen und ihre Position auf der Seite bestimmen.</p>
+  <p>Mit „Änderungen in alle Sprachen übersetzen“ werden die geänderten Textfelder beim Veröffentlichen ins Deutsche, Englische, Griechische und Arabische übernommen. Du kannst in jeder dieser Sprachen bearbeiten.</p>
+  <h2>Übersetzungsdienst einrichten</h2>
+  <p>Für die Automatik ist ein eigener API-Schlüssel nötig. Die vollständige Anleitung steht im Website-Ordner in <strong>UEBERSETZUNG-EINRICHTEN.md</strong>.</p>
+  <p>Für DeepL ein <a href="https://www.deepl.com/pro-api" target="_blank" rel="noopener noreferrer">DeepL-API-Konto</a> verwenden. Den Schlüssel als <code>DEEPL_API_KEY</code> und <code>CMS_TRANSLATION_PROVIDER=deepl</code> in der lokalen <code>.env</code> oder in den Production-Variablen des Vercel-Projekts speichern. Danach lokal neu starten bzw. die Website neu deployen. Der Schlüssel gehört ausschließlich auf den Server.</p>
+  <h2>Manuell bearbeiten</h2>
+  <p>Die Automatik ausschalten, um nur die gewählte Sprachfassung zu korrigieren. Neue Abschnitte werden trotzdem gemeinsam angelegt; in noch nicht ausgefüllten Sprachen bleiben sie ausgeblendet. Die fehlenden Übersetzungen können später manuell ergänzt oder automatisch erzeugt werden.</p>
+  <p>Nur geänderte Textfelder werden neu übersetzt. Eine Übersetzung ersetzt die bisherige Fassung desselben Textfelds. Bilder, Abschnittspositionen und das Entfernen neuer Abschnitte gelten gemeinsam für alle Sprachen.</p>
+  <a class="site-link" href="/admin/">Zum Editor</a>
+</main>
+</html>

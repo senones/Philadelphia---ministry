@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "kontakt": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "adresse": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "anfahrt": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "social-media": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    }
+  }
+}

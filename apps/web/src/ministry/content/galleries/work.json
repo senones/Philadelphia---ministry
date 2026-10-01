@@ -1,0 +1,44 @@
+{
+  "sections": {
+    "evangelisation": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "fluechtlingsarbeit": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "camp-besuche": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "praktische-hilfe": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "sprachkurse": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "juengerschaft": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "gemeinschaft": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "camps": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    }
+  }
+}

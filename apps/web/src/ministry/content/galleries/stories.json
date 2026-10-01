@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "geschichten": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "zeugnisse": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "maluk": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    },
+    "sunday": {
+      "position": "after",
+      "layout": "grid",
+      "images": []
+    }
+  }
+}

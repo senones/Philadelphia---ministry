@@ -1,0 +1,27 @@
+{
+  "title": "Life stories / testimonies",
+  "heading": "People. Stories. Hope.",
+  "intro": "A space for personal stories and approved testimonies from the community.",
+  "sections": {
+    "geschichten": {
+      "title": "Personal stories",
+      "body": "Personal life stories will be published based on original texts and with the consent of the people concerned.",
+      "pending": true
+    },
+    "zeugnisse": {
+      "title": "Residents’ testimonies",
+      "body": "Residents can share their own voices here. Approved testimonies and accompanying images will be added.",
+      "pending": true
+    },
+    "maluk": {
+      "title": "Maluk",
+      "body": "The approved website text about Maluk will be added here. The original document linked in the previous draft is available below.",
+      "pending": true
+    },
+    "sunday": {
+      "title": "Sunday",
+      "body": "The approved website text about Sunday will be added here. The original document linked in the previous draft is available below.",
+      "pending": true
+    }
+  }
+}

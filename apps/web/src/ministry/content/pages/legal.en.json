@@ -1,0 +1,17 @@
+{
+  "title": "Legal",
+  "heading": "Legal information.",
+  "intro": "Find the legal notice and privacy information on the following pages.",
+  "sections": {
+    "impressum": {
+      "title": "Legal notice",
+      "body": "Information about the provider and responsible people.",
+      "pending": false
+    },
+    "datenschutz": {
+      "title": "Privacy",
+      "body": "Information about the processing of personal data.",
+      "pending": false
+    }
+  }
+}

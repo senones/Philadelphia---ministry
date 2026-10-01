@@ -1,0 +1,22 @@
+{
+  "title": "Legal notice",
+  "heading": "Legal notice",
+  "intro": "Draft: The legally responsible organisation and all required provider details must be confirmed and completed before publication.",
+  "sections": {
+    "anbieter": {
+      "title": "Provider",
+      "body": "Philadelphia International Ministry – add the full legal form, address and registration details where applicable.",
+      "pending": true
+    },
+    "verantwortung": {
+      "title": "Representation / responsibility",
+      "body": "Add confirmed names and contact details of the legally responsible people.",
+      "pending": true
+    },
+    "kontakt": {
+      "title": "Get in touch",
+      "body": "Email address and phone number will be added.",
+      "pending": false
+    }
+  }
+}

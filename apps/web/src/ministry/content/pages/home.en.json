@@ -1,0 +1,33 @@
+{
+  "title": "Home",
+  "heading": "Faith brings us together. Hope grows.",
+  "intro": "Philadelphia International Ministry combines Christian faith, practical help and fellowship for people from different cultures. This is a test of the automatic translation.",
+  "sections": {
+    "vorstellung": {
+      "title": "About the ministry",
+      "body": "Evangelism, refugee outreach, discipleship and community activities are at the heart of our ministry. Explore our areas of work and House Philadelphia.",
+      "pending": false
+    },
+    "vision": {
+      "title": "Vision / guiding principle",
+      "body": "Faith, love for our neighbours and community are at the heart of this ministry. The official vision and guiding principle will be agreed with the leadership and added here.",
+      "pending": true
+    },
+    "projekte": {
+      "title": "Current projects",
+      "body": "Philadelphia Bayt, language courses and camps are among the planned topics. Current project updates, dates and reports will be added after confirmation.",
+      "pending": true
+    },
+    "bilder": {
+      "title": "Images & impressions",
+      "body": "Images from the existing website draft. The final selection will be made together with the leadership.",
+      "pending": false
+    },
+    "mitmachen": {
+      "title": "Learn more / get involved",
+      "body": "Learn about our work and explore ways to pray, support and volunteer.",
+      "pending": false
+    }
+  },
+  "extraSections": []
+}

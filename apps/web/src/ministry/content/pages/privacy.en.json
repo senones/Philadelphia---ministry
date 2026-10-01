@@ -1,0 +1,32 @@
+{
+  "title": "Privacy",
+  "heading": "Privacy",
+  "intro": "Draft: The final privacy information will be completed according to the actual hosting, contact options and integrated services.",
+  "sections": {
+    "verantwortlicher": {
+      "title": "Data controller",
+      "body": "The responsible organisation and its privacy contact will be added.",
+      "pending": true
+    },
+    "kontaktformular": {
+      "title": "Contact and messages",
+      "body": "When you use the configured contact form, your name, email address and message are forwarded by email to handle your enquiry. Sending uses Resend and a function on Vercel. The legal basis, responsible parties, provider details and retention period will be added to the final privacy notice.",
+      "pending": true
+    },
+    "externe-dienste": {
+      "title": "External services",
+      "body": "Links to Google Maps open an external service. Original documents are provided by this website. Add details of all providers actually used before publication.",
+      "pending": true
+    },
+    "spracheinstellung": {
+      "title": "Language preference",
+      "body": "This website can store your chosen language locally in your browser to keep your selection for your next visit.",
+      "pending": false
+    },
+    "rechte": {
+      "title": "Privacy rights and contact",
+      "body": "Applicable information about rights and contact options will be added before publication.",
+      "pending": true
+    }
+  }
+}

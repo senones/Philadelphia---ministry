@@ -1,0 +1,32 @@
+{
+  "title": "News",
+  "heading": "Stay connected. Discover what’s new.",
+  "intro": "Mission reports, events and prayer requests – gathered in one place.",
+  "sections": {
+    "missionsberichte": {
+      "title": "Mission reports",
+      "body": "Current mission reports will be added after approval. The mission letter linked in the existing draft is available here.",
+      "pending": true
+    },
+    "veranstaltungen": {
+      "title": "Events",
+      "body": "Confirmed event dates, locations and registration options will be published here.",
+      "pending": true
+    },
+    "sommercamps": {
+      "title": "Summer camps",
+      "body": "Summer camp information and reports will follow. The original document about the 2026 summer camp from the existing draft is linked below.",
+      "pending": true
+    },
+    "neuigkeiten": {
+      "title": "Updates",
+      "body": "Approved updates from the ministry and Philadelphia Bayt will appear here.",
+      "pending": true
+    },
+    "gebetsanliegen": {
+      "title": "Prayer requests",
+      "body": "Specific prayer requests will be agreed with the leadership. Pray with us for the people and the work of the ministry.",
+      "pending": true
+    }
+  }
+}

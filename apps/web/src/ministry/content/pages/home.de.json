@@ -1,0 +1,34 @@
+{
+  "title": "Startseite",
+  "heading": "Glaube verbindet. Hoffnung wächst.",
+  "intro": "Philadelphia International Ministry verbindet christlichen Glauben, praktische Hilfe und Gemeinschaft für Menschen aus unterschiedlichen Kulturen. Dies ist ein Test der automatischen Übersetzung.",
+  "sections": {
+    "vorstellung": {
+      "title": "Kurze Vorstellung des Ministries",
+      "body": "Evangelisation, Flüchtlingsarbeit, Jüngerschaft und gemeinsame Aktivitäten stehen im Mittelpunkt unseres Ministries. Lernen Sie die Arbeitsbereiche und das Haus Philadelphia kennen.",
+      "pending": false
+    },
+    "vision": {
+      "title": "Vision / Leitgedanke",
+      "body": "Glaube, Nächstenliebe und Gemeinschaft stehen im Mittelpunkt. Die offizielle Vision und der Leitgedanke werden mit der Leitung abgestimmt und hier ergänzt.",
+      "pending": true
+    },
+    "projekte": {
+      "title": "Aktuelle Projekte",
+      "body": "Philadelphia Bayt, Sprachkurse und Camps gehören zu den vorgesehenen Themen. Aktuelle Projektstände, Termine und Berichte werden nach Bestätigung ergänzt.",
+      "pending": true
+    },
+    "bilder": {
+      "title": "Große Bilder",
+      "body": "Einblicke aus dem vorhandenen Website-Entwurf. Die finale Bildauswahl erfolgt gemeinsam mit der Leitung.",
+      "pending": false
+    },
+    "mitmachen": {
+      "title": "Mehr erfahren / Mitmachen",
+      "body": "Informieren Sie sich über unsere Arbeit und entdecken Sie Möglichkeiten für Gebet, Unterstützung und Mitarbeit.",
+      "pending": false
+    }
+  },
+  "syncTranslations": true,
+  "extraSections": []
+}

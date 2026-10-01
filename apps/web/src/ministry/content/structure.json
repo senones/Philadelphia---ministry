@@ -1,0 +1,261 @@
+{
+  "languages": [
+    {
+      "code": "en",
+      "label": "🇬🇧 English"
+    },
+    {
+      "code": "de",
+      "label": "🇩🇪 Deutsch"
+    },
+    {
+      "code": "el",
+      "label": "🇬🇷 Ελληνικά"
+    },
+    {
+      "code": "ar",
+      "label": "🇸🇦 العربية"
+    }
+  ],
+  "mainPageCount": 9,
+  "pages": [
+    {
+      "id": "home",
+      "path": "/",
+      "sections": [
+        {
+          "id": "vorstellung",
+          "target": "about"
+        },
+        {
+          "id": "vision"
+        },
+        {
+          "id": "projekte",
+          "kind": "projects"
+        },
+        {
+          "id": "bilder",
+          "kind": "gallery"
+        },
+        {
+          "id": "mitmachen",
+          "kind": "cta"
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "path": "/ueber-uns",
+      "sections": [
+        {
+          "id": "geschichte"
+        },
+        {
+          "id": "vision-ziele"
+        },
+        {
+          "id": "glaubensgrundlagen"
+        },
+        {
+          "id": "team"
+        }
+      ]
+    },
+    {
+      "id": "work",
+      "path": "/unsere-arbeit",
+      "sections": [
+        {
+          "id": "evangelisation"
+        },
+        {
+          "id": "fluechtlingsarbeit"
+        },
+        {
+          "id": "camp-besuche"
+        },
+        {
+          "id": "praktische-hilfe"
+        },
+        {
+          "id": "sprachkurse"
+        },
+        {
+          "id": "juengerschaft"
+        },
+        {
+          "id": "gemeinschaft"
+        },
+        {
+          "id": "camps",
+          "target": "news",
+          "targetSection": "veranstaltungen"
+        }
+      ]
+    },
+    {
+      "id": "bayt",
+      "path": "/philadelphia-bayt",
+      "sections": [
+        {
+          "id": "was-ist-bayt",
+          "image": "bayt"
+        },
+        {
+          "id": "ziel-konzept"
+        },
+        {
+          "id": "leben"
+        },
+        {
+          "id": "begleitung"
+        },
+        {
+          "id": "bewohner",
+          "target": "support"
+        }
+      ]
+    },
+    {
+      "id": "stories",
+      "path": "/lebensgeschichten",
+      "sections": [
+        {
+          "id": "geschichten"
+        },
+        {
+          "id": "zeugnisse"
+        },
+        {
+          "id": "maluk",
+          "document": "maluk"
+        },
+        {
+          "id": "sunday",
+          "document": "sunday"
+        }
+      ]
+    },
+    {
+      "id": "news",
+      "path": "/aktuelles",
+      "sections": [
+        {
+          "id": "missionsberichte",
+          "document": "letter"
+        },
+        {
+          "id": "veranstaltungen"
+        },
+        {
+          "id": "sommercamps",
+          "document": "camp"
+        },
+        {
+          "id": "neuigkeiten"
+        },
+        {
+          "id": "gebetsanliegen"
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "path": "/mitmachen",
+      "sections": [
+        {
+          "id": "gebet",
+          "target": "news",
+          "targetSection": "gebetsanliegen"
+        },
+        {
+          "id": "spenden",
+          "kind": "donations"
+        },
+        {
+          "id": "praktische-unterstuetzung",
+          "target": "contact"
+        },
+        {
+          "id": "mitarbeit",
+          "target": "contact"
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "path": "/kontakt",
+      "sections": [
+        {
+          "id": "kontakt",
+          "kind": "contact"
+        },
+        {
+          "id": "adresse",
+          "kind": "address"
+        },
+        {
+          "id": "anfahrt",
+          "kind": "map"
+        },
+        {
+          "id": "social-media",
+          "kind": "social"
+        }
+      ]
+    },
+    {
+      "id": "legal",
+      "path": "/rechtliches",
+      "sections": [
+        {
+          "id": "impressum",
+          "target": "imprint"
+        },
+        {
+          "id": "datenschutz",
+          "target": "privacy"
+        }
+      ]
+    },
+    {
+      "id": "imprint",
+      "path": "/impressum",
+      "sections": [
+        {
+          "id": "anbieter"
+        },
+        {
+          "id": "verantwortung"
+        },
+        {
+          "id": "kontakt",
+          "target": "contact"
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "path": "/datenschutz",
+      "sections": [
+        {
+          "id": "verantwortlicher"
+        },
+        {
+          "id": "kontaktformular"
+        },
+        {
+          "id": "externe-dienste"
+        },
+        {
+          "id": "spracheinstellung"
+        },
+        {
+          "id": "rechte",
+          "target": "contact"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Mitmachen / Unterstützen",
+  "heading": "Gemeinsam etwas bewegen.",
+  "intro": "Gebet, Spenden, praktische Hilfe oder Mitarbeit – entdecken Sie, wie Sie sich einbringen können.",
+  "sections": {
+    "gebet": {
+      "title": "Gebet",
+      "body": "Begleiten Sie die Menschen, das Team und die Projekte im Gebet. Aktuelle Anliegen finden Sie unter Aktuelles.",
+      "pending": false
+    },
+    "spenden": {
+      "title": "Spenden",
+      "body": "Hier werden die bestätigten Spendenmöglichkeiten und Informationen zur Verwendung der Mittel ergänzt.",
+      "pending": true
+    },
+    "praktische-unterstuetzung": {
+      "title": "Praktische Unterstützung",
+      "body": "Sie möchten Fähigkeiten, Zeit oder Sachmittel einbringen? Die aktuellen Bedarfe und Kontaktmöglichkeiten werden ergänzt.",
+      "pending": false
+    },
+    "mitarbeit": {
+      "title": "Mitarbeit / Missionseinsatz",
+      "body": "Möglichkeiten zur Mitarbeit sowie Voraussetzungen und Ablauf eines Missionseinsatzes werden mit der Leitung abgestimmt.",
+      "pending": true
+    }
+  }
+}
