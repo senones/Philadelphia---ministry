@@ -71,7 +71,7 @@ test('successful submission always targets the fixed recipient and uses visitor 
   assert.equal(calls.length, 1);
   assert.equal(calls[0].url, 'https://api.resend.com/emails');
   const email = JSON.parse(calls[0].options.body);
-  assert.deepEqual(email.to, ['tsorakis@hotmail.de']);
+  assert.deepEqual(email.to, ['info@philadelphia-ministry.org']);
   assert.equal(email.from, 'Philadelphia <kontakt@example.com>');
   assert.equal(email.reply_to, 'visitor@example.com');
   assert.equal(email.html, undefined);

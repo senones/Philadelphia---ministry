@@ -1,5 +1,5 @@
 // Vercel Node.js function. Keep mail credentials in server environment variables.
-const RECIPIENT = 'tsorakis@hotmail.de';
+const RECIPIENT = 'info@philadelphia-ministry.org';
 const MAX_BODY_BYTES = 32768;
 const RATE_WINDOW_MS = 60000;
 const RATE_LIMIT = 5;
