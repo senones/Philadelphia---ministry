@@ -18,7 +18,10 @@ const labelNames = {
   sent: 'Versand erfolgreich', error: 'Versand fehlgeschlagen', notFound: 'Seite nicht gefunden', backHome: 'Zur Startseite',
 };
 const field = (name, label, widget = 'string', extra = {}) => ({ name, label, widget, ...extra });
-const image = (name, label) => field(name, label, 'image', { choose_url: false, hint: 'JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet.' });
+const image = (name, label, optional = false) => field(name, label, 'image', {
+  required: !optional, choose_url: false,
+  hint: `JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet.${optional ? ' Das Feld darf leer bleiben, um dieses Bild auszublenden.' : ''}`,
+});
 const url = (name, label, optional = false) => field(name, label, 'string', {
   required: !optional, pattern: [optional ? '^(https://[^\\s]+)?$' : '^https://[^\\s]+$', 'Bitte einen vollständigen HTTPS-Link eintragen.'],
 });
@@ -110,7 +113,7 @@ collections.push({
 const assets = await read(`${content}assets.json`);
 const imageLabels = { logo: 'Logo', hero: 'Großes Bild auf der Startseite', bayt: 'Haus Philadelphia', camp: 'Camps', language: 'Sprachkurse', missionLetter: 'Missionsbrief „Komm und sieh!“' };
 collections.push({ name: 'images', label: 'Feste Website-Bilder', format: 'json', editor: { preview: false }, files: [
-  { name: 'assets', label: 'Bilder der Website', file: `${content}assets.json`, fields: Object.keys(assets).map(key => image(key, imageLabels[key])) },
+  { name: 'assets', label: 'Bilder der Website', file: `${content}assets.json`, fields: Object.keys(assets).map(key => image(key, imageLabels[key], true)) },
 ] });
 const galleryFiles = [];
 for (const page of structure.pages) {
@@ -155,7 +158,7 @@ collections.push({ name: 'documents', label: 'PDF-Dokumente', format: 'json', ed
   { name: 'documents', label: 'Berichte & PDF-Vorschauen', file: `${content}documents.json`, fields: [
     ...['maluk', 'sunday', 'camp'].map(key => field(key, { maluk: 'Maluk', sunday: 'Sunday', camp: 'Sommercamp' }[key], 'object', { fields: [
       field('url', 'PDF-Datei', 'file', { media_folder: '/apps/web/public/documents', public_folder: '/documents', choose_url: false, hint: 'Hier eine PDF-Datei auswählen. Andere Dateiformate werden beim Veröffentlichen der Website zurückgewiesen.' }),
-      { ...image('preview', 'Vorschau der ersten Seite'), media_folder: '/apps/web/public/document-previews', public_folder: '/document-previews' },
+      { ...image('preview', 'Vorschau der ersten Seite', true), media_folder: '/apps/web/public/document-previews', public_folder: '/document-previews' },
       field('pages', 'Anzahl der Seiten', 'number', { value_type: 'int', min: 1, max: 10000 }),
       field('type', 'Dateityp', 'hidden', { default: 'pdf' }),
       field('sourceUrl', 'Originalquelle', 'hidden', { default: documents[key].sourceUrl }),

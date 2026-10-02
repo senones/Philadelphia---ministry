@@ -8,6 +8,9 @@ import { useLocale } from './LocaleContext';
 import Header from './Header';
 import ContactForm from './ContactForm';
 import DocumentPreview from './DocumentPreview';
+import ContentImage from './ContentImage';
+
+const markdownComponents = { img: ContentImage };
 
 function Footer() {
   const { t, href } = useLocale();
@@ -23,12 +26,12 @@ function AdditionalImages({ gallery }) {
     {gallery.images.map((image, index) => {
       const caption = t(image.caption);
       const description = t(image.alt) || caption || t(ui.imageAlt);
-      return <figure key={`${image.src}-${index}`}>
-        <a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`${t(ui.fullSize)}: ${description}`}>
-          <img src={image.src} alt={description} loading="lazy" decoding="async" />
-        </a>
-        {caption && <figcaption>{caption}</figcaption>}
-      </figure>;
+      return <ContentImage key={`${image.src}-${index}`} src={image.src} alt={description} loading="lazy" decoding="async">
+        {picture => picture && <figure>
+          <a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`${t(ui.fullSize)}: ${description}`}>{picture}</a>
+          {caption && <figcaption>{caption}</figcaption>}
+        </figure>}
+      </ContentImage>;
     })}
   </div>;
 }
@@ -46,14 +49,18 @@ function PageSection({ section, pageId }) {
     </div></div>
     <div className="section-body">
       {section.gallery.position === 'before' && <AdditionalImages gallery={section.gallery} />}
-      <div className="section-description"><ReactMarkdown skipHtml>{t(section.body)}</ReactMarkdown></div>
-      {section.image && <img className="section-image" src={assets[section.image]} alt={t(ui.imageAlt)} loading="lazy" width="1000" height="620" />}
-      {section.kind === 'projects' && <div className="project-grid">{projects.map((project) => <Link to={project.to} className="project-card" key={project.to}>
-        <img src={project.image} alt={t(ui.imageAlt)} loading="lazy" width="600" height="440" /><div><h3>{t(project.title)}</h3><ArrowUpRight size={20} aria-hidden="true" /></div><span>{t(ui.learn)}</span>
-      </Link>)}</div>}
+      <div className="section-description"><ReactMarkdown skipHtml components={markdownComponents}>{t(section.body)}</ReactMarkdown></div>
+      {section.image && <ContentImage className="section-image" src={assets[section.image]} alt={t(ui.imageAlt)} loading="lazy" width="1000" height="620" />}
+      {section.kind === 'projects' && <div className="project-grid">{projects.map((project) => <ContentImage key={project.to} src={project.image} alt={t(ui.imageAlt)} loading="lazy" width="600" height="440">
+        {picture => <Link to={project.to} className={`project-card${picture ? '' : ' is-text-only'}`}>
+          {picture}<div><h3>{t(project.title)}</h3><ArrowUpRight size={20} aria-hidden="true" /></div><span>{t(ui.learn)}</span>
+        </Link>}
+      </ContentImage>)}</div>}
       {section.kind === 'gallery' && <>
-        <figure className="mission-letter-figure"><a href={assets.missionLetter} target="_blank" rel="noopener noreferrer" aria-label={t(ui.fullSize)}><img src={assets.missionLetter} alt={t(ui.missionLetterAlt)} loading="lazy" width="1080" height="714" /></a><figcaption><span>{t(ui.missionLetter)}</span><a href={assets.missionLetter} target="_blank" rel="noopener noreferrer">{t(ui.fullSize)}<ArrowUpRight size={15} aria-hidden="true" /></a></figcaption></figure>
-        <div className="image-gallery"><img src={assets.bayt} alt={t(ui.imageAlt)} loading="lazy" width="900" height="680" /><img src={assets.camp} alt={t(ui.imageAlt)} loading="lazy" width="700" height="680" /></div>
+        <ContentImage src={assets.missionLetter} alt={t(ui.missionLetterAlt)} loading="lazy" width="1080" height="714">
+          {picture => picture && <figure className="mission-letter-figure"><a href={assets.missionLetter} target="_blank" rel="noopener noreferrer" aria-label={t(ui.fullSize)}>{picture}</a><figcaption><span>{t(ui.missionLetter)}</span><a href={assets.missionLetter} target="_blank" rel="noopener noreferrer">{t(ui.fullSize)}<ArrowUpRight size={15} aria-hidden="true" /></a></figcaption></figure>}
+        </ContentImage>
+        <div className="image-gallery"><ContentImage src={assets.bayt} alt={t(ui.imageAlt)} loading="lazy" width="900" height="680" /><ContentImage src={assets.camp} alt={t(ui.imageAlt)} loading="lazy" width="700" height="680" /></div>
       </>}
       {section.kind === 'cta' && <div className="cta-panel"><Heart size={30} strokeWidth={1.4} aria-hidden="true" /><p>{t(ui.tagline)}</p><div className="button-row"><Link className="button button-primary" to={href('support')}>{t(ui.join)}<ArrowUpRight size={17} aria-hidden="true" /></Link><Link className="button button-secondary" to={href('work')}>{t(ui.learn)}</Link></div></div>}
       {section.document && <DocumentPreview document={documents[section.document]} title={section.document === 'letter' ? t(ui.missionLetter) : t(section.title)} />}
@@ -80,7 +87,7 @@ export default function MinistryPage() {
     <Helmet><html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} /><title>{t(page.title)} | {site.name}</title><meta name="description" content={t(page.intro)} /></Helmet>
     <a className="skip-link" href="#main-content">{t(ui.skip)}</a><Header />
     <main id="main-content">
-      {isHome ? <section className="home-hero"><img className="hero-image" src={assets.hero} alt={t(ui.imageAlt)} fetchPriority="high" width="1920" height="1100" /><div className="hero-overlay" /><div className="content-width">{intro}</div><div className="hero-bottom content-width"><span>{t(ui.tagline)}</span><span>Philadelphia International Ministry</span></div></section> : <section className="page-hero content-width">{intro}</section>}
+      {isHome ? <section className="home-hero"><ContentImage className="hero-image" src={assets.hero} alt={t(ui.imageAlt)} fetchPriority="high" width="1920" height="1100" /><div className="hero-overlay" /><div className="content-width">{intro}</div><div className="hero-bottom content-width"><span>{t(ui.tagline)}</span><span>Philadelphia International Ministry</span></div></section> : <section className="page-hero content-width">{intro}</section>}
       <div className="content-width page-content"><nav className="section-index" aria-label={t(ui.pageSections)}><span className="eyebrow">{t(ui.pageSections)}</span><ul>{visibleSections.map((section) => <li key={section.id}><Link to={href(page.id, section.id)}>{t(section.title)}</Link></li>)}</ul></nav><div className="sections">{visibleSections.map((section) => <PageSection key={section.id} section={section} pageId={page.id} />)}</div></div>
     </main><Footer />
   </>;

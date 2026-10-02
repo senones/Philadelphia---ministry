@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, Globe2, Menu, X } from 'lucide-react';
 import { assets, languages, pages, site, ui } from './content';
 import { useLocale } from './LocaleContext';
+import ContentImage from './ContentImage';
 
 export default function Header() {
   const { t, locale, href, changeLanguage } = useLocale();
@@ -47,7 +48,7 @@ export default function Header() {
         </select>
       </div>
       <Link className="ministry-brand" to={href('home')} aria-label={site.name}>
-        <img src={assets.logo} alt="" width="44" height="50" /><span className="brand-wordmark"><strong>Philadelphia</strong><span>International Ministry</span></span>
+        <ContentImage src={assets.logo} alt="" width="44" height="50" /><span className="brand-wordmark"><strong>Philadelphia</strong><span>International Ministry</span></span>
       </Link>
       <div ref={container} className="right-navigation"
         onPointerEnter={(event) => { if (event.pointerType === 'mouse') show(); }}

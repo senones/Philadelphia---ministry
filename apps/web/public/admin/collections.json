@@ -18,7 +18,7 @@
       "files": [
         {
           "name": "home_de",
-          "label": "Startseite",
+          "label": "Testseite",
           "file": "apps/web/src/ministry/content/pages/home.de.json",
           "preview_path": "de",
           "fields": [
@@ -361,6 +361,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -687,6 +688,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -1185,6 +1187,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -1554,6 +1557,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -1880,6 +1884,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -2249,6 +2254,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -2575,6 +2581,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -2901,6 +2908,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -3141,6 +3149,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -3424,6 +3433,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -3793,6 +3803,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -4060,7 +4071,7 @@
       "files": [
         {
           "name": "home_en",
-          "label": "Startseite",
+          "label": "Testseite",
           "file": "apps/web/src/ministry/content/pages/home.en.json",
           "preview_path": "en",
           "fields": [
@@ -4403,6 +4414,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -4729,6 +4741,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -5227,6 +5240,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -5596,6 +5610,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -5922,6 +5937,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -6291,6 +6307,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -6617,6 +6634,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -6943,6 +6961,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -7183,6 +7202,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -7466,6 +7486,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -7835,6 +7856,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -8102,7 +8124,7 @@
       "files": [
         {
           "name": "home_el",
-          "label": "Startseite",
+          "label": "Testseite",
           "file": "apps/web/src/ministry/content/pages/home.el.json",
           "preview_path": "el",
           "fields": [
@@ -8445,6 +8467,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -8771,6 +8794,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -9269,6 +9293,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -9638,6 +9663,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -9964,6 +9990,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -10333,6 +10360,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -10659,6 +10687,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -10985,6 +11014,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -11225,6 +11255,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -11508,6 +11539,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -11877,6 +11909,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -12144,7 +12177,7 @@
       "files": [
         {
           "name": "home_ar",
-          "label": "Startseite",
+          "label": "Testseite",
           "file": "apps/web/src/ministry/content/pages/home.ar.json",
           "preview_path": "ar",
           "fields": [
@@ -12487,6 +12520,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -12813,6 +12847,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -13311,6 +13346,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -13680,6 +13716,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -14006,6 +14043,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -14375,6 +14413,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -14701,6 +14740,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -15027,6 +15067,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -15267,6 +15308,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -15550,6 +15592,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -15919,6 +15962,7 @@
                       "name": "src",
                       "label": "Bilddatei",
                       "widget": "image",
+                      "required": true,
                       "choose_url": false,
                       "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                     },
@@ -16296,43 +16340,49 @@
               "name": "logo",
               "label": "Logo",
               "widget": "image",
+              "required": false,
               "choose_url": false,
-              "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
+              "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
             },
             {
               "name": "hero",
               "label": "Großes Bild auf der Startseite",
               "widget": "image",
+              "required": false,
               "choose_url": false,
-              "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
+              "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
             },
             {
               "name": "bayt",
               "label": "Haus Philadelphia",
               "widget": "image",
+              "required": false,
               "choose_url": false,
-              "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
+              "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
             },
             {
               "name": "camp",
               "label": "Camps",
               "widget": "image",
+              "required": false,
               "choose_url": false,
-              "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
+              "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
             },
             {
               "name": "language",
               "label": "Sprachkurse",
               "widget": "image",
+              "required": false,
               "choose_url": false,
-              "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
+              "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
             },
             {
               "name": "missionLetter",
               "label": "Missionsbrief „Komm und sieh!“",
               "widget": "image",
+              "required": false,
               "choose_url": false,
-              "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
+              "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
             }
           ]
         }
@@ -16345,7 +16395,7 @@
       "files": [
         {
           "name": "gallery_home",
-          "label": "Startseite",
+          "label": "Testseite",
           "file": "apps/web/src/ministry/content/galleries/home.json",
           "preview_path": "de",
           "fields": [
@@ -16426,6 +16476,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -16585,6 +16636,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -16744,6 +16796,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -16903,6 +16956,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -17062,6 +17116,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -17244,6 +17299,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -17403,6 +17459,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -17562,6 +17619,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -17721,6 +17779,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -17903,6 +17962,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -18062,6 +18122,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -18221,6 +18282,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -18380,6 +18442,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -18539,6 +18602,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -18698,6 +18762,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -18857,6 +18922,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -19016,6 +19082,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -19198,6 +19265,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -19357,6 +19425,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -19516,6 +19585,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -19675,6 +19745,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -19834,6 +19905,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -20016,6 +20088,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -20175,6 +20248,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -20334,6 +20408,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -20493,6 +20568,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -20675,6 +20751,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -20834,6 +20911,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -20993,6 +21071,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -21152,6 +21231,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -21311,6 +21391,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -21493,6 +21574,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -21652,6 +21734,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -21811,6 +21894,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -21970,6 +22054,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -22152,6 +22237,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -22311,6 +22397,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -22470,6 +22557,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -22629,6 +22717,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -22811,6 +22900,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -22970,6 +23060,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -23152,6 +23243,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -23311,6 +23403,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -23470,6 +23563,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -23652,6 +23746,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -23811,6 +23906,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -23970,6 +24066,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -24129,6 +24226,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -24288,6 +24386,7 @@
                           "name": "src",
                           "label": "Bilddatei",
                           "widget": "image",
+                          "required": true,
                           "choose_url": false,
                           "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet."
                         },
@@ -24421,8 +24520,9 @@
                   "name": "preview",
                   "label": "Vorschau der ersten Seite",
                   "widget": "image",
+                  "required": false,
                   "choose_url": false,
-                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet.",
+                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden.",
                   "media_folder": "/apps/web/public/document-previews",
                   "public_folder": "/document-previews"
                 },
@@ -24466,8 +24566,9 @@
                   "name": "preview",
                   "label": "Vorschau der ersten Seite",
                   "widget": "image",
+                  "required": false,
                   "choose_url": false,
-                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet.",
+                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden.",
                   "media_folder": "/apps/web/public/document-previews",
                   "public_folder": "/document-previews"
                 },
@@ -24511,8 +24612,9 @@
                   "name": "preview",
                   "label": "Vorschau der ersten Seite",
                   "widget": "image",
+                  "required": false,
                   "choose_url": false,
-                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet.",
+                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden.",
                   "media_folder": "/apps/web/public/document-previews",
                   "public_folder": "/document-previews"
                 },

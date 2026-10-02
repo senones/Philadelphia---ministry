@@ -6,17 +6,27 @@ import assert from 'node:assert/strict';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const base = path.join(root, 'apps/web/src/ministry/content');
 const read = async filename => JSON.parse(await readFile(path.join(base, filename), 'utf8'));
+const missingImages = new Set();
 function nonempty(value, label) { assert.equal(typeof value, 'string', `${label}: Text fehlt.`); assert(value.trim(), `${label}: Text ist leer.`); }
 function https(value, label, optional = false) {
   if (optional && value === '') return;
   const url = new URL(value);
   assert(url.protocol === 'https:' && !url.username && !url.password, `${label}: Bitte einen HTTPS-Link ohne Zugangsdaten verwenden.`);
 }
-async function localFile(value, label, extensions) {
+async function localFile(value, label, extensions, allowMissing = false) {
   nonempty(value, label);
   assert(/^\/(media|documents|document-previews)\//.test(value) && !value.includes('..') && !/[?#\\]/.test(value), `${label}: Ungültiger Dateipfad.`);
   assert(extensions.test(value), `${label}: Dateiformat nicht unterstützt.`);
-  await access(path.join(root, 'apps/web/public', value));
+  try {
+    await access(path.join(root, 'apps/web/public', value));
+  } catch (error) {
+    if (!allowMissing || error.code !== 'ENOENT') throw error;
+    missingImages.add(value);
+  }
+}
+async function localImage(value, label, { optional = false, extensions = /\.(jpe?g|png|webp|gif)$/i } = {}) {
+  if (optional && (value === undefined || value === null || value === '')) return;
+  await localFile(value, label, extensions, true);
 }
 try {
   const structure = await read('structure.json');
@@ -66,7 +76,7 @@ try {
           assert(/^image-[a-z0-9-]{8,80}$/.test(image.id || '') && !imageIds.has(image.id), `${label}: Bild-ID ist ungültig oder doppelt.`);
           imageIds.add(image.id);
           assert(image.src?.startsWith('/media/'), `${label}: Bild muss aus der Mediensammlung stammen.`);
-          await localFile(image.src, `${label}: Bilddatei`, /\.(jpe?g|png|webp|gif)$/i);
+          await localImage(image.src, `${label}: Bilddatei`);
           for (const field of ['caption', 'alt']) assert(image[field] === undefined || typeof image[field] === 'string', `${label}/${field}: Bildtext ist ungültig.`);
         }
       }
@@ -89,14 +99,14 @@ try {
   assert(Array.isArray(site.socialLinks), 'Social-Media-Liste fehlt.');
   for (const social of site.socialLinks) { nonempty(social.name, 'Social-Media-Name'); https(social.url, 'Social-Media-Link'); }
   const assets = await read('assets.json');
-  for (const [name, value] of Object.entries(assets)) await localFile(value, name, /\.(jpe?g|png|webp|gif)$/i);
+  for (const [name, value] of Object.entries(assets)) await localImage(value, name, { optional: true });
   const documents = await read('documents.json');
   for (const key of ['maluk', 'sunday', 'camp']) {
     const document = documents[key];
     assert(document?.type === 'pdf', `${key}: PDF-Typ fehlt.`);
     assert(Number.isInteger(document.pages) && document.pages >= 1 && document.pages <= 10000, `${key}: Seitenzahl ist ungültig.`);
     await localFile(document.url, `${key}: PDF`, /\.pdf$/i);
-    await localFile(document.preview, `${key}: Vorschau`, /\.(jpe?g|png|webp)$/i);
+    await localImage(document.preview, `${key}: Vorschau`, { optional: true, extensions: /\.(jpe?g|png|webp)$/i });
   }
   let extraImages = 0;
   const locales = new Set(structure.languages.map(language => language.code));
@@ -112,7 +122,7 @@ try {
       for (const image of entry.images ?? []) {
         nonempty(image.name, `${label}: Bildbezeichnung`);
         assert(typeof image.src === 'string' && image.src.startsWith('/media/'), `${label}: Bild muss aus der Mediensammlung stammen.`);
-        await localFile(image.src, `${label}: Bilddatei`, /\.(jpe?g|png|webp|gif)$/i);
+        await localImage(image.src, `${label}: Bilddatei`);
         for (const field of ['caption', 'alt']) {
           const translated = image[field];
           if (translated === undefined) continue;
@@ -125,6 +135,7 @@ try {
       }
     }
   }
+  for (const image of missingImages) console.warn(`Bild fehlt und wird auf der Website ausgeblendet: ${image}. Textänderungen können veröffentlicht werden.`);
   console.log(`Content checked: ${count} language pages, labels, contact details, images, ${extraImages} additional images and PDF previews.`);
 } catch (error) {
   console.error(`Inhalte konnten nicht veröffentlicht werden: ${error.message}`);

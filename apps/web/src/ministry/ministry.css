@@ -52,7 +52,7 @@ button:disabled { cursor: not-allowed; opacity: .55; }
 .nav-subsections { margin: 0 0 12px; padding-inline-start: 8px; }
 .nav-subsections a { display: block; padding: 8px 10px; line-height: 1.6; border-inline-start: 1px solid #d4c6b4; color: var(--muted-ink); text-decoration: none; font-size: 12px; }
 .nav-subsections a:hover { color: var(--ink); background: #ede7de; border-inline-start-color: #9b6726; }
-.home-hero { position: relative; color: var(--paper); min-height: min(740px, calc(100dvh - 96px)); padding-block: 115px 75px; isolation: isolate; display: flex; flex-direction: column; justify-content: center; }
+.home-hero { position: relative; color: var(--paper); background: #171612; min-height: min(740px, calc(100dvh - 96px)); padding-block: 115px 75px; isolation: isolate; display: flex; flex-direction: column; justify-content: center; }
 .hero-image { position: absolute; inset: 0; z-index: -3; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .hero-overlay { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, #171612e8 0%, #171612b8 44%, #17161228 100%); }
 .hero-content { max-width: 760px; }
@@ -107,6 +107,8 @@ button:disabled { cursor: not-allowed; opacity: .55; }
 .additional-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 18px; margin-block: 28px; }
 .additional-gallery:first-child { margin-top: 0; }
 .additional-gallery:last-child { margin-bottom: 0; }
+.additional-gallery:empty, .image-gallery:empty { display: none; }
+.additional-gallery>figure:only-child, .image-gallery>img:only-child { grid-column: 1 / -1; }
 .additional-gallery.gallery-full, .additional-gallery.is-single { grid-template-columns: minmax(0, 1fr); }
 .additional-gallery figure { min-width: 0; margin: 0; }
 .additional-gallery a { display: block; border-radius: 8px; overflow: hidden; background: #eee8de; }
@@ -182,6 +184,7 @@ button:disabled { cursor: not-allowed; opacity: .55; }
 
 @media(max-width:760px) { .ministry-brand { gap: 7px; }.brand-wordmark strong { font-size:18px; }.brand-wordmark>span { font-size:6px; letter-spacing:.06em; } }
 @media(max-width:380px) { .brand-wordmark strong { font-size:15px; }.brand-wordmark>span { font-size:5px; } }
+.project-card.is-text-only { grid-template-columns: minmax(0,1fr); }
 
 /* A static first-page image makes PDF previews available on phones too. */
 .document-preview-wrapper { margin-top: 26px; }
