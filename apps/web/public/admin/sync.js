@@ -144,6 +144,26 @@
     }
     return plan;
   }
+  function videoPlan({ before, source, automatic = true }) {
+    const document = clone(source), plan = planner(), ids = new Set();
+    if (!Array.isArray(source.videos)) throw new Error('Die Videoliste ist ungültig.');
+    for (const [index, video] of source.videos.entries()) {
+      if (!/^video-[a-z0-9-]{8,80}$/.test(video.id || '') || ids.has(video.id)) throw new Error('Ein Video hat keine eindeutige ID. Bitte den Editor neu laden.');
+      ids.add(video.id);
+      if (!video.name?.trim() || !/^[a-z0-9-]+$/.test(video.section || '')) throw new Error('Bitte das Video benennen und einen Abschnitt auswählen.');
+      if (!/^\/videos\/[^?#\\]+\.mp4$/i.test(video.src || '') || video.src.includes('..')) throw new Error('Bitte eine MP4-Datei aus dem Video-Ordner auswählen.');
+      if (video.poster && (!/^\/media\/[^?#\\]+\.(jpe?g|png|webp|gif)$/i.test(video.poster) || video.poster.includes('..'))) throw new Error('Bitte ein Vorschaubild aus der Mediensammlung auswählen.');
+      if (video.caption !== undefined && (!video.caption || typeof video.caption !== 'object' || Array.isArray(video.caption) || Object.entries(video.caption).some(([locale, text]) => !locales.includes(locale) || typeof text !== 'string'))) throw new Error('Die Videobeschreibungen sind ungültig.');
+      if (!automatic) continue;
+      const previous = (before.videos || []).find(item => item.id === video.id);
+      const changed = locales.filter(locale => (video.caption?.[locale] || '') !== (previous?.caption?.[locale] || ''));
+      if (changed.length !== 1) continue;
+      const locale = changed[0];
+      document.videos[index].caption ??= {};
+      for (const target of locales.filter(item => item !== locale)) plan.add(document, target, ['videos', index, 'caption', target], video.caption[locale] || '', locale);
+    }
+    return { ...plan, document };
+  }
   function identify(path) {
     if (!path?.startsWith(base)) return null;
     const relative = path.slice(base.length);
@@ -152,6 +172,7 @@
     const label = /^ui\/(de|en|el|ar)\.json$/.exec(relative);
     if (label) return { type: 'labels', locale: label[1], pathFor: locale => `${base}ui/${locale}.json` };
     if (/^galleries\/[a-z0-9-]+\.json$/.test(relative)) return { type: 'gallery' };
+    if (/^videos\/[a-z0-9-]+\.json$/.test(relative)) return { type: 'video' };
     return null;
   }
   function readJSON(raw) {
@@ -200,23 +221,25 @@
       if (!file) return originalPersist(entry, options);
       if (entry.dataFiles.length !== 1 || options.useWorkflow) throw new Error('Die gemeinsame Übersetzung benötigt die direkte Veröffentlichung einer einzelnen Seite.');
       const info = identify(file.path), source = readJSON(file.raw), automatic = source.syncTranslations === true || (source.syncTranslations !== false && defaultAutomatic);
+      const shared = info.type === 'gallery' || info.type === 'video';
       source.syncTranslations = automatic;
       try {
         onStatus('busy', automatic ? 'Änderungen werden übersetzt und gemeinsam gespeichert …' : 'Änderungen werden gespeichert …');
-        const paths = info.type === 'gallery' ? [file.path] : locales.map(info.pathFor);
+        const paths = shared ? [file.path] : locales.map(info.pathFor);
         const records = await Promise.all(paths.map(async path => ({ path, data: readJSON((await originalGet(path)).data) })));
         const before = records.find(record => record.path === file.path).data;
         if (snapshots.has(file.path) && !equal(before, snapshots.get(file.path))) throw new Error('Diese Seite wurde inzwischen geändert. Bitte neu laden, damit keine neueren Inhalte überschrieben werden.');
-        const translations = info.type === 'gallery' ? null : Object.fromEntries(locales.map(locale => [locale, records.find(record => record.path === info.pathFor(locale)).data]));
+        const translations = shared ? null : Object.fromEntries(locales.map(locale => [locale, records.find(record => record.path === info.pathFor(locale)).data]));
         let plan;
         if (info.type === 'page') plan = pagePlan({ locale: info.locale, before, source, translations, automatic });
         else if (info.type === 'labels') plan = labelsPlan({ locale: info.locale, before, source, translations, automatic });
+        else if (info.type === 'video') plan = videoPlan({ before, source, automatic });
         else plan = galleryPlan({ before, source, automatic });
         if (plan.texts.length) {
           const token = await backend.getToken();
-          if (info.type !== 'gallery') applyTranslations(plan, await request({ plan, locale: info.locale, token }));
+          if (!shared) applyTranslations(plan, await request({ plan, locale: info.locale, token }));
           else {
-            // Caption/alt fields may each have a different source language.
+            // Shared media descriptions may each have a different source language.
             for (const locale of locales) {
               const changes = plan.changes.filter(change => change.sourceLocale === locale);
               const indexes = [...new Set(changes.map(change => change.index))];
@@ -228,7 +251,7 @@
         // Recheck all participating files after the network calls, before writing any of them.
         const current = await Promise.all(records.map(async record => readJSON((await originalGet(record.path)).data)));
         if (records.some((record, index) => !equal(record.data, current[index]))) throw new Error('Während der Übersetzung wurden Inhalte geändert. Bitte neu laden und erneut veröffentlichen.');
-        const documents = info.type === 'gallery' ? { [file.path]: plan.document } : Object.fromEntries(locales.map(locale => [info.pathFor(locale), plan.documents[locale]]));
+        const documents = shared ? { [file.path]: plan.document } : Object.fromEntries(locales.map(locale => [info.pathFor(locale), plan.documents[locale]]));
         const dataFiles = Object.entries(documents).filter(([path, value]) => path === file.path || !equal(value, records.find(record => record.path === path).data))
           .map(([path, value]) => ({ ...file, path, raw: `${JSON.stringify(value, null, 2)}\n` }));
         const result = await originalPersist({ ...entry, dataFiles }, options);
@@ -261,8 +284,9 @@
         if (section.get('images')) section = section.set('images', section.get('images').map(image => image.get('id') ? image : image.set('id', `image-${crypto.randomUUID()}`)));
         return section;
       }));
+      if (identify(entry.get('path'))?.type === 'video' && data.get('videos')) data = data.set('videos', data.get('videos').map(video => video.get('id') ? video : video.set('id', `video-${crypto.randomUUID()}`)));
       return data;
     } });
   }
-  return { locales, pagePlan, labelsPlan, galleryPlan, applyTranslations, identify, equal, requestTranslations, wrapBackend, install };
+  return { locales, pagePlan, labelsPlan, galleryPlan, videoPlan, applyTranslations, identify, equal, requestTranslations, wrapBackend, install };
 });

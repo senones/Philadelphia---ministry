@@ -1,4 +1,4 @@
-import { readFile, readdir, access } from 'node:fs/promises';
+import { readFile, readdir, access, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -7,6 +7,8 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const base = path.join(root, 'apps/web/src/ministry/content');
 const read = async filename => JSON.parse(await readFile(path.join(base, filename), 'utf8'));
 const missingImages = new Set();
+const missingVideos = new Set();
+const readOptional = async filename => { try { return await read(filename); } catch (error) { if (error.code === 'ENOENT') return null; throw error; } };
 function nonempty(value, label) { assert.equal(typeof value, 'string', `${label}: Text fehlt.`); assert(value.trim(), `${label}: Text ist leer.`); }
 function https(value, label, optional = false) {
   if (optional && value === '') return;
@@ -15,17 +17,18 @@ function https(value, label, optional = false) {
 }
 async function localFile(value, label, extensions, allowMissing = false) {
   nonempty(value, label);
-  assert(/^\/(media|documents|document-previews)\//.test(value) && !value.includes('..') && !/[?#\\]/.test(value), `${label}: Ungültiger Dateipfad.`);
+  assert(/^\/(media|documents|document-previews|videos)\//.test(value) && !value.includes('..') && !/[?#\\]/.test(value), `${label}: Ungültiger Dateipfad.`);
   assert(extensions.test(value), `${label}: Dateiformat nicht unterstützt.`);
   try {
     await access(path.join(root, 'apps/web/public', value));
   } catch (error) {
     if (!allowMissing || error.code !== 'ENOENT') throw error;
-    missingImages.add(value);
+    (value.startsWith('/videos/') ? missingVideos : missingImages).add(value);
   }
 }
 async function localImage(value, label, { optional = false, extensions = /\.(jpe?g|png|webp|gif)$/i } = {}) {
   if (optional && (value === undefined || value === null || value === '')) return;
+  assert(typeof value !== 'string' || !value.startsWith('/videos/'), `${label}: Ungültiger Bildpfad.`);
   await localFile(value, label, extensions, true);
 }
 try {
@@ -135,8 +138,39 @@ try {
       }
     }
   }
+  let videoCount = 0;
+  for (const page of structure.pages) {
+    const data = await readOptional(`videos/${page.id}.json`);
+    if (!data) continue;
+    assert(Array.isArray(data.videos), `${page.id}: Videoliste ist ungültig.`);
+    if (data.syncTranslations !== undefined) assert.equal(typeof data.syncTranslations, 'boolean', `${page.id}: Übersetzungsschalter für Videos ist ungültig.`);
+    const sections = new Set(page.sections.map(section => section.id));
+    for (const language of structure.languages) for (const section of (await read(`pages/${page.id}.${language.code}.json`)).extraSections || []) sections.add(section.id);
+    const ids = new Set();
+    for (const video of data.videos) {
+      const label = `${page.id}/${video.id}`;
+      assert(/^video-[a-z0-9-]{8,80}$/.test(video.id || '') && !ids.has(video.id), `${label}: Video-ID ist ungültig oder doppelt.`);
+      ids.add(video.id);
+      nonempty(video.name, `${label}: Videobezeichnung`);
+      assert(typeof video.section === 'string' && /^[a-z0-9-]+$/.test(video.section), `${label}: Videoabschnitt ist ungültig.`);
+      if (!sections.has(video.section)) console.warn(`Video gehört zu einem entfernten Abschnitt und wird ausgeblendet: ${label}.`);
+      assert(typeof video.src === 'string' && video.src.startsWith('/videos/'), `${label}: Video muss aus dem Video-Ordner stammen.`);
+      await localFile(video.src, `${label}: Videodatei`, /\.mp4$/i, true);
+      if (!missingVideos.has(video.src)) {
+        const info = await stat(path.join(root, 'apps/web/public', video.src));
+        assert(info.size <= 50 * 1024 * 1024, `${label}: Videodatei ist größer als 50 MiB.`);
+      }
+      await localImage(video.poster, `${label}: Videovorschau`, { optional: true });
+      if (video.caption !== undefined) {
+        assert(video.caption && typeof video.caption === 'object' && !Array.isArray(video.caption), `${label}: Videobeschreibungen sind ungültig.`);
+        for (const [locale, value] of Object.entries(video.caption)) assert(locales.has(locale) && typeof value === 'string', `${label}/${locale}: Videobeschreibung ist ungültig.`);
+      }
+      videoCount++;
+    }
+  }
   for (const image of missingImages) console.warn(`Bild fehlt und wird auf der Website ausgeblendet: ${image}. Textänderungen können veröffentlicht werden.`);
-  console.log(`Content checked: ${count} language pages, labels, contact details, images, ${extraImages} additional images and PDF previews.`);
+  for (const video of missingVideos) console.warn(`Videodatei fehlt: ${video}. Der Player zeigt einen Hinweis; Textänderungen können veröffentlicht werden.`);
+  console.log(`Content checked: ${count} language pages, labels, contact details, images, ${extraImages} additional images, ${videoCount} videos and PDF previews.`);
 } catch (error) {
   console.error(`Inhalte konnten nicht veröffentlicht werden: ${error.message}`);
   process.exitCode = 1;

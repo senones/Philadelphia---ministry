@@ -9,6 +9,9 @@ body { margin: 0; background: #fffcf7; color: #29251f; font-family: Arial, sans-
 .page-preview .pending-label { font-size: 11px; color: #8d6b44; margin: 0; }
 .page-preview .preview-body { color: #766c60; }
 .page-preview img { max-width: 100%; }
+.preview-video { margin: 22px 0; }
+.preview-video video { display: block; width: 100%; max-height: 600px; object-fit: contain; background: #171612; border-radius: 8px; }
+.preview-video figcaption { margin-top: 10px; color: #766c60; font-size: 13px; white-space: pre-line; overflow-wrap: anywhere; }
 .page-preview[dir=rtl] h1, .page-preview[dir=rtl] h2 { font-family: Tahoma, Arial, sans-serif; line-height: 1.6; }
 .gallery-position { font-size: 12px; color: #766c60; }
 .preview-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }

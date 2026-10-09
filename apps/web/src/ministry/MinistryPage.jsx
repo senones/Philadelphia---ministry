@@ -9,6 +9,7 @@ import Header from './Header';
 import ContactForm from './ContactForm';
 import DocumentPreview from './DocumentPreview';
 import ContentImage from './ContentImage';
+import ContentVideo from './ContentVideo';
 
 const markdownComponents = { img: ContentImage };
 
@@ -71,6 +72,7 @@ function PageSection({ section, pageId }) {
       {section.kind === 'social' && (site.socialLinks.length ? <div className="button-row">{site.socialLinks.map((social) => <a className="button button-secondary" key={social.url} href={social.url} target="_blank" rel="noopener noreferrer">{social.name}<ArrowUpRight size={16} aria-hidden="true" /></a>)}</div> : <p className="muted">{t(ui.socialPending)}</p>)}
       {section.kind === 'donations' && (site.donationUrl ? <a className="button button-primary" href={site.donationUrl} target="_blank" rel="noopener noreferrer">{t(ui.donate)}<Heart size={16} aria-hidden="true" /></a> : <p className="muted">{t(ui.donatePending)}</p>)}
       {section.gallery.position === 'after' && <AdditionalImages gallery={section.gallery} />}
+      {(section.videos || []).map(video => <ContentVideo key={video.id} video={video} />)}
     </div>
   </section>;
 }

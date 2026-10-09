@@ -95,6 +95,24 @@
         );
       });
     }
+    for (const file of result.config.collections.find(item => item.name === 'videos')?.files || []) {
+      const videoFields = file.fields.find(field => field.name === 'videos').fields;
+      const options = videoFields.find(field => field.name === 'section').options;
+      window.CMS.registerPreviewTemplate(file.name, function VideoPreview({ entry, getAsset }) {
+        const videos = entry.get('data').toJS().videos || [];
+        return h('article', { className: 'page-preview', lang: 'de', dir: 'ltr' },
+          h('header', {}, h('p', { className: 'eyebrow' }, 'Videos'), h('h1', {}, file.label), h('p', { className: 'intro' }, 'Diese Videos erscheinen in allen vier Sprachen. Das Video selbst wird nicht übersetzt.')),
+          ...videos.map((video, index) => h('section', { key: video.id || index },
+            h('h2', {}, options.find(option => option.value === video.section)?.label || 'Abschnitt auswählen'),
+            h('figure', { className: 'preview-video' },
+              video.src ? h('video', { src: getAsset(video.src).toString(), poster: video.poster ? getAsset(video.poster).toString() : undefined, controls: true, playsInline: true, preload: 'metadata', 'aria-label': video.caption?.de || 'Video' }) : h('p', {}, 'MP4-Datei auswählen'),
+              video.caption?.de && h('figcaption', { dir: 'auto' }, video.caption.de),
+            ),
+          )),
+          !videos.length && h('p', { className: 'intro' }, 'Links „Video hinzufügen“ anklicken, Abschnitt auswählen und eine MP4-Datei hochladen.'),
+        );
+      });
+    }
     window.CMS.init({ config: result.config });
     status.hidden = true;
     // Language is detected from the text itself; the editor controls remain German.

@@ -18,7 +18,7 @@
       "files": [
         {
           "name": "home_de",
-          "label": "Testseite",
+          "label": "Startseite",
           "file": "apps/web/src/ministry/content/pages/home.de.json",
           "preview_path": "de",
           "fields": [
@@ -4071,7 +4071,7 @@
       "files": [
         {
           "name": "home_en",
-          "label": "Testseite",
+          "label": "Startseite",
           "file": "apps/web/src/ministry/content/pages/home.en.json",
           "preview_path": "en",
           "fields": [
@@ -8124,7 +8124,7 @@
       "files": [
         {
           "name": "home_el",
-          "label": "Testseite",
+          "label": "Startseite",
           "file": "apps/web/src/ministry/content/pages/home.el.json",
           "preview_path": "el",
           "fields": [
@@ -12177,7 +12177,7 @@
       "files": [
         {
           "name": "home_ar",
-          "label": "Testseite",
+          "label": "Startseite",
           "file": "apps/web/src/ministry/content/pages/home.ar.json",
           "preview_path": "ar",
           "fields": [
@@ -16395,7 +16395,7 @@
       "files": [
         {
           "name": "gallery_home",
-          "label": "Testseite",
+          "label": "Startseite",
           "file": "apps/web/src/ministry/content/galleries/home.json",
           "preview_path": "de",
           "fields": [
@@ -24488,6 +24488,1589 @@
         }
       ],
       "description": "Seite und Abschnitt auswählen, zusätzliche Bilder hochladen, anordnen und veröffentlichen. Die Vorschau zeigt die zusätzlichen Bilder mit deutschen Bildunterschriften."
+    },
+    {
+      "name": "videos",
+      "label": "Videos",
+      "format": "json",
+      "files": [
+        {
+          "name": "videos_home",
+          "label": "Startseite",
+          "file": "apps/web/src/ministry/content/videos/home.json",
+          "preview_path": "de",
+          "fields": [
+            {
+              "name": "syncTranslations",
+              "label": "Änderungen in alle Sprachen übersetzen",
+              "widget": "boolean",
+              "default": true,
+              "required": false,
+              "hint": "Eine einzelne geänderte Videobeschreibung wird automatisch in die anderen Sprachen übersetzt. Das Video und seine Zuordnung gelten immer für alle vier Sprachen. Der Ton im Video wird nicht übersetzt."
+            },
+            {
+              "name": "videos",
+              "label": "Videos auf dieser Seite",
+              "widget": "list",
+              "required": false,
+              "default": [],
+              "collapsed": true,
+              "label_singular": "Video",
+              "summary": "{{fields.name}}",
+              "allow_add": true,
+              "allow_remove": true,
+              "allow_reorder": true,
+              "hint": "Video hinzufügen, Abschnitt auswählen und eine MP4-Datei hochladen. Videos erscheinen am Ende des gewählten Abschnitts in allen vier Sprachen. Die Reihenfolge lässt sich durch Ziehen ändern. Das Video selbst wird nicht übersetzt.",
+              "fields": [
+                {
+                  "name": "id",
+                  "label": "Video-ID",
+                  "widget": "hidden",
+                  "required": false,
+                  "default": ""
+                },
+                {
+                  "name": "name",
+                  "label": "Bezeichnung im Editor",
+                  "widget": "string",
+                  "default": "Neues Video",
+                  "hint": "Nur zur Übersicht im CMS, z. B. Bericht vom Sommercamp."
+                },
+                {
+                  "name": "section",
+                  "label": "Abschnitt auf der Seite",
+                  "widget": "select",
+                  "options": [
+                    {
+                      "label": "Kurze Vorstellung des Ministries",
+                      "value": "vorstellung"
+                    },
+                    {
+                      "label": "Vision / Leitgedanke",
+                      "value": "vision"
+                    },
+                    {
+                      "label": "Aktuelle Projekte",
+                      "value": "projekte"
+                    },
+                    {
+                      "label": "Große Bilder",
+                      "value": "bilder"
+                    },
+                    {
+                      "label": "Mehr erfahren / Mitmachen",
+                      "value": "mitmachen"
+                    }
+                  ],
+                  "default": "vorstellung"
+                },
+                {
+                  "name": "src",
+                  "label": "Videodatei (MP4)",
+                  "widget": "file",
+                  "media_folder": "/apps/web/public/videos",
+                  "public_folder": "/videos",
+                  "choose_url": false,
+                  "media_library": {
+                    "allow_multiple": false,
+                    "config": {
+                      "max_file_size": 52428800
+                    }
+                  },
+                  "pattern": [
+                    "^[^/\\\\?#]+[.][mM][pP]4$",
+                    "Bitte eine MP4-Datei aus dem Video-Ordner auswählen."
+                  ],
+                  "hint": "MP4 mit H.264-Video und AAC-Ton, höchstens 50 MiB pro Datei. Die Wiedergabe startet erst nach einem Klick. Zum Entfernen den gesamten Video-Eintrag löschen."
+                },
+                {
+                  "name": "poster",
+                  "label": "Vorschaubild",
+                  "widget": "image",
+                  "required": false,
+                  "choose_url": false,
+                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
+                },
+                {
+                  "name": "caption",
+                  "label": "Videobeschreibung je Sprache",
+                  "widget": "object",
+                  "collapsed": true,
+                  "required": false,
+                  "hint": "Eine Beschreibung in Deutsch, Englisch, Griechisch oder Arabisch eintragen. Bei eingeschalteter Übersetzung werden die anderen Sprachen automatisch ergänzt. Mehrere gleichzeitig bearbeitete Sprachfassungen bleiben wie eingegeben.",
+                  "default": {
+                    "de": "",
+                    "en": "",
+                    "el": "",
+                    "ar": ""
+                  },
+                  "fields": [
+                    {
+                      "name": "de",
+                      "label": "Deutsch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "en",
+                      "label": "Englisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "el",
+                      "label": "Griechisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "ar",
+                      "label": "Arabisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "videos_about",
+          "label": "Über uns",
+          "file": "apps/web/src/ministry/content/videos/about.json",
+          "preview_path": "de/ueber-uns",
+          "fields": [
+            {
+              "name": "syncTranslations",
+              "label": "Änderungen in alle Sprachen übersetzen",
+              "widget": "boolean",
+              "default": true,
+              "required": false,
+              "hint": "Eine einzelne geänderte Videobeschreibung wird automatisch in die anderen Sprachen übersetzt. Das Video und seine Zuordnung gelten immer für alle vier Sprachen. Der Ton im Video wird nicht übersetzt."
+            },
+            {
+              "name": "videos",
+              "label": "Videos auf dieser Seite",
+              "widget": "list",
+              "required": false,
+              "default": [],
+              "collapsed": true,
+              "label_singular": "Video",
+              "summary": "{{fields.name}}",
+              "allow_add": true,
+              "allow_remove": true,
+              "allow_reorder": true,
+              "hint": "Video hinzufügen, Abschnitt auswählen und eine MP4-Datei hochladen. Videos erscheinen am Ende des gewählten Abschnitts in allen vier Sprachen. Die Reihenfolge lässt sich durch Ziehen ändern. Das Video selbst wird nicht übersetzt.",
+              "fields": [
+                {
+                  "name": "id",
+                  "label": "Video-ID",
+                  "widget": "hidden",
+                  "required": false,
+                  "default": ""
+                },
+                {
+                  "name": "name",
+                  "label": "Bezeichnung im Editor",
+                  "widget": "string",
+                  "default": "Neues Video",
+                  "hint": "Nur zur Übersicht im CMS, z. B. Bericht vom Sommercamp."
+                },
+                {
+                  "name": "section",
+                  "label": "Abschnitt auf der Seite",
+                  "widget": "select",
+                  "options": [
+                    {
+                      "label": "Geschichte",
+                      "value": "geschichte"
+                    },
+                    {
+                      "label": "Vision und Ziele",
+                      "value": "vision-ziele"
+                    },
+                    {
+                      "label": "Glaubensgrundlagen",
+                      "value": "glaubensgrundlagen"
+                    },
+                    {
+                      "label": "Team / Leitung",
+                      "value": "team"
+                    }
+                  ],
+                  "default": "geschichte"
+                },
+                {
+                  "name": "src",
+                  "label": "Videodatei (MP4)",
+                  "widget": "file",
+                  "media_folder": "/apps/web/public/videos",
+                  "public_folder": "/videos",
+                  "choose_url": false,
+                  "media_library": {
+                    "allow_multiple": false,
+                    "config": {
+                      "max_file_size": 52428800
+                    }
+                  },
+                  "pattern": [
+                    "^[^/\\\\?#]+[.][mM][pP]4$",
+                    "Bitte eine MP4-Datei aus dem Video-Ordner auswählen."
+                  ],
+                  "hint": "MP4 mit H.264-Video und AAC-Ton, höchstens 50 MiB pro Datei. Die Wiedergabe startet erst nach einem Klick. Zum Entfernen den gesamten Video-Eintrag löschen."
+                },
+                {
+                  "name": "poster",
+                  "label": "Vorschaubild",
+                  "widget": "image",
+                  "required": false,
+                  "choose_url": false,
+                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
+                },
+                {
+                  "name": "caption",
+                  "label": "Videobeschreibung je Sprache",
+                  "widget": "object",
+                  "collapsed": true,
+                  "required": false,
+                  "hint": "Eine Beschreibung in Deutsch, Englisch, Griechisch oder Arabisch eintragen. Bei eingeschalteter Übersetzung werden die anderen Sprachen automatisch ergänzt. Mehrere gleichzeitig bearbeitete Sprachfassungen bleiben wie eingegeben.",
+                  "default": {
+                    "de": "",
+                    "en": "",
+                    "el": "",
+                    "ar": ""
+                  },
+                  "fields": [
+                    {
+                      "name": "de",
+                      "label": "Deutsch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "en",
+                      "label": "Englisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "el",
+                      "label": "Griechisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "ar",
+                      "label": "Arabisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "videos_work",
+          "label": "Unsere Arbeit",
+          "file": "apps/web/src/ministry/content/videos/work.json",
+          "preview_path": "de/unsere-arbeit",
+          "fields": [
+            {
+              "name": "syncTranslations",
+              "label": "Änderungen in alle Sprachen übersetzen",
+              "widget": "boolean",
+              "default": true,
+              "required": false,
+              "hint": "Eine einzelne geänderte Videobeschreibung wird automatisch in die anderen Sprachen übersetzt. Das Video und seine Zuordnung gelten immer für alle vier Sprachen. Der Ton im Video wird nicht übersetzt."
+            },
+            {
+              "name": "videos",
+              "label": "Videos auf dieser Seite",
+              "widget": "list",
+              "required": false,
+              "default": [],
+              "collapsed": true,
+              "label_singular": "Video",
+              "summary": "{{fields.name}}",
+              "allow_add": true,
+              "allow_remove": true,
+              "allow_reorder": true,
+              "hint": "Video hinzufügen, Abschnitt auswählen und eine MP4-Datei hochladen. Videos erscheinen am Ende des gewählten Abschnitts in allen vier Sprachen. Die Reihenfolge lässt sich durch Ziehen ändern. Das Video selbst wird nicht übersetzt.",
+              "fields": [
+                {
+                  "name": "id",
+                  "label": "Video-ID",
+                  "widget": "hidden",
+                  "required": false,
+                  "default": ""
+                },
+                {
+                  "name": "name",
+                  "label": "Bezeichnung im Editor",
+                  "widget": "string",
+                  "default": "Neues Video",
+                  "hint": "Nur zur Übersicht im CMS, z. B. Bericht vom Sommercamp."
+                },
+                {
+                  "name": "section",
+                  "label": "Abschnitt auf der Seite",
+                  "widget": "select",
+                  "options": [
+                    {
+                      "label": "Evangelisation",
+                      "value": "evangelisation"
+                    },
+                    {
+                      "label": "Flüchtlingsarbeit",
+                      "value": "fluechtlingsarbeit"
+                    },
+                    {
+                      "label": "Besuche in Flüchtlingscamps",
+                      "value": "camp-besuche"
+                    },
+                    {
+                      "label": "Praktische Hilfe",
+                      "value": "praktische-hilfe"
+                    },
+                    {
+                      "label": "Sprachkurse",
+                      "value": "sprachkurse"
+                    },
+                    {
+                      "label": "Jüngerschaft",
+                      "value": "juengerschaft"
+                    },
+                    {
+                      "label": "Freizeit & Gemeinschaft",
+                      "value": "gemeinschaft"
+                    },
+                    {
+                      "label": "Camps / Veranstaltungen",
+                      "value": "camps"
+                    }
+                  ],
+                  "default": "evangelisation"
+                },
+                {
+                  "name": "src",
+                  "label": "Videodatei (MP4)",
+                  "widget": "file",
+                  "media_folder": "/apps/web/public/videos",
+                  "public_folder": "/videos",
+                  "choose_url": false,
+                  "media_library": {
+                    "allow_multiple": false,
+                    "config": {
+                      "max_file_size": 52428800
+                    }
+                  },
+                  "pattern": [
+                    "^[^/\\\\?#]+[.][mM][pP]4$",
+                    "Bitte eine MP4-Datei aus dem Video-Ordner auswählen."
+                  ],
+                  "hint": "MP4 mit H.264-Video und AAC-Ton, höchstens 50 MiB pro Datei. Die Wiedergabe startet erst nach einem Klick. Zum Entfernen den gesamten Video-Eintrag löschen."
+                },
+                {
+                  "name": "poster",
+                  "label": "Vorschaubild",
+                  "widget": "image",
+                  "required": false,
+                  "choose_url": false,
+                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
+                },
+                {
+                  "name": "caption",
+                  "label": "Videobeschreibung je Sprache",
+                  "widget": "object",
+                  "collapsed": true,
+                  "required": false,
+                  "hint": "Eine Beschreibung in Deutsch, Englisch, Griechisch oder Arabisch eintragen. Bei eingeschalteter Übersetzung werden die anderen Sprachen automatisch ergänzt. Mehrere gleichzeitig bearbeitete Sprachfassungen bleiben wie eingegeben.",
+                  "default": {
+                    "de": "",
+                    "en": "",
+                    "el": "",
+                    "ar": ""
+                  },
+                  "fields": [
+                    {
+                      "name": "de",
+                      "label": "Deutsch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "en",
+                      "label": "Englisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "el",
+                      "label": "Griechisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "ar",
+                      "label": "Arabisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "videos_bayt",
+          "label": "Philadelphia Bayt – Haus Philadelphia",
+          "file": "apps/web/src/ministry/content/videos/bayt.json",
+          "preview_path": "de/philadelphia-bayt",
+          "fields": [
+            {
+              "name": "syncTranslations",
+              "label": "Änderungen in alle Sprachen übersetzen",
+              "widget": "boolean",
+              "default": true,
+              "required": false,
+              "hint": "Eine einzelne geänderte Videobeschreibung wird automatisch in die anderen Sprachen übersetzt. Das Video und seine Zuordnung gelten immer für alle vier Sprachen. Der Ton im Video wird nicht übersetzt."
+            },
+            {
+              "name": "videos",
+              "label": "Videos auf dieser Seite",
+              "widget": "list",
+              "required": false,
+              "default": [],
+              "collapsed": true,
+              "label_singular": "Video",
+              "summary": "{{fields.name}}",
+              "allow_add": true,
+              "allow_remove": true,
+              "allow_reorder": true,
+              "hint": "Video hinzufügen, Abschnitt auswählen und eine MP4-Datei hochladen. Videos erscheinen am Ende des gewählten Abschnitts in allen vier Sprachen. Die Reihenfolge lässt sich durch Ziehen ändern. Das Video selbst wird nicht übersetzt.",
+              "fields": [
+                {
+                  "name": "id",
+                  "label": "Video-ID",
+                  "widget": "hidden",
+                  "required": false,
+                  "default": ""
+                },
+                {
+                  "name": "name",
+                  "label": "Bezeichnung im Editor",
+                  "widget": "string",
+                  "default": "Neues Video",
+                  "hint": "Nur zur Übersicht im CMS, z. B. Bericht vom Sommercamp."
+                },
+                {
+                  "name": "section",
+                  "label": "Abschnitt auf der Seite",
+                  "widget": "select",
+                  "options": [
+                    {
+                      "label": "Was ist das Bayt?",
+                      "value": "was-ist-bayt"
+                    },
+                    {
+                      "label": "Ziel und Konzept",
+                      "value": "ziel-konzept"
+                    },
+                    {
+                      "label": "Leben im Haus",
+                      "value": "leben"
+                    },
+                    {
+                      "label": "Begleitung und Jüngerschaft",
+                      "value": "begleitung"
+                    },
+                    {
+                      "label": "Unterstützung der Bewohner",
+                      "value": "bewohner"
+                    },
+                    {
+                      "label": "Hier  ist wasser",
+                      "value": "extra-d4149624-b28d-4fc9-856d-30830c4e3dfa"
+                    }
+                  ],
+                  "default": "was-ist-bayt"
+                },
+                {
+                  "name": "src",
+                  "label": "Videodatei (MP4)",
+                  "widget": "file",
+                  "media_folder": "/apps/web/public/videos",
+                  "public_folder": "/videos",
+                  "choose_url": false,
+                  "media_library": {
+                    "allow_multiple": false,
+                    "config": {
+                      "max_file_size": 52428800
+                    }
+                  },
+                  "pattern": [
+                    "^[^/\\\\?#]+[.][mM][pP]4$",
+                    "Bitte eine MP4-Datei aus dem Video-Ordner auswählen."
+                  ],
+                  "hint": "MP4 mit H.264-Video und AAC-Ton, höchstens 50 MiB pro Datei. Die Wiedergabe startet erst nach einem Klick. Zum Entfernen den gesamten Video-Eintrag löschen."
+                },
+                {
+                  "name": "poster",
+                  "label": "Vorschaubild",
+                  "widget": "image",
+                  "required": false,
+                  "choose_url": false,
+                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
+                },
+                {
+                  "name": "caption",
+                  "label": "Videobeschreibung je Sprache",
+                  "widget": "object",
+                  "collapsed": true,
+                  "required": false,
+                  "hint": "Eine Beschreibung in Deutsch, Englisch, Griechisch oder Arabisch eintragen. Bei eingeschalteter Übersetzung werden die anderen Sprachen automatisch ergänzt. Mehrere gleichzeitig bearbeitete Sprachfassungen bleiben wie eingegeben.",
+                  "default": {
+                    "de": "",
+                    "en": "",
+                    "el": "",
+                    "ar": ""
+                  },
+                  "fields": [
+                    {
+                      "name": "de",
+                      "label": "Deutsch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "en",
+                      "label": "Englisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "el",
+                      "label": "Griechisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "ar",
+                      "label": "Arabisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "videos_stories",
+          "label": "Lebensgeschichten / Zeugnisse",
+          "file": "apps/web/src/ministry/content/videos/stories.json",
+          "preview_path": "de/lebensgeschichten",
+          "fields": [
+            {
+              "name": "syncTranslations",
+              "label": "Änderungen in alle Sprachen übersetzen",
+              "widget": "boolean",
+              "default": true,
+              "required": false,
+              "hint": "Eine einzelne geänderte Videobeschreibung wird automatisch in die anderen Sprachen übersetzt. Das Video und seine Zuordnung gelten immer für alle vier Sprachen. Der Ton im Video wird nicht übersetzt."
+            },
+            {
+              "name": "videos",
+              "label": "Videos auf dieser Seite",
+              "widget": "list",
+              "required": false,
+              "default": [],
+              "collapsed": true,
+              "label_singular": "Video",
+              "summary": "{{fields.name}}",
+              "allow_add": true,
+              "allow_remove": true,
+              "allow_reorder": true,
+              "hint": "Video hinzufügen, Abschnitt auswählen und eine MP4-Datei hochladen. Videos erscheinen am Ende des gewählten Abschnitts in allen vier Sprachen. Die Reihenfolge lässt sich durch Ziehen ändern. Das Video selbst wird nicht übersetzt.",
+              "fields": [
+                {
+                  "name": "id",
+                  "label": "Video-ID",
+                  "widget": "hidden",
+                  "required": false,
+                  "default": ""
+                },
+                {
+                  "name": "name",
+                  "label": "Bezeichnung im Editor",
+                  "widget": "string",
+                  "default": "Neues Video",
+                  "hint": "Nur zur Übersicht im CMS, z. B. Bericht vom Sommercamp."
+                },
+                {
+                  "name": "section",
+                  "label": "Abschnitt auf der Seite",
+                  "widget": "select",
+                  "options": [
+                    {
+                      "label": "Persönliche Geschichten",
+                      "value": "geschichten"
+                    },
+                    {
+                      "label": "Zeugnisse von Bewohnern",
+                      "value": "zeugnisse"
+                    },
+                    {
+                      "label": "Maluk",
+                      "value": "maluk"
+                    },
+                    {
+                      "label": "Sunday",
+                      "value": "sunday"
+                    }
+                  ],
+                  "default": "geschichten"
+                },
+                {
+                  "name": "src",
+                  "label": "Videodatei (MP4)",
+                  "widget": "file",
+                  "media_folder": "/apps/web/public/videos",
+                  "public_folder": "/videos",
+                  "choose_url": false,
+                  "media_library": {
+                    "allow_multiple": false,
+                    "config": {
+                      "max_file_size": 52428800
+                    }
+                  },
+                  "pattern": [
+                    "^[^/\\\\?#]+[.][mM][pP]4$",
+                    "Bitte eine MP4-Datei aus dem Video-Ordner auswählen."
+                  ],
+                  "hint": "MP4 mit H.264-Video und AAC-Ton, höchstens 50 MiB pro Datei. Die Wiedergabe startet erst nach einem Klick. Zum Entfernen den gesamten Video-Eintrag löschen."
+                },
+                {
+                  "name": "poster",
+                  "label": "Vorschaubild",
+                  "widget": "image",
+                  "required": false,
+                  "choose_url": false,
+                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
+                },
+                {
+                  "name": "caption",
+                  "label": "Videobeschreibung je Sprache",
+                  "widget": "object",
+                  "collapsed": true,
+                  "required": false,
+                  "hint": "Eine Beschreibung in Deutsch, Englisch, Griechisch oder Arabisch eintragen. Bei eingeschalteter Übersetzung werden die anderen Sprachen automatisch ergänzt. Mehrere gleichzeitig bearbeitete Sprachfassungen bleiben wie eingegeben.",
+                  "default": {
+                    "de": "",
+                    "en": "",
+                    "el": "",
+                    "ar": ""
+                  },
+                  "fields": [
+                    {
+                      "name": "de",
+                      "label": "Deutsch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "en",
+                      "label": "Englisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "el",
+                      "label": "Griechisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "ar",
+                      "label": "Arabisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "videos_news",
+          "label": "Aktuelles",
+          "file": "apps/web/src/ministry/content/videos/news.json",
+          "preview_path": "de/aktuelles",
+          "fields": [
+            {
+              "name": "syncTranslations",
+              "label": "Änderungen in alle Sprachen übersetzen",
+              "widget": "boolean",
+              "default": true,
+              "required": false,
+              "hint": "Eine einzelne geänderte Videobeschreibung wird automatisch in die anderen Sprachen übersetzt. Das Video und seine Zuordnung gelten immer für alle vier Sprachen. Der Ton im Video wird nicht übersetzt."
+            },
+            {
+              "name": "videos",
+              "label": "Videos auf dieser Seite",
+              "widget": "list",
+              "required": false,
+              "default": [],
+              "collapsed": true,
+              "label_singular": "Video",
+              "summary": "{{fields.name}}",
+              "allow_add": true,
+              "allow_remove": true,
+              "allow_reorder": true,
+              "hint": "Video hinzufügen, Abschnitt auswählen und eine MP4-Datei hochladen. Videos erscheinen am Ende des gewählten Abschnitts in allen vier Sprachen. Die Reihenfolge lässt sich durch Ziehen ändern. Das Video selbst wird nicht übersetzt.",
+              "fields": [
+                {
+                  "name": "id",
+                  "label": "Video-ID",
+                  "widget": "hidden",
+                  "required": false,
+                  "default": ""
+                },
+                {
+                  "name": "name",
+                  "label": "Bezeichnung im Editor",
+                  "widget": "string",
+                  "default": "Neues Video",
+                  "hint": "Nur zur Übersicht im CMS, z. B. Bericht vom Sommercamp."
+                },
+                {
+                  "name": "section",
+                  "label": "Abschnitt auf der Seite",
+                  "widget": "select",
+                  "options": [
+                    {
+                      "label": "Missionsberichte",
+                      "value": "missionsberichte"
+                    },
+                    {
+                      "label": "Veranstaltungen",
+                      "value": "veranstaltungen"
+                    },
+                    {
+                      "label": "Sommercamps",
+                      "value": "sommercamps"
+                    },
+                    {
+                      "label": "Neuigkeiten",
+                      "value": "neuigkeiten"
+                    },
+                    {
+                      "label": "Gebetsanliegen",
+                      "value": "gebetsanliegen"
+                    }
+                  ],
+                  "default": "missionsberichte"
+                },
+                {
+                  "name": "src",
+                  "label": "Videodatei (MP4)",
+                  "widget": "file",
+                  "media_folder": "/apps/web/public/videos",
+                  "public_folder": "/videos",
+                  "choose_url": false,
+                  "media_library": {
+                    "allow_multiple": false,
+                    "config": {
+                      "max_file_size": 52428800
+                    }
+                  },
+                  "pattern": [
+                    "^[^/\\\\?#]+[.][mM][pP]4$",
+                    "Bitte eine MP4-Datei aus dem Video-Ordner auswählen."
+                  ],
+                  "hint": "MP4 mit H.264-Video und AAC-Ton, höchstens 50 MiB pro Datei. Die Wiedergabe startet erst nach einem Klick. Zum Entfernen den gesamten Video-Eintrag löschen."
+                },
+                {
+                  "name": "poster",
+                  "label": "Vorschaubild",
+                  "widget": "image",
+                  "required": false,
+                  "choose_url": false,
+                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
+                },
+                {
+                  "name": "caption",
+                  "label": "Videobeschreibung je Sprache",
+                  "widget": "object",
+                  "collapsed": true,
+                  "required": false,
+                  "hint": "Eine Beschreibung in Deutsch, Englisch, Griechisch oder Arabisch eintragen. Bei eingeschalteter Übersetzung werden die anderen Sprachen automatisch ergänzt. Mehrere gleichzeitig bearbeitete Sprachfassungen bleiben wie eingegeben.",
+                  "default": {
+                    "de": "",
+                    "en": "",
+                    "el": "",
+                    "ar": ""
+                  },
+                  "fields": [
+                    {
+                      "name": "de",
+                      "label": "Deutsch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "en",
+                      "label": "Englisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "el",
+                      "label": "Griechisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "ar",
+                      "label": "Arabisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "videos_support",
+          "label": "Mitmachen / Unterstützen",
+          "file": "apps/web/src/ministry/content/videos/support.json",
+          "preview_path": "de/mitmachen",
+          "fields": [
+            {
+              "name": "syncTranslations",
+              "label": "Änderungen in alle Sprachen übersetzen",
+              "widget": "boolean",
+              "default": true,
+              "required": false,
+              "hint": "Eine einzelne geänderte Videobeschreibung wird automatisch in die anderen Sprachen übersetzt. Das Video und seine Zuordnung gelten immer für alle vier Sprachen. Der Ton im Video wird nicht übersetzt."
+            },
+            {
+              "name": "videos",
+              "label": "Videos auf dieser Seite",
+              "widget": "list",
+              "required": false,
+              "default": [],
+              "collapsed": true,
+              "label_singular": "Video",
+              "summary": "{{fields.name}}",
+              "allow_add": true,
+              "allow_remove": true,
+              "allow_reorder": true,
+              "hint": "Video hinzufügen, Abschnitt auswählen und eine MP4-Datei hochladen. Videos erscheinen am Ende des gewählten Abschnitts in allen vier Sprachen. Die Reihenfolge lässt sich durch Ziehen ändern. Das Video selbst wird nicht übersetzt.",
+              "fields": [
+                {
+                  "name": "id",
+                  "label": "Video-ID",
+                  "widget": "hidden",
+                  "required": false,
+                  "default": ""
+                },
+                {
+                  "name": "name",
+                  "label": "Bezeichnung im Editor",
+                  "widget": "string",
+                  "default": "Neues Video",
+                  "hint": "Nur zur Übersicht im CMS, z. B. Bericht vom Sommercamp."
+                },
+                {
+                  "name": "section",
+                  "label": "Abschnitt auf der Seite",
+                  "widget": "select",
+                  "options": [
+                    {
+                      "label": "Gebet",
+                      "value": "gebet"
+                    },
+                    {
+                      "label": "Spenden",
+                      "value": "spenden"
+                    },
+                    {
+                      "label": "Praktische Unterstützung",
+                      "value": "praktische-unterstuetzung"
+                    },
+                    {
+                      "label": "Mitarbeit / Missionseinsatz",
+                      "value": "mitarbeit"
+                    }
+                  ],
+                  "default": "gebet"
+                },
+                {
+                  "name": "src",
+                  "label": "Videodatei (MP4)",
+                  "widget": "file",
+                  "media_folder": "/apps/web/public/videos",
+                  "public_folder": "/videos",
+                  "choose_url": false,
+                  "media_library": {
+                    "allow_multiple": false,
+                    "config": {
+                      "max_file_size": 52428800
+                    }
+                  },
+                  "pattern": [
+                    "^[^/\\\\?#]+[.][mM][pP]4$",
+                    "Bitte eine MP4-Datei aus dem Video-Ordner auswählen."
+                  ],
+                  "hint": "MP4 mit H.264-Video und AAC-Ton, höchstens 50 MiB pro Datei. Die Wiedergabe startet erst nach einem Klick. Zum Entfernen den gesamten Video-Eintrag löschen."
+                },
+                {
+                  "name": "poster",
+                  "label": "Vorschaubild",
+                  "widget": "image",
+                  "required": false,
+                  "choose_url": false,
+                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
+                },
+                {
+                  "name": "caption",
+                  "label": "Videobeschreibung je Sprache",
+                  "widget": "object",
+                  "collapsed": true,
+                  "required": false,
+                  "hint": "Eine Beschreibung in Deutsch, Englisch, Griechisch oder Arabisch eintragen. Bei eingeschalteter Übersetzung werden die anderen Sprachen automatisch ergänzt. Mehrere gleichzeitig bearbeitete Sprachfassungen bleiben wie eingegeben.",
+                  "default": {
+                    "de": "",
+                    "en": "",
+                    "el": "",
+                    "ar": ""
+                  },
+                  "fields": [
+                    {
+                      "name": "de",
+                      "label": "Deutsch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "en",
+                      "label": "Englisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "el",
+                      "label": "Griechisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "ar",
+                      "label": "Arabisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "videos_contact",
+          "label": "Kontakt & Anfahrt",
+          "file": "apps/web/src/ministry/content/videos/contact.json",
+          "preview_path": "de/kontakt",
+          "fields": [
+            {
+              "name": "syncTranslations",
+              "label": "Änderungen in alle Sprachen übersetzen",
+              "widget": "boolean",
+              "default": true,
+              "required": false,
+              "hint": "Eine einzelne geänderte Videobeschreibung wird automatisch in die anderen Sprachen übersetzt. Das Video und seine Zuordnung gelten immer für alle vier Sprachen. Der Ton im Video wird nicht übersetzt."
+            },
+            {
+              "name": "videos",
+              "label": "Videos auf dieser Seite",
+              "widget": "list",
+              "required": false,
+              "default": [],
+              "collapsed": true,
+              "label_singular": "Video",
+              "summary": "{{fields.name}}",
+              "allow_add": true,
+              "allow_remove": true,
+              "allow_reorder": true,
+              "hint": "Video hinzufügen, Abschnitt auswählen und eine MP4-Datei hochladen. Videos erscheinen am Ende des gewählten Abschnitts in allen vier Sprachen. Die Reihenfolge lässt sich durch Ziehen ändern. Das Video selbst wird nicht übersetzt.",
+              "fields": [
+                {
+                  "name": "id",
+                  "label": "Video-ID",
+                  "widget": "hidden",
+                  "required": false,
+                  "default": ""
+                },
+                {
+                  "name": "name",
+                  "label": "Bezeichnung im Editor",
+                  "widget": "string",
+                  "default": "Neues Video",
+                  "hint": "Nur zur Übersicht im CMS, z. B. Bericht vom Sommercamp."
+                },
+                {
+                  "name": "section",
+                  "label": "Abschnitt auf der Seite",
+                  "widget": "select",
+                  "options": [
+                    {
+                      "label": "Kontakt",
+                      "value": "kontakt"
+                    },
+                    {
+                      "label": "Adresse",
+                      "value": "adresse"
+                    },
+                    {
+                      "label": "Google Maps / Anfahrt",
+                      "value": "anfahrt"
+                    },
+                    {
+                      "label": "Social Media",
+                      "value": "social-media"
+                    }
+                  ],
+                  "default": "kontakt"
+                },
+                {
+                  "name": "src",
+                  "label": "Videodatei (MP4)",
+                  "widget": "file",
+                  "media_folder": "/apps/web/public/videos",
+                  "public_folder": "/videos",
+                  "choose_url": false,
+                  "media_library": {
+                    "allow_multiple": false,
+                    "config": {
+                      "max_file_size": 52428800
+                    }
+                  },
+                  "pattern": [
+                    "^[^/\\\\?#]+[.][mM][pP]4$",
+                    "Bitte eine MP4-Datei aus dem Video-Ordner auswählen."
+                  ],
+                  "hint": "MP4 mit H.264-Video und AAC-Ton, höchstens 50 MiB pro Datei. Die Wiedergabe startet erst nach einem Klick. Zum Entfernen den gesamten Video-Eintrag löschen."
+                },
+                {
+                  "name": "poster",
+                  "label": "Vorschaubild",
+                  "widget": "image",
+                  "required": false,
+                  "choose_url": false,
+                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
+                },
+                {
+                  "name": "caption",
+                  "label": "Videobeschreibung je Sprache",
+                  "widget": "object",
+                  "collapsed": true,
+                  "required": false,
+                  "hint": "Eine Beschreibung in Deutsch, Englisch, Griechisch oder Arabisch eintragen. Bei eingeschalteter Übersetzung werden die anderen Sprachen automatisch ergänzt. Mehrere gleichzeitig bearbeitete Sprachfassungen bleiben wie eingegeben.",
+                  "default": {
+                    "de": "",
+                    "en": "",
+                    "el": "",
+                    "ar": ""
+                  },
+                  "fields": [
+                    {
+                      "name": "de",
+                      "label": "Deutsch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "en",
+                      "label": "Englisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "el",
+                      "label": "Griechisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "ar",
+                      "label": "Arabisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "videos_legal",
+          "label": "Rechtliches",
+          "file": "apps/web/src/ministry/content/videos/legal.json",
+          "preview_path": "de/rechtliches",
+          "fields": [
+            {
+              "name": "syncTranslations",
+              "label": "Änderungen in alle Sprachen übersetzen",
+              "widget": "boolean",
+              "default": true,
+              "required": false,
+              "hint": "Eine einzelne geänderte Videobeschreibung wird automatisch in die anderen Sprachen übersetzt. Das Video und seine Zuordnung gelten immer für alle vier Sprachen. Der Ton im Video wird nicht übersetzt."
+            },
+            {
+              "name": "videos",
+              "label": "Videos auf dieser Seite",
+              "widget": "list",
+              "required": false,
+              "default": [],
+              "collapsed": true,
+              "label_singular": "Video",
+              "summary": "{{fields.name}}",
+              "allow_add": true,
+              "allow_remove": true,
+              "allow_reorder": true,
+              "hint": "Video hinzufügen, Abschnitt auswählen und eine MP4-Datei hochladen. Videos erscheinen am Ende des gewählten Abschnitts in allen vier Sprachen. Die Reihenfolge lässt sich durch Ziehen ändern. Das Video selbst wird nicht übersetzt.",
+              "fields": [
+                {
+                  "name": "id",
+                  "label": "Video-ID",
+                  "widget": "hidden",
+                  "required": false,
+                  "default": ""
+                },
+                {
+                  "name": "name",
+                  "label": "Bezeichnung im Editor",
+                  "widget": "string",
+                  "default": "Neues Video",
+                  "hint": "Nur zur Übersicht im CMS, z. B. Bericht vom Sommercamp."
+                },
+                {
+                  "name": "section",
+                  "label": "Abschnitt auf der Seite",
+                  "widget": "select",
+                  "options": [
+                    {
+                      "label": "Impressum",
+                      "value": "impressum"
+                    },
+                    {
+                      "label": "Datenschutz",
+                      "value": "datenschutz"
+                    }
+                  ],
+                  "default": "impressum"
+                },
+                {
+                  "name": "src",
+                  "label": "Videodatei (MP4)",
+                  "widget": "file",
+                  "media_folder": "/apps/web/public/videos",
+                  "public_folder": "/videos",
+                  "choose_url": false,
+                  "media_library": {
+                    "allow_multiple": false,
+                    "config": {
+                      "max_file_size": 52428800
+                    }
+                  },
+                  "pattern": [
+                    "^[^/\\\\?#]+[.][mM][pP]4$",
+                    "Bitte eine MP4-Datei aus dem Video-Ordner auswählen."
+                  ],
+                  "hint": "MP4 mit H.264-Video und AAC-Ton, höchstens 50 MiB pro Datei. Die Wiedergabe startet erst nach einem Klick. Zum Entfernen den gesamten Video-Eintrag löschen."
+                },
+                {
+                  "name": "poster",
+                  "label": "Vorschaubild",
+                  "widget": "image",
+                  "required": false,
+                  "choose_url": false,
+                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
+                },
+                {
+                  "name": "caption",
+                  "label": "Videobeschreibung je Sprache",
+                  "widget": "object",
+                  "collapsed": true,
+                  "required": false,
+                  "hint": "Eine Beschreibung in Deutsch, Englisch, Griechisch oder Arabisch eintragen. Bei eingeschalteter Übersetzung werden die anderen Sprachen automatisch ergänzt. Mehrere gleichzeitig bearbeitete Sprachfassungen bleiben wie eingegeben.",
+                  "default": {
+                    "de": "",
+                    "en": "",
+                    "el": "",
+                    "ar": ""
+                  },
+                  "fields": [
+                    {
+                      "name": "de",
+                      "label": "Deutsch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "en",
+                      "label": "Englisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "el",
+                      "label": "Griechisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "ar",
+                      "label": "Arabisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "videos_imprint",
+          "label": "Impressum",
+          "file": "apps/web/src/ministry/content/videos/imprint.json",
+          "preview_path": "de/impressum",
+          "fields": [
+            {
+              "name": "syncTranslations",
+              "label": "Änderungen in alle Sprachen übersetzen",
+              "widget": "boolean",
+              "default": true,
+              "required": false,
+              "hint": "Eine einzelne geänderte Videobeschreibung wird automatisch in die anderen Sprachen übersetzt. Das Video und seine Zuordnung gelten immer für alle vier Sprachen. Der Ton im Video wird nicht übersetzt."
+            },
+            {
+              "name": "videos",
+              "label": "Videos auf dieser Seite",
+              "widget": "list",
+              "required": false,
+              "default": [],
+              "collapsed": true,
+              "label_singular": "Video",
+              "summary": "{{fields.name}}",
+              "allow_add": true,
+              "allow_remove": true,
+              "allow_reorder": true,
+              "hint": "Video hinzufügen, Abschnitt auswählen und eine MP4-Datei hochladen. Videos erscheinen am Ende des gewählten Abschnitts in allen vier Sprachen. Die Reihenfolge lässt sich durch Ziehen ändern. Das Video selbst wird nicht übersetzt.",
+              "fields": [
+                {
+                  "name": "id",
+                  "label": "Video-ID",
+                  "widget": "hidden",
+                  "required": false,
+                  "default": ""
+                },
+                {
+                  "name": "name",
+                  "label": "Bezeichnung im Editor",
+                  "widget": "string",
+                  "default": "Neues Video",
+                  "hint": "Nur zur Übersicht im CMS, z. B. Bericht vom Sommercamp."
+                },
+                {
+                  "name": "section",
+                  "label": "Abschnitt auf der Seite",
+                  "widget": "select",
+                  "options": [
+                    {
+                      "label": "Anbieter",
+                      "value": "anbieter"
+                    },
+                    {
+                      "label": "Vertretung / Verantwortliche",
+                      "value": "verantwortung"
+                    },
+                    {
+                      "label": "Kontakt aufnehmen",
+                      "value": "kontakt"
+                    }
+                  ],
+                  "default": "anbieter"
+                },
+                {
+                  "name": "src",
+                  "label": "Videodatei (MP4)",
+                  "widget": "file",
+                  "media_folder": "/apps/web/public/videos",
+                  "public_folder": "/videos",
+                  "choose_url": false,
+                  "media_library": {
+                    "allow_multiple": false,
+                    "config": {
+                      "max_file_size": 52428800
+                    }
+                  },
+                  "pattern": [
+                    "^[^/\\\\?#]+[.][mM][pP]4$",
+                    "Bitte eine MP4-Datei aus dem Video-Ordner auswählen."
+                  ],
+                  "hint": "MP4 mit H.264-Video und AAC-Ton, höchstens 50 MiB pro Datei. Die Wiedergabe startet erst nach einem Klick. Zum Entfernen den gesamten Video-Eintrag löschen."
+                },
+                {
+                  "name": "poster",
+                  "label": "Vorschaubild",
+                  "widget": "image",
+                  "required": false,
+                  "choose_url": false,
+                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
+                },
+                {
+                  "name": "caption",
+                  "label": "Videobeschreibung je Sprache",
+                  "widget": "object",
+                  "collapsed": true,
+                  "required": false,
+                  "hint": "Eine Beschreibung in Deutsch, Englisch, Griechisch oder Arabisch eintragen. Bei eingeschalteter Übersetzung werden die anderen Sprachen automatisch ergänzt. Mehrere gleichzeitig bearbeitete Sprachfassungen bleiben wie eingegeben.",
+                  "default": {
+                    "de": "",
+                    "en": "",
+                    "el": "",
+                    "ar": ""
+                  },
+                  "fields": [
+                    {
+                      "name": "de",
+                      "label": "Deutsch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "en",
+                      "label": "Englisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "el",
+                      "label": "Griechisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "ar",
+                      "label": "Arabisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "videos_privacy",
+          "label": "Datenschutz",
+          "file": "apps/web/src/ministry/content/videos/privacy.json",
+          "preview_path": "de/datenschutz",
+          "fields": [
+            {
+              "name": "syncTranslations",
+              "label": "Änderungen in alle Sprachen übersetzen",
+              "widget": "boolean",
+              "default": true,
+              "required": false,
+              "hint": "Eine einzelne geänderte Videobeschreibung wird automatisch in die anderen Sprachen übersetzt. Das Video und seine Zuordnung gelten immer für alle vier Sprachen. Der Ton im Video wird nicht übersetzt."
+            },
+            {
+              "name": "videos",
+              "label": "Videos auf dieser Seite",
+              "widget": "list",
+              "required": false,
+              "default": [],
+              "collapsed": true,
+              "label_singular": "Video",
+              "summary": "{{fields.name}}",
+              "allow_add": true,
+              "allow_remove": true,
+              "allow_reorder": true,
+              "hint": "Video hinzufügen, Abschnitt auswählen und eine MP4-Datei hochladen. Videos erscheinen am Ende des gewählten Abschnitts in allen vier Sprachen. Die Reihenfolge lässt sich durch Ziehen ändern. Das Video selbst wird nicht übersetzt.",
+              "fields": [
+                {
+                  "name": "id",
+                  "label": "Video-ID",
+                  "widget": "hidden",
+                  "required": false,
+                  "default": ""
+                },
+                {
+                  "name": "name",
+                  "label": "Bezeichnung im Editor",
+                  "widget": "string",
+                  "default": "Neues Video",
+                  "hint": "Nur zur Übersicht im CMS, z. B. Bericht vom Sommercamp."
+                },
+                {
+                  "name": "section",
+                  "label": "Abschnitt auf der Seite",
+                  "widget": "select",
+                  "options": [
+                    {
+                      "label": "Verantwortliche Stelle",
+                      "value": "verantwortlicher"
+                    },
+                    {
+                      "label": "Kontakt und Nachrichten",
+                      "value": "kontaktformular"
+                    },
+                    {
+                      "label": "Externe Dienste",
+                      "value": "externe-dienste"
+                    },
+                    {
+                      "label": "Spracheinstellung",
+                      "value": "spracheinstellung"
+                    },
+                    {
+                      "label": "Datenschutzrechte und Kontakt",
+                      "value": "rechte"
+                    }
+                  ],
+                  "default": "verantwortlicher"
+                },
+                {
+                  "name": "src",
+                  "label": "Videodatei (MP4)",
+                  "widget": "file",
+                  "media_folder": "/apps/web/public/videos",
+                  "public_folder": "/videos",
+                  "choose_url": false,
+                  "media_library": {
+                    "allow_multiple": false,
+                    "config": {
+                      "max_file_size": 52428800
+                    }
+                  },
+                  "pattern": [
+                    "^[^/\\\\?#]+[.][mM][pP]4$",
+                    "Bitte eine MP4-Datei aus dem Video-Ordner auswählen."
+                  ],
+                  "hint": "MP4 mit H.264-Video und AAC-Ton, höchstens 50 MiB pro Datei. Die Wiedergabe startet erst nach einem Klick. Zum Entfernen den gesamten Video-Eintrag löschen."
+                },
+                {
+                  "name": "poster",
+                  "label": "Vorschaubild",
+                  "widget": "image",
+                  "required": false,
+                  "choose_url": false,
+                  "hint": "JPG, PNG oder WebP hochladen. Das Bild wird nach der Veröffentlichung auf der Website verwendet. Das Feld darf leer bleiben, um dieses Bild auszublenden."
+                },
+                {
+                  "name": "caption",
+                  "label": "Videobeschreibung je Sprache",
+                  "widget": "object",
+                  "collapsed": true,
+                  "required": false,
+                  "hint": "Eine Beschreibung in Deutsch, Englisch, Griechisch oder Arabisch eintragen. Bei eingeschalteter Übersetzung werden die anderen Sprachen automatisch ergänzt. Mehrere gleichzeitig bearbeitete Sprachfassungen bleiben wie eingegeben.",
+                  "default": {
+                    "de": "",
+                    "en": "",
+                    "el": "",
+                    "ar": ""
+                  },
+                  "fields": [
+                    {
+                      "name": "de",
+                      "label": "Deutsch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "en",
+                      "label": "Englisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "el",
+                      "label": "Griechisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "ar",
+                      "label": "Arabisch",
+                      "widget": "text",
+                      "required": false,
+                      "default": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "Seite auswählen, Video hinzufügen und eine MP4-Datei vom Computer hochladen. Neu angelegte Abschnitte werden nach Veröffentlichung und Neuladen des CMS zur Auswahl angeboten."
     },
     {
       "name": "documents",

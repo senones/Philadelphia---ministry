@@ -3,6 +3,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 const root = new URL('../', import.meta.url);
 const content = 'apps/web/src/ministry/content/';
 const read = async path => JSON.parse(await readFile(new URL(path, root), 'utf8'));
+const readOptional = async path => { try { return await read(path); } catch (error) { if (error.code === 'ENOENT') return null; throw error; } };
 const structure = await read(`${content}structure.json`);
 const ui = await read(`${content}ui/de.json`);
 const labelNames = {
@@ -153,6 +154,43 @@ collections.push({
   name: 'galleries', label: 'Zusätzliche Bilder', format: 'json', files: galleryFiles,
   description: 'Seite und Abschnitt auswählen, zusätzliche Bilder hochladen, anordnen und veröffentlichen. Die Vorschau zeigt die zusätzlichen Bilder mit deutschen Bildunterschriften.',
 });
+const videoFiles = [];
+for (const page of structure.pages) {
+  const german = await read(`${content}pages/${page.id}.de.json`);
+  const sectionNames = new Map(page.sections.map(section => [section.id, german.sections[section.id].title]));
+  for (const locale of Object.keys(locales)) {
+    const data = locale === 'de' ? german : await read(`${content}pages/${page.id}.${locale}.json`);
+    for (const section of data.extraSections || []) if (!sectionNames.has(section.id)) sectionNames.set(section.id, section.title || section.id);
+  }
+  const saved = await readOptional(`${content}videos/${page.id}.json`);
+  for (const video of saved?.videos || []) if (!sectionNames.has(video.section)) sectionNames.set(video.section, `Entfernter Abschnitt: ${video.section}`);
+  videoFiles.push({
+    name: `videos_${page.id}`, label: german.title, file: `${content}videos/${page.id}.json`,
+    preview_path: `de${page.path === '/' ? '' : page.path}`,
+    fields: [{ ...automatic(), hint: 'Eine einzelne geänderte Videobeschreibung wird automatisch in die anderen Sprachen übersetzt. Das Video und seine Zuordnung gelten immer für alle vier Sprachen. Der Ton im Video wird nicht übersetzt.' }, field('videos', 'Videos auf dieser Seite', 'list', {
+      required: false, default: [], collapsed: true, label_singular: 'Video', summary: '{{fields.name}}',
+      allow_add: true, allow_remove: true, allow_reorder: true,
+      hint: 'Video hinzufügen, Abschnitt auswählen und eine MP4-Datei hochladen. Videos erscheinen am Ende des gewählten Abschnitts in allen vier Sprachen. Die Reihenfolge lässt sich durch Ziehen ändern. Das Video selbst wird nicht übersetzt.',
+      fields: [
+        field('id', 'Video-ID', 'hidden', { required: false, default: '' }),
+        field('name', 'Bezeichnung im Editor', 'string', { default: 'Neues Video', hint: 'Nur zur Übersicht im CMS, z. B. Bericht vom Sommercamp.' }),
+        field('section', 'Abschnitt auf der Seite', 'select', { options: [...sectionNames].map(([value, label]) => ({ label, value })), default: page.sections[0].id }),
+        field('src', 'Videodatei (MP4)', 'file', {
+          media_folder: '/apps/web/public/videos', public_folder: '/videos', choose_url: false,
+          media_library: { allow_multiple: false, config: { max_file_size: 50 * 1024 * 1024 } },
+          // Decap validates file-widget patterns against the basename, not the saved path.
+          pattern: ['^[^/\\\\?#]+[.][mM][pP]4$', 'Bitte eine MP4-Datei aus dem Video-Ordner auswählen.'],
+          hint: 'MP4 mit H.264-Video und AAC-Ton, höchstens 50 MiB pro Datei. Die Wiedergabe startet erst nach einem Klick. Zum Entfernen den gesamten Video-Eintrag löschen.',
+        }),
+        image('poster', 'Vorschaubild', true),
+        translatedOptional('caption', 'Videobeschreibung je Sprache', 'Eine Beschreibung in Deutsch, Englisch, Griechisch oder Arabisch eintragen. Bei eingeschalteter Übersetzung werden die anderen Sprachen automatisch ergänzt. Mehrere gleichzeitig bearbeitete Sprachfassungen bleiben wie eingegeben.'),
+      ],
+    })],
+  });
+}
+collections.push({ name: 'videos', label: 'Videos', format: 'json', files: videoFiles,
+  description: 'Seite auswählen, Video hinzufügen und eine MP4-Datei vom Computer hochladen. Neu angelegte Abschnitte werden nach Veröffentlichung und Neuladen des CMS zur Auswahl angeboten.',
+});
 const documents = await read(`${content}documents.json`);
 collections.push({ name: 'documents', label: 'PDF-Dokumente', format: 'json', editor: { preview: false }, files: [
   { name: 'documents', label: 'Berichte & PDF-Vorschauen', file: `${content}documents.json`, fields: [
@@ -175,4 +213,4 @@ const schema = {
   collections,
 };
 await writeFile(new URL('apps/web/public/admin/collections.json', root), `${JSON.stringify(schema, null, 2)}\n`);
-console.log('CMS schema: four languages, 11 pages each, contact details, fixed images, section galleries and PDFs.');
+console.log('CMS schema: four languages, 11 pages each, contact details, fixed images, section galleries, videos and PDFs.');

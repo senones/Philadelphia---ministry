@@ -4,10 +4,13 @@ export function orderedSections(fixed, extra = []) {
   const at = anchor => extra.filter(section => (ids.has(section.after) ? section.after : '') === anchor);
   return [...at(''), ...fixed.flatMap(section => [section, ...at(section.id)])];
 }
-export function buildContent({ structure, translations, labels, settings, media, documentData, galleries = {} }) {
+export function buildContent({ structure, translations, labels, settings, media, documentData, galleries = {}, videoData = {} }) {
   const locales = structure.languages.map(language => language.code);
   const translated = getValue => Object.fromEntries(locales.map(locale => [locale, getValue(locale)]));
   const allPages = structure.pages.map(page => {
+    const videosIn = sectionId => (videoData[page.id]?.videos ?? [])
+      .filter(video => video.section === sectionId)
+      .map(video => ({ ...video, caption: translated(locale => video.caption?.[locale] ?? '') }));
     const extras = new Map();
     for (const locale of locales) for (const section of translations[`${page.id}.${locale}`].extraSections ?? []) {
       if (!extras.has(section.id)) extras.set(section.id, section);
@@ -15,6 +18,7 @@ export function buildContent({ structure, translations, labels, settings, media,
     const extraIn = (id, locale) => translations[`${page.id}.${locale}`].extraSections?.find(section => section.id === id);
     const additional = [...extras.values()].map(section => ({
       id: section.id, after: section.after,
+      videos: videosIn(section.id),
       available: translated(locale => Boolean(extraIn(section.id, locale)) && extraIn(section.id, locale).untranslated !== true),
       ...Object.fromEntries(['title', 'body', 'pending'].map(key => [key, translated(locale => extraIn(section.id, locale)?.[key] ?? (key === 'pending' ? true : ''))])),
       gallery: {
@@ -30,6 +34,7 @@ export function buildContent({ structure, translations, labels, settings, media,
     ...Object.fromEntries(['title', 'heading', 'intro'].map(key => [key, translated(locale => translations[`${page.id}.${locale}`][key])])),
     sections: orderedSections(page.sections.map(section => ({
       ...section,
+      videos: videosIn(section.id),
       ...Object.fromEntries(['title', 'body', 'pending'].map(key => [key, translated(locale => translations[`${page.id}.${locale}`].sections[section.id][key])])),
       gallery: {
         position: galleries[page.id]?.sections?.[section.id]?.position ?? 'after',
