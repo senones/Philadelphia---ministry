@@ -30,5 +30,15 @@
     }
   },
   "syncTranslations": true,
-  "extraSections": []
+  "extraSections": [
+    {
+      "id": "extra-9eb82798-eef8-4d7f-a089-a39ebc1b7c60",
+      "untranslated": false,
+      "after": "mitmachen",
+      "pending": false,
+      "images": [],
+      "title": "Das ist ein neuer Abschnitt",
+      "body": "TEST TEST"
+    }
+  ]
 }

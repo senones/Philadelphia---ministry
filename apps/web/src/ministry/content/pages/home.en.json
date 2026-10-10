@@ -29,5 +29,15 @@
       "pending": false
     }
   },
-  "extraSections": []
+  "extraSections": [
+    {
+      "id": "extra-9eb82798-eef8-4d7f-a089-a39ebc1b7c60",
+      "title": "This is a new section",
+      "body": "TEST TEST",
+      "pending": false,
+      "untranslated": false,
+      "images": [],
+      "after": "mitmachen"
+    }
+  ]
 }
