@@ -12,6 +12,39 @@
     }
     if (!window.CMS || !window.h || !window.PhiladelphiaSync) throw new Error('Editor unavailable');
     const h = window.h;
+    // Keep the existing object-shaped content files, but provide native list removal controls.
+    const ListControl = window.CMS.getWidget('list').control;
+    window.CMS.registerWidget('fixed-sections', function FixedSectionsControl(props) {
+      const value = props.value || props.field.get('default');
+      const definitions = props.field.get('fields');
+      const hidden = name => definitions.first().get('fields').first()
+        .set('name', name).set('widget', 'hidden').set('required', false);
+      const listField = props.field.set('widget', 'list').set('required', false)
+        .set('allow_add', false).set('allow_remove', true).set('allow_reorder', false)
+        .set('collapsed', true).set('summary', '{{fields.__fixedLabel}}')
+        .set('fields', definitions.first().get('fields').unshift(hidden('__fixedId'), hidden('__fixedLabel')));
+      const items = definitions.filter(definition => value.has(definition.get('name'))).map(definition => {
+        const id = definition.get('name');
+        return value.get(id).set('__fixedId', id).set('__fixedLabel', definition.get('label'));
+      });
+      const missing = definitions.filter(definition => !value.has(definition.get('name')));
+      return h('div', {},
+        h(ListControl, { ...props, field: listField, value: items, onChange(next) {
+          props.onChange(next.reduce((result, item) => result.set(item.get('__fixedId'), item.delete('__fixedId').delete('__fixedLabel')), value.clear()));
+        } }),
+        missing.size > 0 && h('label', { style: { display: 'block', marginTop: '12px' } },
+          'Entfernten Abschnitt wieder hinzufügen',
+          h('select', { 'aria-label': 'Entfernten Abschnitt wieder hinzufügen', value: '',
+            style: { display: 'block', width: '100%', padding: '10px', marginTop: '6px' },
+            onChange(event) {
+              const id = event.target.value;
+              const definition = definitions.find(item => item.get('name') === id);
+              if (definition) props.onChange(value.set(id, value.clear().set('title', definition.get('label')).set('body', '').set('pending', false)));
+            },
+          }, h('option', { value: '' }, 'Abschnitt auswählen …'), ...missing.map(definition => h('option', { key: definition.get('name'), value: definition.get('name') }, definition.get('label')))),
+        ),
+      );
+    });
     const notice = document.getElementById('translation-status');
     const noticeText = document.getElementById('translation-message');
     const showNotice = (state, text) => { notice.hidden = false; notice.dataset.state = state; noticeText.textContent = text; };
@@ -30,6 +63,10 @@
     });
     window.PhiladelphiaSync.install(window.CMS, {
       defaultAutomatic: Boolean(result.translation?.enabled),
+      fixedSections: Object.fromEntries(result.config.collections.flatMap(collection => (collection.files || []).flatMap(file => {
+        const sections = file.fields.find(field => field.name === 'sections' && field.widget === 'fixed-sections');
+        return sections ? [[file.file, sections.fields.map(field => field.name)]] : [];
+      }))),
       onStatus: showNotice,
       onSaved(paths, source) {
         const sourceLocale = window.PhiladelphiaSync.identify(source)?.locale;
@@ -61,11 +98,14 @@
           return h('article', { className: 'page-preview', dir: locale === 'ar' ? 'rtl' : 'ltr', lang: locale },
             h('header', {}, h('p', { className: 'eyebrow' }, data.title), h('h1', {}, data.heading), h('p', { className: 'intro' }, data.intro)),
             ...at(''),
-            ...Object.entries(data.sections || {}).flatMap(([key, section]) => [h('section', { key },
+            ...sectionFields.toArray().flatMap(definition => {
+              const key = definition.get('name'), section = data.sections?.[key];
+              return [...(section && (section.title?.trim() || section.body?.trim()) && section.untranslated !== true ? [h('section', { key },
               section.pending && h('p', { className: 'pending-label' }, pendingLabels[locale]),
               h('h2', {}, section.title),
-              h('div', { className: 'preview-body' }, widgetFor('body', sectionFields.find(field => field.get('name') === key).get('fields'), entry.getIn(['data', 'sections', key]))),
-            ), ...at(key)]),
+              h('div', { className: 'preview-body' }, widgetFor('body', definition.get('fields'), entry.getIn(['data', 'sections', key]))),
+            )] : []), ...at(key)];
+            }),
           );
         });
       }

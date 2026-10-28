@@ -22,3 +22,34 @@ test('dynamic content has localized text, captions, visibility and a stable menu
   assert.equal(sections[1].available.ar, false); assert.equal(sections[1].available.el, true);
   assert(!Object.hasOwn(content.ui, 'syncTranslations'));
 });
+
+test('removed fixed sections are hidden per language without removing adjacent extras or their media', () => {
+  const locales = ['de', 'en', 'el', 'ar'];
+  const structure = { languages: locales.map(code => ({ code })), mainPageCount: 1, pages: [{ id: 'home', sections: [{ id: 'first' }, { id: 'second', kind: 'contact' }] }] };
+  const translations = Object.fromEntries(locales.map(locale => [`home.${locale}`, {
+    title: locale, heading: locale, intro: locale, sections: {
+      ...(locale === 'ar' ? { first: { title: 'عنوان', body: 'نص', pending: false } } : {}),
+      second: { title: 'Kontakt', body: 'Text', pending: false },
+    }, extraSections: [{ id: 'extra-next-1234', after: 'first', title: 'Extra', body: 'Weiterer Text', pending: false }],
+  }]));
+  const content = buildContent({ structure, translations, labels: Object.fromEntries(locales.map(locale => [locale, { menu: locale }])), settings: {}, media: {}, documentData: { letter: {} },
+    galleries: { home: { sections: { first: { images: [{ src: '/media/kept.jpg' }] } } } },
+    videoData: { home: { videos: [{ id: 'video-kept-1234', section: 'first', src: '/videos/kept.mp4' }] } },
+  });
+  const sections = content.pages[0].sections;
+  assert.deepEqual(sections.map(section => section.id), ['first', 'extra-next-1234', 'second']);
+  assert.equal(sections[0].available.de, false);
+  assert.equal(sections[0].available.ar, true);
+  assert.equal(sections[0].body.de, '');
+  assert.equal(sections[0].gallery.images[0].src, '/media/kept.jpg');
+  assert.equal(sections[0].videos[0].src, '/videos/kept.mp4');
+  assert.equal(sections[2].kind, 'contact');
+  assert.deepEqual(sections.filter(section => section.available.de).map(section => section.id), ['extra-next-1234', 'second']);
+});
+
+test('cleared fixed sections do not leave empty headings or pending placeholders', () => {
+  const structure = { languages: [{ code: 'de' }], mainPageCount: 1, pages: [{ id: 'home', sections: [{ id: 'empty' }] }] };
+  const content = buildContent({ structure, translations: { 'home.de': { title: 'Seite', heading: 'Seite', intro: 'Text', sections: { empty: { title: ' ', body: '', pending: true } } } },
+    labels: { de: { menu: 'Menü' } }, settings: {}, media: {}, documentData: { letter: {} } });
+  assert.equal(content.pages[0].sections[0].available.de, false);
+});

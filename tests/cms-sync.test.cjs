@@ -57,6 +57,50 @@ test('unchanged source content does not retranslate other languages', () => {
   assert.equal(plan.texts.length, 0);
   assert.deepEqual(normalize(plan.documents), docs);
 });
+
+for (const locale of ['de', 'el']) for (const automatic of [true, false]) {
+  test(`removing a fixed section in ${locale} removes it in every language, automatic=${automatic}`, () => {
+    const docs = documents();
+    for (const language of sync.locales) docs[language].extraSections = [extra('next-1234', `${language} Zusätzlich`, 'geschichte')];
+    const source = clone(docs[locale]);
+    delete source.sections.geschichte;
+    const plan = sync.pagePlan({ locale, before: docs[locale], source, translations: docs, automatic });
+    assert.equal(plan.texts.length, 0, 'removal needs no translation service');
+    for (const language of sync.locales) {
+      assert(!Object.hasOwn(plan.documents[language].sections, 'geschichte'));
+      assert.equal(plan.documents[language].sections.vision.body, docs[language].sections.vision.body);
+      assert.equal(plan.documents[language].extraSections[0].title, docs[language].extraSections[0].title);
+      assert.equal(plan.documents[language].extraSections[0].after, 'geschichte');
+    }
+    const again = sync.pagePlan({ locale, before: plan.documents[locale], source: plan.documents[locale], translations: plan.documents, automatic });
+    assert.equal(again.texts.length, 0);
+  });
+}
+
+test('all fixed sections can be removed while a new section can still use a fixed anchor', () => {
+  const docs = documents(), source = clone(docs.de);
+  source.sections = {};
+  const removed = sync.pagePlan({ locale: 'de', before: docs.de, source, translations: docs, automatic: false });
+  for (const language of sync.locales) assert.deepEqual(normalize(removed.documents[language].sections), {});
+  const edited = clone(removed.documents.de);
+  edited.extraSections = [extra('after-delete-1234', 'Neue Arbeit', 'geschichte')];
+  const added = sync.pagePlan({ locale: 'de', before: removed.documents.de, source: edited, translations: removed.documents, automatic: false, sectionIds: ['geschichte', 'vision'] });
+  assert.equal(added.documents.en.extraSections[0].after, 'geschichte');
+});
+
+test('restoring a fixed section translates it or leaves missing translations hidden in manual mode', () => {
+  const docs = documents();
+  for (const language of sync.locales) delete docs[language].sections.geschichte;
+  const source = clone(docs.de);
+  source.sections.geschichte = { title: 'Geschichte', body: 'Wiederhergestellt', pending: false };
+  const manual = sync.pagePlan({ locale: 'de', before: docs.de, source, translations: docs, automatic: false });
+  assert.equal(manual.documents.en.sections.geschichte.untranslated, true);
+  assert.equal(manual.documents.en.sections.geschichte.body, '');
+  const automatic = sync.pagePlan({ locale: 'de', before: source, source, translations: manual.documents });
+  sync.applyTranslations(automatic, translated(automatic));
+  assert.equal(automatic.documents.ar.sections.geschichte.body, 'ar: Wiederhergestellt');
+  assert.equal(automatic.documents.ar.sections.geschichte.untranslated, false);
+});
 test('new sections, positions, images and translated captions are created in all languages', () => {
   const docs = documents(), source = clone(docs.de);
   source.extraSections = [extra('first-1234', 'Familientreffen'), extra('second-1234', 'Gemeinschaft')];

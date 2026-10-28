@@ -35,7 +35,11 @@ export function buildContent({ structure, translations, labels, settings, media,
     sections: orderedSections(page.sections.map(section => ({
       ...section,
       videos: videosIn(section.id),
-      ...Object.fromEntries(['title', 'body', 'pending'].map(key => [key, translated(locale => translations[`${page.id}.${locale}`].sections[section.id][key])])),
+      available: translated(locale => {
+        const entry = translations[`${page.id}.${locale}`].sections?.[section.id];
+        return Boolean(entry && entry.untranslated !== true && (entry.title?.trim() || entry.body?.trim()));
+      }),
+      ...Object.fromEntries(['title', 'body', 'pending'].map(key => [key, translated(locale => translations[`${page.id}.${locale}`].sections?.[section.id]?.[key] ?? (key === 'pending' ? false : ''))])),
       gallery: {
         position: galleries[page.id]?.sections?.[section.id]?.position ?? 'after',
         layout: galleries[page.id]?.sections?.[section.id]?.layout ?? 'grid',

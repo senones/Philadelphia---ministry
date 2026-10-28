@@ -33,6 +33,8 @@ const translatedOptional = (name, label, hint) => field(name, label, 'object', {
   fields: Object.entries(locales).map(([locale, label]) => field(locale, label, 'text', { required: false, default: '' })),
 });
 const collections = [];
+const sectionLabel = (section, german) => german.sections?.[section.id]?.title?.trim()
+  || section.id.replaceAll('-', ' ').replace(/^./, letter => letter.toLocaleUpperCase('de'));
 const automatic = () => field('syncTranslations', 'Änderungen in alle Sprachen übersetzen', 'boolean', {
   default: true, required: false,
   hint: 'Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt.',
@@ -56,12 +58,14 @@ for (const [locale, label] of Object.entries(locales)) {
         field('title', 'Name im Menü'),
         field('heading', 'Große Überschrift'),
         field('intro', 'Einleitung', 'text'),
-        field('sections', 'Abschnitte', 'object', {
-          fields: page.sections.map(section => field(section.id, german.sections[section.id].title, 'object', {
-            collapsed: true,
+        field('sections', 'Abschnitte', 'fixed-sections', {
+          required: false, default: {},
+          hint: 'Auch diese Abschnitte können mit dem × entfernt werden. Veröffentlichen entfernt den Abschnitt in allen vier Sprachen. Bilder und Videos bleiben gespeichert. Entfernte Abschnitte können unten wieder hinzugefügt werden.',
+          fields: page.sections.map(section => field(section.id, sectionLabel(section, german), 'object', {
+            collapsed: true, required: false,
             fields: [
-              field('title', 'Überschrift'),
-              markdown(),
+              field('title', 'Überschrift', 'string', { required: false }),
+              markdown('body', 'Text', { required: false }),
               field('pending', 'Noch nicht fertig', 'boolean', { default: false, hint: 'Ausschalten, sobald dieser Text freigegeben ist. Der Hinweis „Inhalte folgen“ verschwindet dann in dieser Sprache.' }),
             ],
           })),
@@ -75,7 +79,7 @@ for (const [locale, label] of Object.entries(locales)) {
             field('untranslated', 'Übersetzung fehlt', 'hidden', { required: false, default: false }),
             field('after', 'Position auf der Seite', 'select', {
               default: page.sections.at(-1).id,
-              options: [{ label: 'Vor dem ersten Abschnitt', value: 'start' }, ...page.sections.map(section => ({ label: `Nach: ${german.sections[section.id].title}`, value: section.id }))],
+              options: [{ label: 'Vor dem ersten Abschnitt', value: 'start' }, ...page.sections.map(section => ({ label: `Nach: ${sectionLabel(section, german)}`, value: section.id }))],
             }),
             field('title', 'Überschrift', 'string', { required: false, hint: 'Neue Abschnitte brauchen eine Überschrift und einen Text. Noch fehlende Sprachfassungen können später ausgefüllt werden.' }), markdown('body', 'Text', { required: false }),
             field('pending', 'Noch nicht fertig', 'boolean', { default: false }),
@@ -124,7 +128,7 @@ for (const page of structure.pages) {
     file: `${content}galleries/${page.id}.json`,
     preview_path: `de${page.path === '/' ? '' : page.path}`,
     fields: [automatic(), field('sections', 'Abschnitt auswählen', 'object', {
-      fields: page.sections.map(section => field(section.id, german.sections[section.id].title, 'object', {
+      fields: page.sections.map(section => field(section.id, sectionLabel(section, german), 'object', {
         collapsed: true,
         fields: [
           field('position', 'Position der zusätzlichen Bilder', 'select', {
@@ -157,7 +161,7 @@ collections.push({
 const videoFiles = [];
 for (const page of structure.pages) {
   const german = await read(`${content}pages/${page.id}.de.json`);
-  const sectionNames = new Map(page.sections.map(section => [section.id, german.sections[section.id].title]));
+  const sectionNames = new Map(page.sections.map(section => [section.id, sectionLabel(section, german)]));
   for (const locale of Object.keys(locales)) {
     const data = locale === 'de' ? german : await read(`${content}pages/${page.id}.${locale}.json`);
     for (const section of data.extraSections || []) if (!sectionNames.has(section.id)) sectionNames.set(section.id, section.title || section.id);

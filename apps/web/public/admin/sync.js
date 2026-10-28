@@ -31,13 +31,13 @@
       },
     };
   }
-  function validateExtras(source) {
-    const seen = new Set(Object.keys(source.sections || {}));
+  function validateExtras(source, fixedIds) {
+    const seen = new Set(fixedIds);
     if (source.extraSections !== undefined && !Array.isArray(source.extraSections)) throw new Error('Die Liste der neuen Abschnitte ist ungültig.');
     for (const section of source.extraSections || []) {
       if (!/^extra-[a-z0-9-]{8,80}$/.test(section.id || '') || seen.has(section.id)) throw new Error('Ein neuer Abschnitt hat keine eindeutige ID. Bitte den Editor neu laden.');
       seen.add(section.id);
-      if (!['', 'start'].includes(section.after) && !Object.hasOwn(source.sections, section.after)) throw new Error('Die Position eines neuen Abschnitts ist ungültig.');
+      if (!['', 'start'].includes(section.after) && !fixedIds.has(section.after)) throw new Error('Die Position eines neuen Abschnitts ist ungültig.');
       if ((!section.title?.trim() || !section.body?.trim()) && section.untranslated !== true) throw new Error('Neue Abschnitte brauchen eine Überschrift und einen Text.');
       const images = new Set();
       for (const image of section.images || []) {
@@ -47,25 +47,42 @@
       }
     }
   }
-  function pagePlan({ locale, before, source, translations, automatic = true }) {
+  function pagePlan({ locale, before, source, translations, automatic = true, sectionIds = [] }) {
     source = clone(source);
+    source.sections ??= {};
+    const fixedIds = new Set([...sectionIds, ...Object.keys(before.sections || {}), ...Object.keys(source.sections),
+      ...Object.values(translations).flatMap(document => Object.keys(document.sections || {})),
+      ...(before.extraSections || []).map(section => section.after).filter(Boolean)]);
+    const removedIds = Object.keys(before.sections || {}).filter(id => !Object.hasOwn(source.sections, id));
+    for (const section of Object.values(source.sections)) {
+      section.title ??= ''; section.body ??= '';
+      if (section.untranslated === true && (section.title.trim() || section.body.trim())) section.untranslated = false;
+    }
     for (const section of source.extraSections || []) { section.title ??= ''; section.body ??= ''; }
-    validateExtras(source);
+    validateExtras(source, fixedIds);
     for (const section of source.extraSections || []) section.untranslated = !(section.title.trim() && section.body.trim());
     const documents = { [locale]: source }, plan = planner();
     for (const target of locales.filter(item => item !== locale)) {
       const document = clone(translations[target]);
+      document.sections ??= {};
+      // Removing a section changes the page structure, including in manual translation mode.
+      for (const id of removedIds) delete document.sections[id];
+      for (const [id, section] of Object.entries(source.sections)) {
+        if (!document.sections[id]) document.sections[id] = { title: '', body: '', pending: Boolean(section.pending), untranslated: true };
+      }
       documents[target] = document;
       if (automatic) {
         for (const key of ['title', 'heading', 'intro']) {
           if (source[key] !== before[key]) plan.add(document, target, [key], source[key]);
         }
         for (const [id, section] of Object.entries(source.sections)) {
-          if (!document.sections?.[id] || !before.sections?.[id]) throw new Error('Die vorhandenen Sprachfassungen haben unterschiedliche feste Abschnitte. Bitte die Inhaltsdateien prüfen.');
+          if (section.untranslated === true) continue;
+          const old = before.sections?.[id], missing = document.sections[id].untranslated === true;
           for (const key of ['title', 'body']) {
-            if (section[key] !== before.sections[id][key]) plan.add(document, target, ['sections', id, key], section[key]);
+            if (!old || missing || section[key] !== old[key]) plan.add(document, target, ['sections', id, key], section[key]);
           }
-          if (section.pending !== before.sections[id].pending) document.sections[id].pending = section.pending;
+          if (!old || missing || section.pending !== old.pending) document.sections[id].pending = section.pending;
+          if (missing) document.sections[id].untranslated = false;
         }
       }
       const oldById = new Map((before.extraSections || []).map(section => [section.id, section]));
@@ -205,7 +222,7 @@
     }
     return result;
   }
-  function wrapBackend(backend, { onStatus = () => {}, onSaved = () => {}, request = requestTranslations, defaultAutomatic = true } = {}) {
+  function wrapBackend(backend, { onStatus = () => {}, onSaved = () => {}, request = requestTranslations, defaultAutomatic = true, fixedSections = {} } = {}) {
     if (backend.philadelphiaSync) return backend;
     backend.philadelphiaSync = true;
     const snapshots = new Map();
@@ -231,7 +248,7 @@
         if (snapshots.has(file.path) && !equal(before, snapshots.get(file.path))) throw new Error('Diese Seite wurde inzwischen geändert. Bitte neu laden, damit keine neueren Inhalte überschrieben werden.');
         const translations = shared ? null : Object.fromEntries(locales.map(locale => [locale, records.find(record => record.path === info.pathFor(locale)).data]));
         let plan;
-        if (info.type === 'page') plan = pagePlan({ locale: info.locale, before, source, translations, automatic });
+        if (info.type === 'page') plan = pagePlan({ locale: info.locale, before, source, translations, automatic, sectionIds: fixedSections[file.path] });
         else if (info.type === 'labels') plan = labelsPlan({ locale: info.locale, before, source, translations, automatic });
         else if (info.type === 'video') plan = videoPlan({ before, source, automatic });
         else plan = galleryPlan({ before, source, automatic });

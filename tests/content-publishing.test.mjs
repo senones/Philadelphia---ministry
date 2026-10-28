@@ -148,3 +148,32 @@ test('missing linked PDF documents still fail validation', async t => {
   assert.equal(result.status, 1);
   assert.match(result.stderr, /ENOENT/);
 });
+
+test('deleting fixed sections publishes successfully and the editor schema still generates', async t => {
+  const f = await fixture(t);
+  for (const locale of ['de', 'en', 'el', 'ar']) {
+    const page = await f.read(`pages/home.${locale}.json`);
+    page.sections = {};
+    page.extraSections = [{ id: 'extra-preserved-1234', after: 'welcome', title: 'Bleibt erhalten', body: 'Dieser Text bleibt bestehen.', pending: false, images: [] }];
+    await f.write(`pages/home.${locale}.json`, page);
+  }
+  assert.equal(f.run().status, 0);
+  const generated = f.run('generate-cms-schema.mjs');
+  assert.equal(generated.status, 0, generated.stderr);
+  const schema = JSON.parse(await readFile(path.join(f.root, 'apps/web/public/admin/collections.json'), 'utf8'));
+  assert.equal(schema.collections[0].files[0].fields.find(field => field.name === 'sections').widget, 'fixed-sections');
+});
+
+test('clearing a fixed section is accepted but malformed values and unknown section IDs are rejected', async t => {
+  const f = await fixture(t), page = await f.read('pages/home.de.json');
+  page.sections.welcome.title = ''; page.sections.welcome.body = '';
+  await f.write('pages/home.de.json', page);
+  assert.equal(f.run().status, 0);
+  page.sections.welcome.body = 42;
+  await f.write('pages/home.de.json', page);
+  assert.equal(f.run().status, 1);
+  page.sections.welcome.body = '';
+  page.sections.unknown = { title: 'Titel', body: 'Text', pending: false };
+  await f.write('pages/home.de.json', page);
+  assert.match(f.run().stderr, /unbekannter fester Abschnitt/);
+});

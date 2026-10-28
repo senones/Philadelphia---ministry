@@ -37,12 +37,14 @@ function AdditionalImages({ gallery }) {
   </div>;
 }
 function PageSection({ section, pageId }) {
-  const { t, href } = useLocale();
+  const { t, href, locale } = useLocale();
+  const languageSection = pages.find(page => page.id === 'work').sections.find(section => section.id === 'sprachkurse');
+  const campSection = pages.find(page => page.id === 'news').sections.find(section => section.id === 'sommercamps');
   const projects = [
     { title: pages.find(page => page.id === 'bayt').title, image: assets.bayt, to: href('bayt') },
-    { title: pages.find(page => page.id === 'work').sections.find(section => section.id === 'sprachkurse').title, image: assets.language, to: href('work', 'sprachkurse') },
-    { title: pages.find(page => page.id === 'news').sections.find(section => section.id === 'sommercamps').title, image: assets.camp, to: href('news', 'sommercamps') },
-  ];
+    { title: languageSection.title, image: assets.language, to: href('work', 'sprachkurse'), section: languageSection },
+    { title: campSection.title, image: assets.camp, to: href('news', 'sommercamps'), section: campSection },
+  ].filter(project => project.section?.available?.[locale] !== false);
   return <section id={section.id} className={`content-section section-${section.kind || 'text'} ${section.image ? 'has-image' : ''}`}>
     <div className="section-heading"><div>
       {t(section.pending) && <span className="pending-label">{t(ui.pending)}</span>}
@@ -90,7 +92,7 @@ export default function MinistryPage() {
     <a className="skip-link" href="#main-content">{t(ui.skip)}</a><Header />
     <main id="main-content">
       {isHome ? <section className="home-hero"><ContentImage className="hero-image" src={assets.hero} alt={t(ui.imageAlt)} fetchPriority="high" width="1920" height="1100" /><div className="hero-overlay" /><div className="content-width">{intro}</div><div className="hero-bottom content-width"><span>{t(ui.tagline)}</span><span>Philadelphia International Ministry</span></div></section> : <section className="page-hero content-width">{intro}</section>}
-      <div className="content-width page-content"><nav className="section-index" aria-label={t(ui.pageSections)}><span className="eyebrow">{t(ui.pageSections)}</span><ul>{visibleSections.map((section) => <li key={section.id}><Link to={href(page.id, section.id)}>{t(section.title)}</Link></li>)}</ul></nav><div className="sections">{visibleSections.map((section) => <PageSection key={section.id} section={section} pageId={page.id} />)}</div></div>
+      {visibleSections.length > 0 && <div className="content-width page-content"><nav className="section-index" aria-label={t(ui.pageSections)}><span className="eyebrow">{t(ui.pageSections)}</span><ul>{visibleSections.map((section) => <li key={section.id}><Link to={href(page.id, section.id)}>{t(section.title)}</Link></li>)}</ul></nav><div className="sections">{visibleSections.map((section) => <PageSection key={section.id} section={section} pageId={page.id} />)}</div></div>}
     </main><Footer />
   </>;
 }

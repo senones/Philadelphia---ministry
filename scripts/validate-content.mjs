@@ -50,11 +50,14 @@ try {
       const data = await read(`pages/${page.id}.${code}.json`);
       if (data.syncTranslations !== undefined) assert.equal(typeof data.syncTranslations, 'boolean', `${code}/${page.id}: Übersetzungsschalter ist ungültig.`);
       for (const key of ['title', 'heading', 'intro']) nonempty(data[key], `${code}/${page.id}/${key}`);
-      assert.deepEqual(Object.keys(data.sections).sort(), page.sections.map(section => section.id).sort(), `${code}/${page.id}: Abschnitte sind unvollständig.`);
+      assert(data.sections && typeof data.sections === 'object' && !Array.isArray(data.sections), `${code}/${page.id}: Abschnitte sind ungültig.`);
+      assert(Object.keys(data.sections).every(id => page.sections.some(section => section.id === id)), `${code}/${page.id}: Ein unbekannter fester Abschnitt ist enthalten.`);
       for (const section of page.sections) {
         const entry = data.sections[section.id];
-        nonempty(entry.title, `${code}/${page.id}/${section.id}/title`);
-        nonempty(entry.body, `${code}/${page.id}/${section.id}/body`);
+        if (!Object.hasOwn(data.sections, section.id)) continue;
+        assert(entry && typeof entry === 'object' && !Array.isArray(entry), `${code}/${page.id}/${section.id}: Abschnitt ist ungültig.`);
+        for (const key of ['title', 'body']) assert(entry[key] === undefined || typeof entry[key] === 'string', `${code}/${page.id}/${section.id}/${key}: Text ist ungültig.`);
+        assert(entry.untranslated === undefined || typeof entry.untranslated === 'boolean', `${code}/${page.id}/${section.id}: Übersetzungsstatus ist ungültig.`);
         assert.equal(typeof entry.pending, 'boolean', `${code}/${page.id}/${section.id}: Fertigstellungsstatus fehlt.`);
         if (section.target) assert(pageIds.has(section.target), `Ungültiges Linkziel: ${section.target}`);
         if (section.targetSection) assert(structure.pages.find(item => item.id === section.target).sections.some(item => item.id === section.targetSection));
