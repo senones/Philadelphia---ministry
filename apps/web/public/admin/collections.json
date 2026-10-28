@@ -1,6 +1,6 @@
 {
   "locale": "de",
-  "logo_url": "/media/logo.png",
+  "logo_url": "/media/philadelphia-logo.jpg",
   "load_config_file": false,
   "media_folder": "apps/web/public/media",
   "public_folder": "/media",
@@ -1274,7 +1274,7 @@
         },
         {
           "name": "bayt_de",
-          "label": "Philadelphia Bayt – Haus Philadelphia",
+          "label": "Haus Philadelphia",
           "file": "apps/web/src/ministry/content/pages/bayt.de.json",
           "preview_path": "de/philadelphia-bayt",
           "fields": [
@@ -1311,7 +1311,7 @@
               "fields": [
                 {
                   "name": "was-ist-bayt",
-                  "label": "Was ist das Bayt?",
+                  "label": "Was ist bayt",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -1353,7 +1353,7 @@
                 },
                 {
                   "name": "ziel-konzept",
-                  "label": "Ziel und Konzept",
+                  "label": "Ziel konzept",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -1395,7 +1395,7 @@
                 },
                 {
                   "name": "leben",
-                  "label": "Leben im Haus",
+                  "label": "Leben",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -1437,7 +1437,7 @@
                 },
                 {
                   "name": "begleitung",
-                  "label": "Begleitung und Jüngerschaft",
+                  "label": "Begleitung",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -1479,7 +1479,7 @@
                 },
                 {
                   "name": "bewohner",
-                  "label": "Unterstützung der Bewohner",
+                  "label": "Bewohner",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -1560,23 +1560,23 @@
                       "value": "start"
                     },
                     {
-                      "label": "Nach: Was ist das Bayt?",
+                      "label": "Nach: Was ist bayt",
                       "value": "was-ist-bayt"
                     },
                     {
-                      "label": "Nach: Ziel und Konzept",
+                      "label": "Nach: Ziel konzept",
                       "value": "ziel-konzept"
                     },
                     {
-                      "label": "Nach: Leben im Haus",
+                      "label": "Nach: Leben",
                       "value": "leben"
                     },
                     {
-                      "label": "Nach: Begleitung und Jüngerschaft",
+                      "label": "Nach: Begleitung",
                       "value": "begleitung"
                     },
                     {
-                      "label": "Nach: Unterstützung der Bewohner",
+                      "label": "Nach: Bewohner",
                       "value": "bewohner"
                     }
                   ]
@@ -5507,7 +5507,7 @@
         },
         {
           "name": "bayt_en",
-          "label": "Philadelphia Bayt – Haus Philadelphia",
+          "label": "Haus Philadelphia",
           "file": "apps/web/src/ministry/content/pages/bayt.en.json",
           "preview_path": "en/philadelphia-bayt",
           "fields": [
@@ -5544,7 +5544,7 @@
               "fields": [
                 {
                   "name": "was-ist-bayt",
-                  "label": "Was ist das Bayt?",
+                  "label": "Was ist bayt",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -5586,7 +5586,7 @@
                 },
                 {
                   "name": "ziel-konzept",
-                  "label": "Ziel und Konzept",
+                  "label": "Ziel konzept",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -5628,7 +5628,7 @@
                 },
                 {
                   "name": "leben",
-                  "label": "Leben im Haus",
+                  "label": "Leben",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -5670,7 +5670,7 @@
                 },
                 {
                   "name": "begleitung",
-                  "label": "Begleitung und Jüngerschaft",
+                  "label": "Begleitung",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -5712,7 +5712,7 @@
                 },
                 {
                   "name": "bewohner",
-                  "label": "Unterstützung der Bewohner",
+                  "label": "Bewohner",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -5793,23 +5793,23 @@
                       "value": "start"
                     },
                     {
-                      "label": "Nach: Was ist das Bayt?",
+                      "label": "Nach: Was ist bayt",
                       "value": "was-ist-bayt"
                     },
                     {
-                      "label": "Nach: Ziel und Konzept",
+                      "label": "Nach: Ziel konzept",
                       "value": "ziel-konzept"
                     },
                     {
-                      "label": "Nach: Leben im Haus",
+                      "label": "Nach: Leben",
                       "value": "leben"
                     },
                     {
-                      "label": "Nach: Begleitung und Jüngerschaft",
+                      "label": "Nach: Begleitung",
                       "value": "begleitung"
                     },
                     {
-                      "label": "Nach: Unterstützung der Bewohner",
+                      "label": "Nach: Bewohner",
                       "value": "bewohner"
                     }
                   ]
@@ -9740,7 +9740,7 @@
         },
         {
           "name": "bayt_el",
-          "label": "Philadelphia Bayt – Haus Philadelphia",
+          "label": "Haus Philadelphia",
           "file": "apps/web/src/ministry/content/pages/bayt.el.json",
           "preview_path": "el/philadelphia-bayt",
           "fields": [
@@ -9777,7 +9777,7 @@
               "fields": [
                 {
                   "name": "was-ist-bayt",
-                  "label": "Was ist das Bayt?",
+                  "label": "Was ist bayt",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -9819,7 +9819,7 @@
                 },
                 {
                   "name": "ziel-konzept",
-                  "label": "Ziel und Konzept",
+                  "label": "Ziel konzept",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -9861,7 +9861,7 @@
                 },
                 {
                   "name": "leben",
-                  "label": "Leben im Haus",
+                  "label": "Leben",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -9903,7 +9903,7 @@
                 },
                 {
                   "name": "begleitung",
-                  "label": "Begleitung und Jüngerschaft",
+                  "label": "Begleitung",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -9945,7 +9945,7 @@
                 },
                 {
                   "name": "bewohner",
-                  "label": "Unterstützung der Bewohner",
+                  "label": "Bewohner",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -10026,23 +10026,23 @@
                       "value": "start"
                     },
                     {
-                      "label": "Nach: Was ist das Bayt?",
+                      "label": "Nach: Was ist bayt",
                       "value": "was-ist-bayt"
                     },
                     {
-                      "label": "Nach: Ziel und Konzept",
+                      "label": "Nach: Ziel konzept",
                       "value": "ziel-konzept"
                     },
                     {
-                      "label": "Nach: Leben im Haus",
+                      "label": "Nach: Leben",
                       "value": "leben"
                     },
                     {
-                      "label": "Nach: Begleitung und Jüngerschaft",
+                      "label": "Nach: Begleitung",
                       "value": "begleitung"
                     },
                     {
-                      "label": "Nach: Unterstützung der Bewohner",
+                      "label": "Nach: Bewohner",
                       "value": "bewohner"
                     }
                   ]
@@ -13973,7 +13973,7 @@
         },
         {
           "name": "bayt_ar",
-          "label": "Philadelphia Bayt – Haus Philadelphia",
+          "label": "Haus Philadelphia",
           "file": "apps/web/src/ministry/content/pages/bayt.ar.json",
           "preview_path": "ar/philadelphia-bayt",
           "fields": [
@@ -14010,7 +14010,7 @@
               "fields": [
                 {
                   "name": "was-ist-bayt",
-                  "label": "Was ist das Bayt?",
+                  "label": "Was ist bayt",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -14052,7 +14052,7 @@
                 },
                 {
                   "name": "ziel-konzept",
-                  "label": "Ziel und Konzept",
+                  "label": "Ziel konzept",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -14094,7 +14094,7 @@
                 },
                 {
                   "name": "leben",
-                  "label": "Leben im Haus",
+                  "label": "Leben",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -14136,7 +14136,7 @@
                 },
                 {
                   "name": "begleitung",
-                  "label": "Begleitung und Jüngerschaft",
+                  "label": "Begleitung",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -14178,7 +14178,7 @@
                 },
                 {
                   "name": "bewohner",
-                  "label": "Unterstützung der Bewohner",
+                  "label": "Bewohner",
                   "widget": "object",
                   "collapsed": true,
                   "required": false,
@@ -14259,23 +14259,23 @@
                       "value": "start"
                     },
                     {
-                      "label": "Nach: Was ist das Bayt?",
+                      "label": "Nach: Was ist bayt",
                       "value": "was-ist-bayt"
                     },
                     {
-                      "label": "Nach: Ziel und Konzept",
+                      "label": "Nach: Ziel konzept",
                       "value": "ziel-konzept"
                     },
                     {
-                      "label": "Nach: Leben im Haus",
+                      "label": "Nach: Leben",
                       "value": "leben"
                     },
                     {
-                      "label": "Nach: Begleitung und Jüngerschaft",
+                      "label": "Nach: Begleitung",
                       "value": "begleitung"
                     },
                     {
-                      "label": "Nach: Unterstützung der Bewohner",
+                      "label": "Nach: Bewohner",
                       "value": "bewohner"
                     }
                   ]
@@ -19904,7 +19904,7 @@
         },
         {
           "name": "gallery_bayt",
-          "label": "Philadelphia Bayt – Haus Philadelphia",
+          "label": "Haus Philadelphia",
           "file": "apps/web/src/ministry/content/galleries/bayt.json",
           "preview_path": "de/philadelphia-bayt",
           "fields": [
@@ -19923,7 +19923,7 @@
               "fields": [
                 {
                   "name": "was-ist-bayt",
-                  "label": "Was ist das Bayt?",
+                  "label": "Was ist bayt",
                   "widget": "object",
                   "collapsed": true,
                   "fields": [
@@ -20083,7 +20083,7 @@
                 },
                 {
                   "name": "ziel-konzept",
-                  "label": "Ziel und Konzept",
+                  "label": "Ziel konzept",
                   "widget": "object",
                   "collapsed": true,
                   "fields": [
@@ -20243,7 +20243,7 @@
                 },
                 {
                   "name": "leben",
-                  "label": "Leben im Haus",
+                  "label": "Leben",
                   "widget": "object",
                   "collapsed": true,
                   "fields": [
@@ -20403,7 +20403,7 @@
                 },
                 {
                   "name": "begleitung",
-                  "label": "Begleitung und Jüngerschaft",
+                  "label": "Begleitung",
                   "widget": "object",
                   "collapsed": true,
                   "fields": [
@@ -20563,7 +20563,7 @@
                 },
                 {
                   "name": "bewohner",
-                  "label": "Unterstützung der Bewohner",
+                  "label": "Bewohner",
                   "widget": "object",
                   "collapsed": true,
                   "fields": [
@@ -25663,7 +25663,7 @@
         },
         {
           "name": "videos_bayt",
-          "label": "Philadelphia Bayt – Haus Philadelphia",
+          "label": "Haus Philadelphia",
           "file": "apps/web/src/ministry/content/videos/bayt.json",
           "preview_path": "de/philadelphia-bayt",
           "fields": [
@@ -25709,28 +25709,24 @@
                   "widget": "select",
                   "options": [
                     {
-                      "label": "Was ist das Bayt?",
+                      "label": "Was ist bayt",
                       "value": "was-ist-bayt"
                     },
                     {
-                      "label": "Ziel und Konzept",
+                      "label": "Ziel konzept",
                       "value": "ziel-konzept"
                     },
                     {
-                      "label": "Leben im Haus",
+                      "label": "Leben",
                       "value": "leben"
                     },
                     {
-                      "label": "Begleitung und Jüngerschaft",
+                      "label": "Begleitung",
                       "value": "begleitung"
                     },
                     {
-                      "label": "Unterstützung der Bewohner",
+                      "label": "Bewohner",
                       "value": "bewohner"
-                    },
-                    {
-                      "label": "Hier  ist wasser",
-                      "value": "extra-d4149624-b28d-4fc9-856d-30830c4e3dfa"
                     }
                   ],
                   "default": "was-ist-bayt"

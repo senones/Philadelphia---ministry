@@ -209,7 +209,7 @@ collections.push({ name: 'documents', label: 'PDF-Dokumente', format: 'json', ed
   ] },
 ] });
 const schema = {
-  locale: 'de', logo_url: '/media/logo.png', display_url: undefined,
+  locale: 'de', logo_url: assets.logo || '/media/philadelphia-logo.jpg', display_url: undefined,
   load_config_file: false,
   media_folder: 'apps/web/public/media', public_folder: '/media',
   publish: true,

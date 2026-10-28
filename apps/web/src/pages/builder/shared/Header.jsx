@@ -4,11 +4,11 @@ import BlockNavigation from '@/components/builder/blocks/BlockNavigation';
 export default function Header() {
 	return (
 		<BlockNavigation
-			logoSrc={"https://horizons-cdn.hostinger.com/4da9d7fd-50bd-455b-82aa-c08bc73b5a2d/wls6ps-9f7Hcoo6tl73nGQ1.png?width=768&fit=scale-down"}
+			logoSrc={"/media/philadelphia-logo.jpg"}
 			logoText={"Philadelphia International Ministry"}
 			logoHref={"/"}
-			logoHeightDesktop={52}
-			logoHeightMobile={26}
+			logoHeightDesktop={108}
+			logoHeightMobile={80}
 			isLogoVisible
 			layout={"desktop-1"}
 			mobileLayout={"mobile-1"}
@@ -27,12 +27,12 @@ export default function Header() {
 				"--m-padding-right": "16px",
 				"--m-padding-bottom": "24px",
 				"--m-padding-left": "16px",
-				"--logo-width": "166px",
+				"--logo-width": "162px",
 				"--cartIconSize": "24px",
 				"--link-spacing": "20px",
 				"--nav-link-font-size": "13px",
 				"--nav-link-m-font-size": "15px",
-				"--m-logo-width": "86px",
+				"--m-logo-width": "120px",
 				"--m-link-spacing": "64px",
 				"--element-spacing": "64px",
 				"--contrastBackgroundColor": "rgb(198, 207, 219)",

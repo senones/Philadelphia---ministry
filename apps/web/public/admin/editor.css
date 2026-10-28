@@ -1,7 +1,7 @@
 :root { color-scheme: light; }
 body { margin: 0; }
 .editor-status { box-sizing: border-box; max-width: 600px; margin: 12vh auto; padding: 32px; color: #29251f; font: 16px/1.7 system-ui, sans-serif; }
-.editor-status img { border-radius: 50%; object-fit: contain; }
+.editor-status img { display: block; width: 180px; height: 120px; max-width: 100%; object-fit: contain; clip-path: inset(1px); }
 .editor-status .eyebrow { margin-top: 22px; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: #786c5a; }
 .editor-status h1 { font: 36px/1.2 Georgia, serif; }
 .editor-status .site-link { display: inline-block; margin-top: 20px; color: #8f572c; text-underline-offset: 4px; }

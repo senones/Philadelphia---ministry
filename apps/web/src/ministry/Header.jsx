@@ -48,7 +48,7 @@ export default function Header() {
         </select>
       </div>
       <Link className="ministry-brand" to={href('home')} aria-label={site.name}>
-        <ContentImage src={assets.logo} alt="" width="44" height="50" /><span className="brand-wordmark"><strong>Philadelphia</strong><span>International Ministry</span></span>
+        <ContentImage src={assets.logo} alt="" width="1080" height="720">{image => image || <span className="brand-wordmark"><strong>Philadelphia</strong><span>International Ministry</span></span>}</ContentImage>
       </Link>
       <div ref={container} className="right-navigation"
         onPointerEnter={(event) => { if (event.pointerType === 'mouse') show(); }}
