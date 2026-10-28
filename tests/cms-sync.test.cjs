@@ -57,6 +57,37 @@ test('unchanged source content does not retranslate other languages', () => {
   assert.equal(plan.texts.length, 0);
   assert.deepEqual(normalize(plan.documents), docs);
 });
+test('a new page translation request catches up unchanged saved text in all other languages', () => {
+  const docs = documents();
+  docs.de.syncTranslations = false;
+  docs.de.intro = 'Bereits ohne Übersetzung gespeicherter Text';
+  docs.de.extraSections = [extra('full-page-1234', 'Zusätzliche Hilfe')];
+  docs.de.extraSections[0].untranslated = false;
+  docs.de.extraSections[0].images = [{ id: 'image-full-page-1234', src: '/media/a.jpg', caption: 'Gemeinsames Essen', alt: 'Menschen am Tisch' }];
+  const source = clone(docs.de);
+  source.translationRequest = '92b31875-5e7d-460b-a773-4b940e1a16e4';
+  const plan = sync.pagePlan({ locale: 'de', before: docs.de, source, translations: docs, automatic: false });
+  assert.equal(plan.translateAll, true);
+  sync.applyTranslations(plan, translated(plan));
+  for (const target of ['en', 'el', 'ar']) {
+    assert.equal(plan.documents[target].intro, `${target}: ${source.intro}`);
+    assert.equal(plan.documents[target].heading, `${target}: ${source.heading}`);
+    assert.equal(plan.documents[target].sections.vision.body, `${target}: ${source.sections.vision.body}`);
+    assert.equal(plan.documents[target].extraSections[0].images[0].caption, `${target}: Gemeinsames Essen`);
+  }
+  assert.deepEqual(normalize(plan.documents.de), source, 'source text and automatic toggle are retained');
+  const again = sync.pagePlan({ locale: 'de', before: source, source, translations: plan.documents, automatic: true });
+  assert.equal(again.translateAll, false); assert.equal(again.texts.length, 0);
+});
+test('full translation works from Greek and keeps deleted sections removed', () => {
+  const docs = documents();
+  for (const locale of sync.locales) docs[locale].sections = {};
+  const source = { ...clone(docs.el), translationRequest: '92b31875-5e7d-460b-a773-4b940e1a16e4' };
+  const plan = sync.pagePlan({ locale: 'el', before: docs.el, source, translations: docs, automatic: false });
+  sync.applyTranslations(plan, translated(plan, 'el'));
+  for (const locale of sync.locales) assert.deepEqual(normalize(plan.documents[locale].sections), {});
+  assert.equal(plan.documents.de.intro, `de: ${source.intro}`);
+});
 
 for (const locale of ['de', 'el']) for (const automatic of [true, false]) {
   test(`removing a fixed section in ${locale} removes it in every language, automatic=${automatic}`, () => {
@@ -248,6 +279,31 @@ test('manual corrections to existing text save only the selected language', asyn
   await backend.persistEntry({ dataFiles: [{ path: pagePath('de'), raw: JSON.stringify(source) }], assets: [] }, {});
   assert.equal(calls[0].entry.dataFiles.length, 1);
   assert.equal(files.get(pagePath('el')).heading, 'el Überschrift');
+});
+test('publishing a full-page request saves Greek catch-up and never repeats it on the next save', async () => {
+  const docs = documents();
+  for (const locale of sync.locales) docs[locale].sections = {};
+  docs.de.syncTranslations = true;
+  docs.de.intro = 'Ein neuer deutscher Text, der bereits gespeichert ist.';
+  const { backend, calls, files } = mockBackend(docs);
+  let requests = 0;
+  sync.wrapBackend(backend, { request: async ({ plan }) => { requests++; return translated(plan); } });
+  const source = { ...clone(files.get(pagePath('de'))), translationRequest: '92b31875-5e7d-460b-a773-4b940e1a16e4' };
+  await backend.persistEntry({ dataFiles: [{ path: pagePath('de'), raw: JSON.stringify(source) }], assets: [] }, {});
+  assert.equal(requests, 1); assert.equal(calls[0].entry.dataFiles.length, 4);
+  assert.equal(files.get(pagePath('el')).intro, `el: ${source.intro}`);
+  assert.equal(files.get(pagePath('de')).intro, source.intro);
+  for (const locale of sync.locales) assert.deepEqual(files.get(pagePath(locale)).sections, {});
+  await backend.persistEntry({ dataFiles: [{ path: pagePath('de'), raw: JSON.stringify(files.get(pagePath('de'))) }], assets: [] }, {});
+  assert.equal(requests, 1);
+});
+test('a failed full-page request preserves all existing language files for a later retry', async () => {
+  const { backend, calls, files } = mockBackend();
+  const previous = clone([...files.entries()]);
+  sync.wrapBackend(backend, { request: async () => { throw new Error('Übersetzungsdienst nicht erreichbar'); } });
+  const source = { ...clone(files.get(pagePath('de'))), translationRequest: '92b31875-5e7d-460b-a773-4b940e1a16e4' };
+  await assert.rejects(backend.persistEntry({ dataFiles: [{ path: pagePath('de'), raw: JSON.stringify(source) }], assets: [] }, {}), /nicht erreichbar/);
+  assert.equal(calls.length, 0); assert.deepEqual([...files.entries()], previous);
 });
 test('mixed-source gallery fields are sent to the service with their own source language', async () => {
   const path = 'apps/web/src/ministry/content/galleries/about.json';

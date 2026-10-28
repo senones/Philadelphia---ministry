@@ -12,6 +12,11 @@
     }
     if (!window.CMS || !window.h || !window.PhiladelphiaSync) throw new Error('Editor unavailable');
     const h = window.h;
+    window.CMS.registerWidget('translate-page', function TranslatePageControl(props) {
+      return h('button', { type: 'button', style: { padding: '10px 14px', cursor: 'pointer' },
+        onClick() { props.onChange(crypto.randomUUID()); },
+      }, 'Alle Texte für die Übersetzung vormerken');
+    });
     // Keep the existing object-shaped content files, but provide native list removal controls.
     const ListControl = window.CMS.getWidget('list').control;
     window.CMS.registerWidget('fixed-sections', function FixedSectionsControl(props) {

@@ -49,6 +49,8 @@
   }
   function pagePlan({ locale, before, source, translations, automatic = true, sectionIds = [] }) {
     source = clone(source);
+    const translateAll = typeof source.translationRequest === 'string' && source.translationRequest !== '' && source.translationRequest !== before.translationRequest;
+    automatic ||= translateAll;
     source.sections ??= {};
     const fixedIds = new Set([...sectionIds, ...Object.keys(before.sections || {}), ...Object.keys(source.sections),
       ...Object.values(translations).flatMap(document => Object.keys(document.sections || {})),
@@ -73,15 +75,15 @@
       documents[target] = document;
       if (automatic) {
         for (const key of ['title', 'heading', 'intro']) {
-          if (source[key] !== before[key]) plan.add(document, target, [key], source[key]);
+          if (translateAll || source[key] !== before[key]) plan.add(document, target, [key], source[key]);
         }
         for (const [id, section] of Object.entries(source.sections)) {
           if (section.untranslated === true) continue;
           const old = before.sections?.[id], missing = document.sections[id].untranslated === true;
           for (const key of ['title', 'body']) {
-            if (!old || missing || section[key] !== old[key]) plan.add(document, target, ['sections', id, key], section[key]);
+            if (translateAll || !old || missing || section[key] !== old[key]) plan.add(document, target, ['sections', id, key], section[key]);
           }
-          if (!old || missing || section.pending !== old.pending) document.sections[id].pending = section.pending;
+          if (translateAll || !old || missing || section.pending !== old.pending) document.sections[id].pending = section.pending;
           if (missing) document.sections[id].untranslated = false;
         }
       }
@@ -93,7 +95,7 @@
         const missing = !previous || previous.untranslated === true;
         const value = previous ? clone(previous) : { id: section.id, title: '', body: '', pending: true, untranslated: true, images: [] };
         value.after = section.after;
-        if (automatic && !section.untranslated && (!old || missing || section.pending !== old.pending)) value.pending = Boolean(section.pending);
+        if (automatic && !section.untranslated && (translateAll || !old || missing || section.pending !== old.pending)) value.pending = Boolean(section.pending);
         const previousImages = new Map((value.images || []).map(image => [image.id, image]));
         value.images = (section.images || []).map(image => ({
           ...(previousImages.get(image.id) || { caption: '', alt: '' }), id: image.id, src: image.src,
@@ -107,13 +109,13 @@
         const old = oldById.get(section.id), previous = targetById.get(section.id);
         const missing = !previous || previous.untranslated === true;
         for (const key of ['title', 'body']) {
-          if (missing || !old || section[key] !== old[key]) plan.add(document, target, ['extraSections', index, key], section[key]);
+          if (translateAll || missing || !old || section[key] !== old[key]) plan.add(document, target, ['extraSections', index, key], section[key]);
         }
         const oldImages = new Map((old?.images || []).map(image => [image.id, image]));
         const targetImages = new Set((previous?.images || []).map(image => image.id));
         (section.images || []).forEach((image, imageIndex) => {
           for (const key of ['caption', 'alt']) {
-            if (missing || !targetImages.has(image.id) || (image[key] || '') !== (oldImages.get(image.id)?.[key] || '')) {
+            if (translateAll || missing || !targetImages.has(image.id) || (image[key] || '') !== (oldImages.get(image.id)?.[key] || '')) {
               plan.add(document, target, ['extraSections', index, 'images', imageIndex, key], image[key] || '');
             }
           }
@@ -121,7 +123,7 @@
         document.extraSections[index].untranslated = false;
       });
     }
-    return { ...plan, documents };
+    return { ...plan, documents, translateAll };
   }
   function labelsPlan({ locale, before, source, translations, automatic = true }) {
     const documents = { [locale]: clone(source) }, plan = planner();
@@ -252,6 +254,7 @@
         else if (info.type === 'labels') plan = labelsPlan({ locale: info.locale, before, source, translations, automatic });
         else if (info.type === 'video') plan = videoPlan({ before, source, automatic });
         else plan = galleryPlan({ before, source, automatic });
+        if (plan.translateAll) onStatus('busy', 'Alle Texte dieser Seite werden neu übersetzt und gemeinsam gespeichert …');
         if (plan.texts.length) {
           const token = await backend.getToken();
           if (!shared) applyTranslations(plan, await request({ plan, locale: info.locale, token }));
@@ -274,7 +277,7 @@
         const result = await originalPersist({ ...entry, dataFiles }, options);
         for (const saved of dataFiles) snapshots.set(saved.path, readJSON(saved.raw));
         onSaved(dataFiles.map(item => item.path), file.path);
-        onStatus('saved', automatic ? 'Gespeichert. Alle betroffenen Sprachen sind aktualisiert.' : 'Gespeichert. Sprachtexte wurden manuell gepflegt.');
+        onStatus('saved', plan.translateAll ? 'Gespeichert. Alle Texte dieser Seite wurden in die anderen drei Sprachen übersetzt.' : automatic ? 'Gespeichert. Alle betroffenen Sprachen sind aktualisiert.' : 'Gespeichert. Sprachtexte wurden manuell gepflegt.');
         return result;
       } catch (error) {
         const message = error.name === 'TimeoutError' ? 'Die Übersetzung hat zu lange gedauert. Bitte erneut versuchen.' : error.message;

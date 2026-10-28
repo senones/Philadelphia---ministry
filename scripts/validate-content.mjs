@@ -49,6 +49,7 @@ try {
     for (const page of structure.pages) {
       const data = await read(`pages/${page.id}.${code}.json`);
       if (data.syncTranslations !== undefined) assert.equal(typeof data.syncTranslations, 'boolean', `${code}/${page.id}: Übersetzungsschalter ist ungültig.`);
+      if (data.translationRequest !== undefined) assert(typeof data.translationRequest === 'string' && (data.translationRequest === '' || /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i.test(data.translationRequest)), `${code}/${page.id}: Übersetzungsauftrag ist ungültig.`);
       for (const key of ['title', 'heading', 'intro']) nonempty(data[key], `${code}/${page.id}/${key}`);
       assert(data.sections && typeof data.sections === 'object' && !Array.isArray(data.sections), `${code}/${page.id}: Abschnitte sind ungültig.`);
       assert(Object.keys(data.sections).every(id => page.sections.some(section => section.id === id)), `${code}/${page.id}: Ein unbekannter fester Abschnitt ist enthalten.`);

@@ -41,6 +41,63 @@ test('a lost or duplicated protected element is rejected instead of changing a l
   assert.throws(() => restoreText(protectedText.plain.replace(/PHL_KEEP_\w+_0_END/, ''), protectedText, 'openai'), /Formatierungen/);
   assert.throws(() => restoreText(protectedText.plain + protectedText.plain, protectedText, 'openai'), /Formatierungen/);
 });
+test('paragraphs and blank lines survive XML whitespace normalization', async () => {
+  const original = 'Hallo\n\nWir helfen Philadelphia mit 50 Euro.\r\n\r\nDanke **Freunde**.';
+  const result = await translateTexts({ source: 'de', targets: ['el'], texts: [original] }, { env, fetch: async (url, options) => {
+    const body = JSON.parse(options.body);
+    return Response.json({ translations: body.text.map(text => ({ text: text
+      .replace(/<keep\s+id="\d+">\s*<\/keep>/g, '')
+      .replace('Hallo', 'Γεια σας').replace('Wir helfen', 'Βοηθάμε').replace('mit', 'με').replace('Euro', 'ευρώ').replace('Danke', 'Ευχαριστούμε').replace('Freunde', 'φίλοι') })) });
+  } });
+  assert.equal(result.el[0], 'Γεια σας\n\nΒοηθάμε Philadelphia με 50 ευρώ.\r\n\r\nΕυχαριστούμε **φίλοι**.');
+});
+test('damaged XML is recovered once using plain fragments while links and paragraphs stay local', async () => {
+  const original = '# Hallo\n\nBitte **helfen**: [Kontakt](https://example.org/?a=1&b=2), 50 Euro.\nPhiladelphia Bayt';
+  const calls = [];
+  const result = await translateTexts({ source: 'de', targets: ['el'], texts: [original, 'Danke'] }, { env, fetch: async (url, options) => {
+    const body = JSON.parse(options.body); calls.push({ body, signal: options.signal });
+    if (body.tag_handling) return Response.json({ translations: body.text.map((text, index) => ({ text: index === 0 ? '<text>lost placeholders</text>' : text.replace('Danke', 'Ευχαριστούμε') })) });
+    assert(body.text.every(text => !/PHL_KEEP_|https:|Philadelphia|\n|\*|50/.test(text)));
+    const translated = { Hallo: 'Γεια σας', Bitte: 'Παρακαλώ', helfen: 'βοηθήστε', Kontakt: 'Επικοινωνία', 'Euro.': 'ευρώ.' };
+    return Response.json({ translations: body.text.map(text => ({ text: translated[text] || text })) });
+  } });
+  assert.equal(result.el[0], '# Γεια σας\n\nΠαρακαλώ **βοηθήστε**: [Επικοινωνία](https://example.org/?a=1&b=2), 50 ευρώ.\nPhiladelphia Bayt');
+  assert.equal(result.el[1], 'Ευχαριστούμε');
+  assert.equal(calls.length, 2);
+  assert.equal(calls[0].signal, calls[1].signal, 'fallback must share the initial timeout');
+});
+test('duplicate or altered keep identities trigger recovery; unknown markup cannot be saved', async () => {
+  for (const damage of [text => text.replace(/(<keep[^>]*>.*?<\/keep>)/, '$1$1'), text => text.replace(/PHL_KEEP_\w+_0_END/, 'changed')]) {
+    let calls = 0;
+    const result = await translateTexts({ source: 'de', targets: ['el'], texts: ['Hallo **Freunde**'] }, { env, fetch: async (url, options) => {
+      calls++; const body = JSON.parse(options.body);
+      return Response.json({ translations: body.text.map(text => ({ text: body.tag_handling ? damage(text) : text.replace('Hallo', 'Γεια σας').replace('Freunde', 'φίλοι') })) });
+    } });
+    assert.equal(result.el[0], 'Γεια σας **φίλοι**'); assert.equal(calls, 2);
+  }
+  await assert.rejects(translateTexts({ source: 'de', targets: ['el'], texts: ['Hallo **Freunde**'] }, { env, fetch: async (url, options) => {
+    const body = JSON.parse(options.body);
+    return Response.json({ translations: body.text.map(() => ({ text: '<text><keep id="99">wrong</keep></text>' })) });
+  } }), /Formatierungen/);
+});
+test('fallback batches only failed text and stops on missing output or quota errors', async () => {
+  const original = Array.from({ length: 45 }, (_, index) => `Wort${String.fromCharCode(65 + Math.floor(index / 26))}${String.fromCharCode(65 + index % 26)}\n`).join('');
+  const sizes = [];
+  const result = await translateTexts({ source: 'de', targets: ['el'], texts: [original] }, { env, fetch: async (url, options) => {
+    const body = JSON.parse(options.body);
+    if (body.tag_handling) return Response.json({ translations: [{ text: '<text>lost</text>' }] });
+    sizes.push(body.text.length);
+    return Response.json({ translations: body.text.map(text => ({ text: `Ελληνικά ${text}` })) });
+  } });
+  assert.deepEqual(sizes, [40, 5]); assert.equal(result.el[0].split('\n').length, 46);
+  for (const failure of [Response.json({ translations: [] }), Response.json({}, { status: 456 })]) {
+    let calls = 0;
+    await assert.rejects(translateTexts({ source: 'de', targets: ['el'], texts: ['Hallo\nFreunde'] }, { env, fetch: async (url, options) => {
+      calls++; return JSON.parse(options.body).tag_handling ? Response.json({ translations: [{ text: '<text>lost</text>' }] }) : failure;
+    } }));
+    assert.equal(calls, 2);
+  }
+});
 test('Greek translates into all other languages using the Free endpoint and server-only auth', async () => {
   const calls = [], translations = await translateTexts({ source: 'el', targets: ['de', 'en', 'ar'], texts: ['Γεια σας'] }, { env, fetch: authorizedFetch(calls) });
   assert.deepEqual(translations, { de: ['Hallo'], en: ['Hello'], ar: ['مرحبا'] });

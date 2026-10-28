@@ -31,6 +31,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -419,6 +427,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -759,6 +775,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -1287,6 +1311,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -1675,6 +1707,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -2015,6 +2055,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -2405,6 +2453,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -2745,6 +2801,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -3089,6 +3153,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -3337,6 +3409,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -3633,6 +3713,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -4264,6 +4352,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -4652,6 +4748,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -4992,6 +5096,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -5520,6 +5632,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -5908,6 +6028,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -6248,6 +6376,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -6638,6 +6774,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -6978,6 +7122,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -7322,6 +7474,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -7570,6 +7730,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -7866,6 +8034,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -8497,6 +8673,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -8885,6 +9069,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -9225,6 +9417,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -9753,6 +9953,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -10141,6 +10349,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -10481,6 +10697,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -10871,6 +11095,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -11211,6 +11443,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -11555,6 +11795,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -11803,6 +12051,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -12099,6 +12355,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -12730,6 +12994,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -13118,6 +13390,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -13458,6 +13738,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -13986,6 +14274,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -14374,6 +14670,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -14714,6 +15018,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -15104,6 +15416,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -15444,6 +15764,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -15788,6 +16116,14 @@
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
             },
             {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
+            },
+            {
               "name": "title",
               "label": "Name im Menü",
               "widget": "string"
@@ -16036,6 +16372,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",
@@ -16332,6 +16676,14 @@
               "default": true,
               "required": false,
               "hint": "Beim Veröffentlichen werden geänderte Texte automatisch übersetzt. Ausschalten, um nur diese Sprachfassung zu korrigieren. Neue Abschnitte, ihre Position und Bilder werden immer für alle Sprachen angelegt."
+            },
+            {
+              "name": "translationRequest",
+              "label": "Gesamte Seite neu übersetzen",
+              "widget": "translate-page",
+              "required": false,
+              "default": "",
+              "hint": "Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt."
             },
             {
               "name": "title",

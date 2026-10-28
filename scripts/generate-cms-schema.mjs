@@ -55,6 +55,10 @@ for (const [locale, label] of Object.entries(locales)) {
       preview_path: `${locale}${page.path === '/' ? '' : page.path}`,
       fields: [
         automatic(),
+        field('translationRequest', 'Gesamte Seite neu übersetzen', 'translate-page', {
+          required: false, default: '',
+          hint: 'Für bereits gespeicherte Texte: Button anklicken und anschließend veröffentlichen. Alle Texte dieser Seite werden aus der geöffneten Sprache in die anderen drei Sprachen übersetzt, auch bei ausgeschalteter Automatik. Vorhandene Übersetzungen dieser Seite werden dabei ersetzt. Ohne Klick werden nur Änderungen übersetzt.',
+        }),
         field('title', 'Name im Menü'),
         field('heading', 'Große Überschrift'),
         field('intro', 'Einleitung', 'text'),
